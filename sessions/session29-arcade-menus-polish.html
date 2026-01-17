@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 29: Menus & Game Polish - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 29: Menus & Game Polish</h1>
+      <p>Add menus, UI, and final polish to your game</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Create start menu and game over screens</li>
+        <li>Design user interface (UI) elements</li>
+        <li>Add high score tracking</li>
+        <li>Polish visual and audio elements</li>
+        <li>Add instructions and help screens</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>Arcade console</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode Arcade editor</li>
+        <li>Your game project from previous sessions</li>
+      </ul>
+
+      <h2>🎨 User Interface</h2>
+      <p>Today we'll add all the finishing touches that make your game feel complete and professional - menus, UI elements, and polish that makes everything look and feel great!</p>
+
+      <h2>🚀 Activity 1: Start Menu</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a function "showStartMenu"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Display game title (large text sprite)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add menu options:
+        <ul>
+          <li>"Press A to Start"</li>
+          <li>"Press B for Instructions"</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add animated background or effects
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Play background music
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> When A is pressed, start the game
+      </div>
+
+      <h2>🎨 Activity 2: Game Over Screen</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create function "showGameOver"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Display:
+        <ul>
+          <li>"Game Over!" text</li>
+          <li>Final score</li>
+          <li>Level reached</li>
+          <li>High score (if new record)</li>
+          <li>"Press A to Restart"</li>
+          <li>"Press B for Menu"</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Play game over sound
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add visual effects (fade, particles)
+      </div>
+
+      <h2>🎯 Activity 3: In-Game UI</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create HUD (Heads-Up Display) elements:
+        <ul>
+          <li>Score (top left)</li>
+          <li>Lives (top right)</li>
+          <li>Level number</li>
+          <li>Power-up indicator (if active)</li>
+          <li>Ability meter (if applicable)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use text sprites or info blocks to display
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Update UI elements continuously during gameplay
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Make sure UI doesn't interfere with gameplay
+      </div>
+
+      <h2>🌟 Activity 4: High Score System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create variable "highScore"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> When game ends, check if current score > highScore
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> If new high score:
+        <ul>
+          <li>Update highScore variable</li>
+          <li>Show "New High Score!" message</li>
+          <li>Play special sound</li>
+          <li>Save high score (if possible)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Display high score on start menu
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Display high score on game over screen
+      </div>
+
+      <h2>🎮 Activity 5: Instructions Screen</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create function "showInstructions"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Display:
+        <ul>
+          <li>How to move (button controls)</li>
+          <li>Game objective</li>
+          <li>What different items do</li>
+          <li>How to win</li>
+          <li>Special abilities</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Make it scrollable if there's a lot of text
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add "Press A to return" option
+      </div>
+
+      <h2>✨ Activity 6: Visual Polish</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add screen transitions:
+        <ul>
+          <li>Fade in/out between screens</li>
+          <li>Smooth level transitions</li>
+          <li>Screen shake for impacts</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Improve animations:
+        <ul>
+          <li>Smooth sprite animations</li>
+          <li>Particle effects for events</li>
+          <li>Color flashes for feedback</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add visual feedback:
+        <ul>
+          <li>Flash when taking damage</li>
+          <li>Glow effects for power-ups</li>
+          <li>Trail effects for fast movement</li>
+        </ul>
+      </div>
+
+      <h2>🎵 Activity 7: Audio Polish</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add background music for:
+        <ul>
+          <li>Start menu</li>
+          <li>Each level (different music)</li>
+          <li>Boss battles (intense music)</li>
+          <li>Game over</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Add sound effects for all actions:
+        <ul>
+          <li>Movement sounds</li>
+          <li>Collecting items</li>
+          <li>Taking damage</li>
+          <li>Using abilities</li>
+          <li>Level complete</li>
+          <li>Boss defeat</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Adjust volume levels (music quieter than sound effects)
+      </div>
+
+      <h2>🎯 Activity 8: Pause Menu</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add pause functionality (button press)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> When paused:
+        <ul>
+          <li>Stop all movement and updates</li>
+          <li>Show "Paused" text</li>
+          <li>Show options: Resume, Restart, Quit to Menu</li>
+          <li>Dim the screen slightly</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Resume continues from where you left off
+      </div>
+
+      <div class="challenge">
+        Create a fully polished game with:
+        <ul>
+          <li>Professional start menu with title and options</li>
+          <li>Complete game over screen with stats</li>
+          <li>In-game HUD showing all important info</li>
+          <li>High score tracking and display</li>
+          <li>Instructions/help screen</li>
+          <li>Pause menu</li>
+          <li>Smooth screen transitions</li>
+          <li>Background music for all screens</li>
+          <li>Sound effects for all actions</li>
+          <li>Visual polish (effects, animations, feedback)</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>UI (User Interface):</strong> Visual elements that show game information</li>
+        <li><strong>HUD:</strong> Heads-Up Display - info shown during gameplay</li>
+        <li><strong>Menu System:</strong> Screens for navigation and options</li>
+        <li><strong>High Score:</strong> Best score achieved, saved and displayed</li>
+        <li><strong>Polish:</strong> Final touches that make game feel professional</li>
+        <li><strong>Transition:</strong> Smooth movement between screens</li>
+        <li><strong>Feedback:</strong> Visual and audio responses to player actions</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! Your game is now polished and complete. Next session is the final one where we'll test everything, fix bugs, and prepare your game for sharing!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -8,6 +8,7 @@ Sessions run at a local school code club using BBC Microbits, Smart Cutebot robo
 - Introduce students to programmable features of BBC microbits, e.g. LEDs, sensors, accelerometer
 - Introduce students to robotics with Cutebot, e.g. movement control, line following, obstacle avoidance
 - Introduce students to game development with Arcade console, e.g. sprites, animation, scoring, game mechanics
+- Introduce students to advanced game development, e.g. game design, power-ups, boss battles, level systems, game polish
 - Encourage students to think beyond sessions and independently add new features based on the content presented
 - Have fun!
 
@@ -41,6 +42,12 @@ Sessions run at a local school code club using BBC Microbits, Smart Cutebot robo
 | **22** | Arcade Scoring & Game Mechanics | Scoring, collisions, game rules | Add scoring, collectibles, and game rules |
 | **23** | Arcade Levels & Backgrounds | Backgrounds, multiple levels | Create beautiful game worlds and multiple levels |
 | **24** | Arcade Final Project | Complete game design | Create your own amazing game combining everything! |
+| **25** | Advanced Game Design | Planning, design documents | Plan and design your detailed game before building |
+| **26** | Building Core Mechanics | Game loop, state management | Create the foundation and core gameplay |
+| **27** | Advanced Game Features | Power-ups, AI, special abilities | Add power-ups, multiple enemies, and special abilities |
+| **28** | Levels & Boss Battles | Level design, boss mechanics | Create multiple levels and epic boss battles |
+| **29** | Menus & Game Polish | UI, menus, polish | Add menus, UI elements, and final polish |
+| **30** | Testing & Sharing | Testing, debugging, sharing | Test, debug, balance, and share your completed game |
 
 ---
 

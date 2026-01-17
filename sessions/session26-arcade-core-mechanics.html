@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 26: Building Core Game Mechanics - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 26: Building Core Game Mechanics</h1>
+      <p>Create the foundation of your detailed game</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Set up a game project structure</li>
+        <li>Create the core gameplay loop</li>
+        <li>Implement player movement and controls</li>
+        <li>Add basic collision detection</li>
+        <li>Create game state management</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>Arcade console</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode Arcade editor</li>
+        <li>Your game design document from Session 25</li>
+      </ul>
+
+      <h2>🏗️ Building the Foundation</h2>
+      <p>Today we'll build the core mechanics of your game - the foundation that everything else will build on. We'll create a solid, well-organized code structure.</p>
+
+      <h2>🚀 Activity 1: Project Setup</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Open MakeCode Arcade and create a new project
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Name it after your game (from your design document)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Set up the basic structure in "on start":
+        <ul>
+          <li>Set background</li>
+          <li>Create player sprite</li>
+          <li>Set initial game state variables</li>
+          <li>Initialize score and lives</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Create variables for game state:
+        <ul>
+          <li>"gameState" (playing, paused, gameOver, menu)</li>
+          <li>"score"</li>
+          <li>"lives"</li>
+          <li>"level"</li>
+        </ul>
+      </div>
+
+      <h2>🎨 Activity 2: Player Setup</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create your player sprite with the design from your document
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Set its position (start position)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Set its kind to "Player"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add physics properties:
+        <ul>
+          <li>Set acceleration (how fast it speeds up)</li>
+          <li>Set max speed (how fast it can go)</li>
+          <li>Set bounce (if it should bounce off walls)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Add animation (walking, idle, etc.)
+      </div>
+
+      <h2>🎯 Activity 3: Advanced Movement System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a function called "updatePlayerMovement"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Inside, use controller inputs to set velocity:
+        <ul>
+          <li>If left pressed: set vx (velocity x) to negative</li>
+          <li>If right pressed: set vx to positive</li>
+          <li>If up pressed: set vy (velocity y) to negative</li>
+          <li>If down pressed: set vy to positive</li>
+          <li>If nothing pressed: gradually slow down</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Call this function in "game.onUpdate"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add boundary checks to keep player on screen
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Test - movement should feel smooth and responsive!
+      </div>
+
+      <h2>🌟 Activity 4: Game State Management</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create functions for different game states:
+        <ul>
+          <li>"startGame" - Initialize everything</li>
+          <li>"updateGame" - Main game loop</li>
+          <li>"pauseGame" - Pause everything</li>
+          <li>"gameOver" - Handle game over</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> In "game.onUpdate", check gameState:
+        <ul>
+          <li>If "playing": run updateGame</li>
+          <li>If "paused": don't update</li>
+          <li>If "gameOver": show game over screen</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add button to pause/unpause game
+      </div>
+
+      <h2>🎮 Activity 5: Collision System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Set up collision handlers for different sprite kinds
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create collision for Player + Collectible:
+        <ul>
+          <li>Increase score</li>
+          <li>Play sound</li>
+          <li>Destroy collectible</li>
+          <li>Spawn new collectible</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Create collision for Player + Enemy:
+        <ul>
+          <li>Decrease lives</li>
+          <li>Play hurt sound</li>
+          <li>Brief invincibility (can't be hurt for a moment)</li>
+          <li>If lives = 0, game over</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add visual feedback for collisions (flash, particles)
+      </div>
+
+      <h2>⚡ Activity 6: Lives System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a variable "lives" and set to 3 in "on start"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Display lives on screen (use text sprite or info.setLife)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> When player hits enemy:
+        <ul>
+          <li>Decrease lives by 1</li>
+          <li>Update display</li>
+          <li>If lives = 0, call gameOver function</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add invincibility period after being hit (so player doesn't lose all lives instantly)
+      </div>
+
+      <div class="challenge">
+        Build a complete core game system with:
+        <ul>
+          <li>Player with smooth movement and animation</li>
+          <li>Game state management (playing, paused, game over)</li>
+          <li>Lives system with visual display</li>
+          <li>Scoring system</li>
+          <li>Collision detection for collectibles and enemies</li>
+          <li>Boundary checking</li>
+          <li>Pause functionality</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Game Loop:</strong> Code that runs continuously to update the game</li>
+        <li><strong>Game State:</strong> What mode the game is in (playing, paused, etc.)</li>
+        <li><strong>Velocity:</strong> Speed and direction of movement (vx, vy)</li>
+        <li><strong>Physics:</strong> How objects move and interact (acceleration, friction, etc.)</li>
+        <li><strong>Collision Detection:</strong> Detecting when sprites touch</li>
+        <li><strong>Invincibility:</strong> Temporary protection from damage</li>
+        <li><strong>Function Organization:</strong> Breaking code into reusable functions</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You have a solid foundation. Next session, we'll add advanced features like power-ups, multiple enemy types, and special abilities!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

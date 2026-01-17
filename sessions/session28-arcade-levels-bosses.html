@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 28: Levels & Boss Battles - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 28: Levels & Boss Battles</h1>
+      <p>Create multiple levels and epic boss battles!</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Design and implement multiple levels</li>
+        <li>Create level progression system</li>
+        <li>Design boss enemies with unique mechanics</li>
+        <li>Add checkpoints and save points</li>
+        <li>Create level transitions</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>Arcade console</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode Arcade editor</li>
+        <li>Your game project from previous sessions</li>
+      </ul>
+
+      <h2>🌍 Level System</h2>
+      <p>Today we'll create a complete level system with multiple stages, each with unique challenges, and epic boss battles at the end of levels!</p>
+
+      <h2>🚀 Activity 1: Level Structure</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a function "loadLevel" that takes level number as parameter
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Inside, set up level-specific elements:
+        <ul>
+          <li>Background image/color</li>
+          <li>Enemy types and positions</li>
+          <li>Collectible positions</li>
+          <li>Obstacle layout</li>
+          <li>Music/soundtrack</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Create different layouts for each level
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Level 1: Tutorial (easy, teaches mechanics)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Each level gets progressively harder
+      </div>
+
+      <h2>🎨 Activity 2: Level Progression</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create function "checkLevelComplete"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Level completion conditions:
+        <ul>
+          <li>Collect all items</li>
+          <li>Defeat all enemies</li>
+          <li>Reach a goal point</li>
+          <li>Survive for a time limit</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> When level is complete:
+        <ul>
+          <li>Show "Level Complete!" message</li>
+          <li>Play victory sound</li>
+          <li>Add bonus points</li>
+          <li>Wait a moment</li>
+          <li>Load next level</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> If it's the last level, show "You Win!" instead
+      </div>
+
+      <h2>🎯 Activity 3: Boss Enemy Design</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a boss sprite (larger, more detailed)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Give boss unique properties:
+        <ul>
+          <li>More health (takes multiple hits to defeat)</li>
+          <li>Larger size</li>
+          <li>Special attacks</li>
+          <li>Movement patterns</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Create boss health bar (visual display)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Boss appears at end of level or after certain conditions
+      </div>
+
+      <h2>🌟 Activity 4: Boss Battle Mechanics</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create function "updateBoss" for boss behavior
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Boss attack patterns:
+        <ul>
+          <li><strong>Phase 1:</strong> Moves slowly, shoots projectiles</li>
+          <li><strong>Phase 2:</strong> Moves faster, more projectiles</li>
+          <li><strong>Phase 3:</strong> Charges at player, area attacks</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Change phases based on boss health
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Boss attacks:
+        <ul>
+          <li>Shoot projectiles in patterns (spread, aimed, etc.)</li>
+          <li>Charge attacks (dash toward player)</li>
+          <li>Area attacks (damage in radius around boss)</li>
+          <li>Spawn minions (smaller enemies)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Player can damage boss (collision or projectiles)
+      </div>
+
+      <h2>🎮 Activity 5: Checkpoint System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create checkpoint sprites at key points in levels
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> When player touches checkpoint:
+        <ul>
+          <li>Save current position</li>
+          <li>Save current score</li>
+          <li>Play checkpoint sound</li>
+          <li>Show "Checkpoint!" message</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> When player dies:
+        <ul>
+          <li>Respawn at last checkpoint</li>
+          <li>Restore saved score</li>
+          <li>Reset enemies (if needed)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> This makes levels less frustrating!
+      </div>
+
+      <h2>🌆 Activity 6: Level Transitions</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create smooth transitions between levels
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> When level completes:
+        <ul>
+          <li>Fade out screen</li>
+          <li>Show level summary (score, time, etc.)</li>
+          <li>Show "Level X Complete!"</li>
+          <li>Fade in to next level</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add level name display at start of each level
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Clear all sprites before loading new level
+      </div>
+
+      <h2>⚔️ Activity 7: Boss Health System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create boss health variable
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Display health bar on screen (visual bar that decreases)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> When boss takes damage:
+        <ul>
+          <li>Decrease health</li>
+          <li>Update health bar</li>
+          <li>Play hit sound</li>
+          <li>Flash boss sprite</li>
+          <li>If health = 0, boss defeated!</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> When boss defeated:
+        <ul>
+          <li>Play victory music</li>
+          <li>Show explosion effect</li>
+          <li>Add big score bonus</li>
+          <li>Complete the level</li>
+        </ul>
+      </div>
+
+      <div class="challenge">
+        Create a complete level system with:
+        <ul>
+          <li>At least 3 different levels with unique layouts</li>
+          <li>Level progression that unlocks next level</li>
+          <li>Boss battle at end of each level</li>
+          <li>Boss with multiple attack phases</li>
+          <li>Health bar for boss</li>
+          <li>Checkpoint system in longer levels</li>
+          <li>Smooth level transitions</li>
+          <li>Level summary screen between levels</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Level Design:</strong> Creating unique stages with different challenges</li>
+        <li><strong>Progression:</strong> Advancing through levels in order</li>
+        <li><strong>Boss Battle:</strong> Special challenging enemy at level end</li>
+        <li><strong>Health System:</strong> Tracking damage and defeat conditions</li>
+        <li><strong>Checkpoint:</strong> Save point where player respawns</li>
+        <li><strong>Phase:</strong> Different behavior patterns based on boss health</li>
+        <li><strong>Transition:</strong> Moving smoothly between levels</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Fantastic! Your game now has multiple levels and epic boss battles. Next session, we'll add menus, game states, and polish everything to make it feel complete!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 27: Advanced Game Features - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 27: Advanced Game Features</h1>
+      <p>Add power-ups, multiple enemies, and special abilities</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Create power-up systems</li>
+        <li>Design multiple enemy types with different behaviors</li>
+        <li>Implement special abilities</li>
+        <li>Add visual effects and feedback</li>
+        <li>Create dynamic gameplay elements</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>Arcade console</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode Arcade editor</li>
+        <li>Your game project from Session 26</li>
+      </ul>
+
+      <h2>⚡ Power-Up System</h2>
+      <p>Today we'll add exciting features that make your game more interesting! Power-ups give temporary abilities, different enemies create variety, and special effects make everything feel more polished.</p>
+
+      <h2>🚀 Activity 1: Create Power-Ups</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a variable "powerUpActive" to track if player has a power-up
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create a variable "powerUpType" to track which power-up is active
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Create power-up sprites (different types):
+        <ul>
+          <li>Speed boost (makes player faster)</li>
+          <li>Shield (protects from damage)</li>
+          <li>Double points (score multiplies)</li>
+          <li>Slow motion (enemies move slower)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Set their kind to "PowerUp"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Make them spawn randomly or at specific locations
+      </div>
+
+      <h2>🎨 Activity 2: Power-Up Effects</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create collision handler for Player + PowerUp
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> When collected:
+        <ul>
+          <li>Set powerUpActive to true</li>
+          <li>Set powerUpType based on which power-up was collected</li>
+          <li>Destroy the power-up sprite</li>
+          <li>Play sound effect</li>
+          <li>Show visual effect (particles, flash)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Apply the power-up effect:
+        <ul>
+          <li>Speed boost: Increase player max speed</li>
+          <li>Shield: Set invincibility flag</li>
+          <li>Double points: Set score multiplier to 2</li>
+          <li>Slow motion: Reduce enemy speed</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add a timer - power-ups should last 5-10 seconds
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> When timer ends, remove the power-up effect
+      </div>
+
+      <h2>🎯 Activity 3: Multiple Enemy Types</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create different enemy types with different behaviors:
+        <ul>
+          <li><strong>Chaser:</strong> Follows the player</li>
+          <li><strong>Patroller:</strong> Moves back and forth</li>
+          <li><strong>Shooter:</strong> Shoots projectiles at player</li>
+          <li><strong>Fast:</strong> Moves quickly but predictably</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create a function "createEnemy" that takes enemy type as parameter
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> For each enemy type, set different properties:
+        <ul>
+          <li>Different sprite image</li>
+          <li>Different speed</li>
+          <li>Different movement pattern</li>
+          <li>Different point value when defeated</li>
+        </ul>
+      </div>
+
+      <h2>🌟 Activity 4: Enemy AI Behaviors</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create function "updateEnemies" that runs in game loop
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> For Chaser enemies:
+        <ul>
+          <li>Calculate direction to player</li>
+          <li>Move toward player</li>
+          <li>Use angle from enemy to player</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> For Patroller enemies:
+        <ul>
+          <li>Move in one direction</li>
+          <li>When hitting boundary, reverse direction</li>
+          <li>Or move in a pattern (up-down, left-right)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> For Shooter enemies:
+        <ul>
+          <li>Periodically create projectile sprite</li>
+          <li>Set projectile velocity toward player</li>
+          <li>Projectile damages player on hit</li>
+        </ul>
+      </div>
+
+      <h2>🎮 Activity 5: Special Abilities</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add special ability that player can activate with button
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create ability meter (variable that fills up)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Ability ideas:
+        <ul>
+          <li><strong>Dash:</strong> Quick burst of speed in one direction</li>
+          <li><strong>Shield:</strong> Temporary invincibility</li>
+          <li><strong>Bomb:</strong> Destroy all enemies on screen</li>
+          <li><strong>Slow Time:</strong> Slow down all enemies</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> When button pressed and meter is full:
+        <ul>
+          <li>Activate ability</li>
+          <li>Reset meter</li>
+          <li>Play sound and visual effect</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Meter fills up over time or when collecting items
+      </div>
+
+      <h2>✨ Activity 6: Visual Effects</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add particle effects:
+        <ul>
+          <li>When collecting items: sparkles</li>
+          <li>When hitting enemy: explosion</li>
+          <li>When using ability: special effect</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use "start effect" blocks to create visual feedback
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add screen shake when big events happen
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add color effects (flash screen, change colors)
+      </div>
+
+      <div class="challenge">
+        Create an advanced game with:
+        <ul>
+          <li>At least 3 different power-up types with unique effects</li>
+          <li>4 different enemy types with different AI behaviors</li>
+          <li>Special ability system with meter</li>
+          <li>Visual effects for all major events</li>
+          <li>Power-up timer display on screen</li>
+          <li>Different enemies spawn at different times/levels</li>
+          <li>Boss enemy with unique behavior</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Power-Up:</strong> Temporary ability that enhances player</li>
+        <li><strong>AI (Artificial Intelligence):</strong> Behavior patterns for enemies</li>
+        <li><strong>Enemy Types:</strong> Different enemies with different behaviors</li>
+        <li><strong>Special Ability:</strong> Player-activated powerful move</li>
+        <li><strong>Particle Effects:</strong> Visual effects made of many small sprites</li>
+        <li><strong>Timer System:</strong> Tracking time for temporary effects</li>
+        <li><strong>Dynamic Gameplay:</strong> Game elements that change during play</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! Your game now has exciting advanced features. Next session, we'll add multiple levels, boss battles, and level progression!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>
