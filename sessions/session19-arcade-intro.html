@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 19: Introduction to Arcade Console - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 19: Introduction to Arcade Console</h1>
+      <p>Meet your game console and create your first game!</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what the Arcade console is</li>
+        <li>Set up MakeCode Arcade</li>
+        <li>Create your first sprite</li>
+        <li>Display sprites on the screen</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>Arcade console (Kitronik Arcade, Elecfreaks Retro Arcade, or similar)</li>
+        <li>USB cable</li>
+        <li>Computer with internet access</li>
+        <li>MakeCode Arcade editor: <a href="https://arcade.makecode.com/" target="_blank">arcade.makecode.com</a></li>
+      </ul>
+
+      <h2>🎮 What is an Arcade Console?</h2>
+      <p>The Arcade console is a special attachment for your micro:bit that turns it into a handheld game console! It has buttons, a color screen, and lets you create and play games. We'll use MakeCode Arcade to program games - it's similar to regular MakeCode but designed for making games!</p>
+
+      <div class="tip">
+        MakeCode Arcade is different from regular MakeCode for micro:bit. Make sure you're using arcade.makecode.com, not makecode.microbit.org!
+      </div>
+
+      <h2>🚀 Activity 1: Set Up MakeCode Arcade</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Go to <a href="https://arcade.makecode.com/" target="_blank">arcade.makecode.com</a>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Click on "New Project" and name it "My First Game"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Look at the screen - you'll see a game simulator on the left and code blocks on the right
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Notice the blocks are different from regular MakeCode - these are for making games!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Click the gear icon (⚙️) and select your Arcade console type (Kitronik Arcade, Elecfreaks, etc.)
+      </div>
+
+      <h2>🎨 Activity 2: Create Your First Sprite</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Look for the <strong>"Sprites"</strong> category in the blocks menu
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Find the <strong>"set mySprite to sprite of kind Player"</strong> block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Drag it into the <strong>"on start"</strong> block (which is already on your screen)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Click on the image in the block - you'll see a sprite editor open!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Choose a sprite from the gallery or draw your own!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Look at the simulator - you should see your sprite appear on the screen!
+      </div>
+
+      <div class="tip">
+        A sprite is a character or object in your game that can move around. You can have many sprites in one game!
+      </div>
+
+      <h2>🎯 Activity 3: Position Your Sprite</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Find the <strong>"set mySprite position to x 80 y 60"</strong> block (in Sprites category)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Add it after your sprite creation block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Change the x and y numbers to move your sprite to different positions
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> The screen is 160 pixels wide (x) and 120 pixels tall (y)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Try different positions: x=0 (left), x=160 (right), y=0 (top), y=120 (bottom)
+      </div>
+
+      <h2>🌟 Activity 4: Multiple Sprites</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a second sprite by adding another <strong>"set mySprite to sprite"</strong> block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Change the name from "mySprite" to "enemy" (click on the name)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Choose a different sprite image (maybe a monster or obstacle)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Set its position to a different location
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Now you have two sprites on screen!
+      </div>
+
+      <div class="challenge">
+        Create a scene with:
+        <ul>
+          <li>A player sprite (you!)</li>
+          <li>An enemy sprite</li>
+          <li>A collectible item sprite</li>
+          <li>Position them in different parts of the screen</li>
+          <li>Use different colors and images for each!</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Arcade Console:</strong> A hardware attachment that turns micro:bit into a game console</li>
+        <li><strong>MakeCode Arcade:</strong> A special version of MakeCode designed for making games</li>
+        <li><strong>Sprite:</strong> A character or object in your game that can move and interact</li>
+        <li><strong>Coordinates:</strong> X and Y positions that tell you where something is on the screen</li>
+        <li><strong>Pixel:</strong> A tiny dot of color - the screen is made of many pixels</li>
+        <li><strong>Screen Size:</strong> 160 pixels wide (x) by 120 pixels tall (y)</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great job! You've created your first sprites. Next session, we'll learn to make them move using the console buttons!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

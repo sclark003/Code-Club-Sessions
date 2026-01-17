@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 23: Arcade Levels & Backgrounds - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 23: Arcade Levels & Backgrounds</h1>
+      <p>Create beautiful game worlds and multiple levels!</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Set game backgrounds</li>
+        <li>Create multiple levels</li>
+        <li>Design game worlds</li>
+        <li>Add level progression</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>Arcade console</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode Arcade editor</li>
+      </ul>
+
+      <h2>🌍 Game Worlds</h2>
+      <p>Today we'll learn to create beautiful backgrounds and multiple levels for your games! This makes games more interesting and challenging.</p>
+
+      <h2>🚀 Activity 1: Set a Background</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Open MakeCode Arcade and create a new project called "Levels"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Look in the <strong>"Scene"</strong> category
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Find <strong>"set background image to"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add it in "on start"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Click on the image to choose a background (forest, space, city, etc.)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> You can also draw your own custom background!
+      </div>
+
+      <div class="tip">
+        Backgrounds set the scene for your game. Choose one that matches your game's theme!
+      </div>
+
+      <h2>🎨 Activity 2: Background Color</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Instead of an image, you can use a solid color
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use <strong>"set background color to"</strong> (from Scene category)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Choose a color that matches your game
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Try different colors for different levels!
+      </div>
+
+      <h2>🎯 Activity 3: Create Multiple Levels</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a variable called "level" (from Variables category)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Set level to 1 in "on start"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Create a function called "startLevel" (from Functions category)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Inside the function, use an if statement to set different backgrounds based on level:
+        <ul>
+          <li>If level = 1: Set background to forest</li>
+          <li>If level = 2: Set background to space</li>
+          <li>If level = 3: Set background to city</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Call this function in "on start" and when level changes
+      </div>
+
+      <h2>🌟 Activity 4: Level Progression</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> When player reaches a certain score, advance to next level
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Check if score equals 10 (or your target)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> If true:
+        <ul>
+          <li>Change level by 1</li>
+          <li>Call "startLevel" function</li>
+          <li>Reset score to 0 (or keep it)</li>
+          <li>Show text "Level Up!"</li>
+          <li>Spawn new enemies or items</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Make each level harder (more enemies, faster movement, etc.)
+      </div>
+
+      <h2>🎮 Activity 5: Display Level</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Show the current level on screen
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use <strong>"set level to"</strong> (from Info category) to display level
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Or create a text sprite that shows "Level: " + level variable
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Update it when level changes
+      </div>
+
+      <h2>🌆 Activity 6: Different Level Themes</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Make each level feel different:
+        <ul>
+          <li>Level 1: Forest theme - green background, tree sprites</li>
+          <li>Level 2: Space theme - dark background, star sprites</li>
+          <li>Level 3: City theme - gray background, building sprites</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Change sprite colors to match the theme
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Use different music for each level
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Adjust difficulty (more enemies, faster speed) as levels increase
+      </div>
+
+      <div class="challenge">
+        Create a multi-level game:
+        <ul>
+          <li>3 different levels with unique backgrounds</li>
+          <li>Each level has different enemies and collectibles</li>
+          <li>Level progression when score target is reached</li>
+          <li>Level number displayed on screen</li>
+          <li>Each level gets progressively harder</li>
+          <li>Win condition: Complete all 3 levels</li>
+          <li>Different music/theme for each level</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Background:</strong> The image or color behind your game</li>
+        <li><strong>Level:</strong> A stage or section of your game</li>
+        <li><strong>Level Progression:</strong> Moving from one level to the next</li>
+        <li><strong>Theme:</strong> The visual style and setting of a level</li>
+        <li><strong>Difficulty Scaling:</strong> Making levels progressively harder</li>
+        <li><strong>Function:</strong> Reusable code that you can call multiple times</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now create multi-level games with beautiful backgrounds. Next session is your final Arcade project where you'll combine everything to create your own amazing game!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

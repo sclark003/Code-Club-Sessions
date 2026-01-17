@@ -1,5 +1,5 @@
 # Code-Club-Sessions
-Sessions run at a local school code club using BBC Microbits and a Smart Cutebot. 
+Sessions run at a local school code club using BBC Microbits, Smart Cutebot robots, and Arcade game consoles. 
 
 ---
 
@@ -7,6 +7,7 @@ Sessions run at a local school code club using BBC Microbits and a Smart Cutebot
 - Introduce students to programming concepts, e.g. variables, booleans, conditionals, loops
 - Introduce students to programmable features of BBC microbits, e.g. LEDs, sensors, accelerometer
 - Introduce students to robotics with Cutebot, e.g. movement control, line following, obstacle avoidance
+- Introduce students to game development with Arcade console, e.g. sprites, animation, scoring, game mechanics
 - Encourage students to think beyond sessions and independently add new features based on the content presented
 - Have fun!
 
@@ -34,6 +35,12 @@ Sessions run at a local school code club using BBC Microbits and a Smart Cutebot
 | **16** | Cutebot Line Following | Sensors, algorithms | Make Cutebot automatically follow a line |
 | **17** | Cutebot Obstacle Avoidance | Ultrasonic sensor, navigation | Detect and avoid obstacles automatically |
 | **18** | Cutebot Final Project | Combining all robot skills | Create your own amazing robot project! |
+| **19** | Introduction to Arcade Console | Sprites, MakeCode Arcade | Meet the Arcade console and create your first sprites |
+| **20** | Arcade Movement & Controls | Button controls, game loops | Make your sprites move with console buttons |
+| **21** | Arcade Animation & Sound | Animation, sound effects | Bring your games to life with animation and sound |
+| **22** | Arcade Scoring & Game Mechanics | Scoring, collisions, game rules | Add scoring, collectibles, and game rules |
+| **23** | Arcade Levels & Backgrounds | Backgrounds, multiple levels | Create beautiful game worlds and multiple levels |
+| **24** | Arcade Final Project | Complete game design | Create your own amazing game combining everything! |
 
 ---
 
@@ -55,8 +62,10 @@ View all sessions on the [GitHub Pages site](https://sclark003.github.io/Code-Cl
 
 ## **Resources**
 - [MakeCode for Micro:bit](https://makecode.microbit.org/)
+- [MakeCode Arcade](https://arcade.makecode.com/) - Game development editor
 - [Cutebot MakeCode Extension](https://makecode.microbit.org/pkg/elecfreaks/pxt-cutebot)
 - [Cutebot - ElecFreaks Docs](https://www.elecfreaks.com/learn-en/microbitKit/smart_cutebot)
+- [Arcade Console Documentation](https://wiki.elecfreaks.com/en/microbit/arcade/) - Arcade console resources
 
 ---
 

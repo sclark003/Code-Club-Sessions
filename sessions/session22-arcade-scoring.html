@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 22: Arcade Scoring & Game Mechanics - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 22: Arcade Scoring & Game Mechanics</h1>
+      <p>Add scoring, collecting items, and game rules!</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Create a scoring system</li>
+        <li>Make collectible items</li>
+        <li>Detect collisions (when sprites touch)</li>
+        <li>Create win/lose conditions</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>Arcade console</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode Arcade editor</li>
+      </ul>
+
+      <h2>🎮 Game Mechanics</h2>
+      <p>Today we'll learn to make a real game with scoring, collectibles, and rules! We'll create a game where you collect items to earn points.</p>
+
+      <h2>🚀 Activity 1: Create a Score</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Open MakeCode Arcade and create a new project called "Scoring Game"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create a player sprite that you can move around
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Look in the <strong>"Info"</strong> category
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Find <strong>"set score to 0"</strong> and add it in "on start"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> The score will automatically appear on screen!
+      </div>
+
+      <div class="tip">
+        The score starts at 0 and you can change it. It will display in the top corner of the screen automatically!
+      </div>
+
+      <h2>🎨 Activity 2: Create Collectible Items</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a new sprite for a collectible item (like a coin or star)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Set its kind to <strong>"Food"</strong> (in Sprites category)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Position it somewhere on the screen
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add an animation to make it look interesting (like spinning or pulsing)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Create multiple collectibles at different positions!
+      </div>
+
+      <h2>🎯 Activity 3: Collect Items and Score</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Look for <strong>"on sprite of kind Player overlaps otherSprite of kind Food"</strong> (in Sprites category)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> This block runs when your player touches a collectible!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Inside it, add <strong>"change score by 1"</strong> (from Info category)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add <strong>"destroy otherSprite"</strong> to make the item disappear when collected
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Add a sound effect (like "coin" or "power up")
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Test it - when you touch a collectible, your score increases!
+      </div>
+
+      <h2>🌟 Activity 4: Spawn New Items</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> After an item is collected, create a new one
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use <strong>"set newSprite to sprite of kind Food"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Use <strong>"set newSprite position to x (pick random 0 to 160) y (pick random 0 to 120)"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Now new items appear randomly when you collect one!
+      </div>
+
+      <h2>🎮 Activity 5: Win Condition</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add a win condition - when score reaches 10
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> In your game loop, check if score equals 10
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> If true:
+        <ul>
+          <li>Show text "You Win!"</li>
+          <li>Play victory music</li>
+          <li>Stop the game</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Use <strong>"game.over(true)"</strong> to end the game with a win
+      </div>
+
+      <h2>⚠️ Activity 6: Obstacles and Losing</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create enemy sprites (kind: Enemy)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Make them move automatically (in game loop)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add collision detection: <strong>"on sprite of kind Player overlaps otherSprite of kind Enemy"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> When player touches enemy:
+        <ul>
+          <li>Show "Game Over!"</li>
+          <li>Play sad sound</li>
+          <li>End game with <strong>"game.over(false)"</strong></li>
+        </ul>
+      </div>
+
+      <div class="challenge">
+        Create a complete game:
+        <ul>
+          <li>Player moves around collecting items</li>
+          <li>Score increases when collecting items</li>
+          <li>New items spawn randomly</li>
+          <li>Enemies move around the screen</li>
+          <li>Game ends if you touch an enemy</li>
+          <li>Win when you collect 20 items</li>
+          <li>Show high score</li>
+          <li>Different items worth different points!</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Score:</strong> A number that tracks player progress</li>
+        <li><strong>Collectible:</strong> Items the player can pick up</li>
+        <li><strong>Collision Detection:</strong> Detecting when sprites touch each other</li>
+        <li><strong>Sprite Kinds:</strong> Categories for sprites (Player, Enemy, Food, etc.)</li>
+        <li><strong>Game Over:</strong> Ending the game (win or lose)</li>
+        <li><strong>Spawning:</strong> Creating new sprites during the game</li>
+        <li><strong>Random:</strong> Using random numbers for unpredictable gameplay</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Amazing! You can now create games with scoring and rules. Next session, we'll learn about backgrounds, levels, and making your games look even better!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 20: Arcade Movement & Controls - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 20: Arcade Movement & Controls</h1>
+      <p>Make your sprites move with buttons!</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Control sprite movement with buttons</li>
+        <li>Understand game loops</li>
+        <li>Keep sprites on screen (boundaries)</li>
+        <li>Create smooth movement controls</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>Arcade console</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode Arcade editor</li>
+      </ul>
+
+      <h2>🎮 Game Controls</h2>
+      <p>Today we'll learn to make your sprites move when you press buttons! The Arcade console has directional buttons (up, down, left, right) that we can use to control our game characters.</p>
+
+      <h2>🚀 Activity 1: Move with Buttons</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Open MakeCode Arcade and create a new project called "Movement"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create a sprite in "on start" (like we did last session)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Look for the <strong>"Controller"</strong> category in the blocks menu
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Find <strong>"on left button pressed"</strong> block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Drag it onto your workspace
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Inside it, add <strong>"change mySprite x by -5"</strong> (from Sprites category)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 7:</span> Test it - press the left button and your sprite should move left!
+      </div>
+
+      <div class="tip">
+        Negative numbers move left (or up), positive numbers move right (or down). The number is how many pixels to move!
+      </div>
+
+      <h2>🎨 Activity 2: All Directions</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add <strong>"on right button pressed"</strong> with <strong>"change mySprite x by 5"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Add <strong>"on up button pressed"</strong> with <strong>"change mySprite y by -5"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add <strong>"on down button pressed"</strong> with <strong>"change mySprite y by 5"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Now you can move in all four directions!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Try different numbers (like 10 or 2) to make movement faster or slower
+      </div>
+
+      <h2>🎯 Activity 3: Smooth Movement</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Find the <strong>"game.onUpdate"</strong> block (in Game category)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> This block runs continuously - perfect for smooth movement!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Inside it, add an <strong>"if"</strong> statement
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Check <strong>"controller left is pressed"</strong> (from Controller category)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> If true, move sprite left by -2
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Add similar checks for right, up, and down
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 7:</span> Now movement is smooth and continuous while you hold the button!
+      </div>
+
+      <h2>🌟 Activity 4: Keep Sprite on Screen</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add boundary checks to keep your sprite on screen
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> After moving, check if sprite x position is less than 0 (off left edge)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> If so, set sprite x to 0 (keep it on screen)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Check if sprite x is greater than 160 (off right edge) - set to 160
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Do the same for y (top: 0, bottom: 120)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Now your sprite can't leave the screen!
+      </div>
+
+      <div class="challenge">
+        Create a game where:
+        <ul>
+          <li>Player sprite moves smoothly in all directions</li>
+          <li>Sprite stays on screen (can't go off edges)</li>
+          <li>Different speeds for different directions (faster left/right, slower up/down)</li>
+          <li>Button A makes sprite jump (move up quickly then down)</li>
+          <li>Button B makes sprite dash (move faster temporarily)</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Button Events:</strong> Code that runs when a button is pressed</li>
+        <li><strong>Game Loop:</strong> Code that runs continuously (like game.onUpdate)</li>
+        <li><strong>Coordinates:</strong> X (left/right) and Y (up/down) positions</li>
+        <li><strong>Boundaries:</strong> Limits that keep sprites on the screen</li>
+        <li><strong>Pixel Movement:</strong> Moving by a certain number of pixels</li>
+        <li><strong>Continuous vs. Single:</strong> Holding button (continuous) vs. pressing once (single)</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now control sprite movement. Next session, we'll add animation to make your sprites look like they're walking or moving!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>
