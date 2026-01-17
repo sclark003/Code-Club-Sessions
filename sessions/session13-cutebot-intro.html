@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 13: Introduction to Cutebot - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 13: Introduction to Cutebot</h1>
+      <p>Meet your robot friend and make it move!</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what Cutebot is and how it works</li>
+        <li>Set up the Cutebot extension in MakeCode</li>
+        <li>Make Cutebot move forward, backward, and turn</li>
+        <li>Control Cutebot with basic commands</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>Cutebot robot car</li>
+        <li>USB cable</li>
+        <li>Computer with internet access</li>
+        <li>MakeCode editor: <a href="https://makecode.microbit.org/" target="_blank">makecode.microbit.org</a></li>
+        <li>Batteries for Cutebot (if needed)</li>
+      </ul>
+
+      <h2>🤖 What is Cutebot?</h2>
+      <p>Cutebot is a smart robot car that you can program with your micro:bit! It has wheels, motors, lights, and sensors. You attach your micro:bit to the Cutebot, and then you can make it drive around, follow lines, avoid obstacles, and more!</p>
+
+      <div class="tip">
+        Make sure your Cutebot is assembled and the micro:bit is securely attached before starting!
+      </div>
+
+      <h2>🚀 Activity 1: Add Cutebot Extension</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Go to <a href="https://makecode.microbit.org/" target="_blank">makecode.microbit.org</a>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Click on "New Project" and name it "Cutebot Intro"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Click on the gear icon (⚙️) in the top right, then click "Extensions"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Search for "cutebot" and click on the "cutebot" extension by ElecFreaks
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> You'll see a new category appear called "Cutebot" with blocks for controlling your robot!
+      </div>
+
+      <div class="warning">
+        If you can't find the extension, try this link: <a href="https://makecode.microbit.org/pkg/elecfreaks/pxt-cutebot" target="_blank">Cutebot Extension</a>
+      </div>
+
+      <h2>🎨 Activity 2: Make Cutebot Move Forward</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Look in the <strong>"Cutebot"</strong> category - you'll see blocks for controlling the robot
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Find the <strong>"move forward at speed %"</strong> block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Drag it into the <strong>"on start"</strong> block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Set the speed to 50 (half speed - good for testing!)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Add a <strong>"pause"</strong> block (from Basic) set to 2000ms (2 seconds)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Add a <strong>"stop"</strong> block (from Cutebot category) to make it stop after 2 seconds
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 7:</span> Download the code to your micro:bit and attach it to Cutebot
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 8:</span> Turn on Cutebot and watch it move forward for 2 seconds!
+      </div>
+
+      <div class="tip">
+        Speed values range from 0 (stopped) to 100 (full speed). Start with lower speeds (30-50) to be safe!
+      </div>
+
+      <h2>🎯 Activity 3: Different Movements</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a new program that makes Cutebot:
+        <ul>
+          <li>Move forward for 2 seconds</li>
+          <li>Stop for 1 second</li>
+          <li>Move backward for 2 seconds</li>
+          <li>Stop</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use <strong>"move backward at speed %"</strong> for going backwards
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Test it and watch Cutebot move!
+      </div>
+
+      <h2>🌟 Activity 4: Turning</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Find the <strong>"turn left at speed %"</strong> and <strong>"turn right at speed %"</strong> blocks
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create a program that:
+        <ul>
+          <li>Moves forward for 1 second</li>
+          <li>Turns left for 1 second</li>
+          <li>Moves forward for 1 second</li>
+          <li>Turns right for 1 second</li>
+          <li>Stops</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Test it - Cutebot should drive in a square pattern!
+      </div>
+
+      <div class="challenge">
+        Create a program that makes Cutebot drive in a figure-8 pattern! You'll need to combine forward movement with left and right turns.
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Extension:</strong> Extra blocks added to MakeCode for specific devices (like Cutebot)</li>
+        <li><strong>Motor Control:</strong> Telling the robot's wheels how fast to spin and in which direction</li>
+        <li><strong>Speed:</strong> How fast the robot moves (0-100, where 100 is maximum speed)</li>
+        <li><strong>Forward/Backward:</strong> Direction of movement</li>
+        <li><strong>Turn:</strong> Rotating the robot left or right</li>
+        <li><strong>Stop:</strong> Stopping all movement</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now make Cutebot move around. Next session, we'll learn to control Cutebot using the micro:bit buttons!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>
