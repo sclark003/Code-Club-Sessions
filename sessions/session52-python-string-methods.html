@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 52: String Methods - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 52: String Methods</h1>
+      <p>Advanced string manipulation techniques</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Explore more string methods</li>
+        <li>Learn to split and join strings</li>
+        <li>Use string formatting methods</li>
+        <li>Validate and clean string data</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Splitting and Joining</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Split strings into lists and join lists into strings:
+        <pre><code># Split a string
+sentence = "Hello, how are you?"
+words = sentence.split()
+print(words)  # ['Hello,', 'how', 'are', 'you?']
+
+# Split by specific character
+data = "apple,banana,orange"
+fruits = data.split(",")
+print(fruits)  # ['apple', 'banana', 'orange']
+
+# Join a list into a string
+words = ["Hello", "world", "Python"]
+sentence = " ".join(words)
+print(sentence)  # "Hello world Python"
+
+# Join with different separator
+email_parts = ["user", "example", "com"]
+email = ".".join(email_parts)
+print(email)  # "user.example.com"</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: String Validation</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Check if strings meet certain conditions:
+        <pre><code>text = "Hello123"
+
+# Check if all characters are alphabetic
+print(text.isalpha())  # False (has numbers)
+
+# Check if all characters are digits
+print("12345".isdigit())  # True
+
+# Check if all characters are alphanumeric
+print(text.isalnum())  # True
+
+# Check if all characters are lowercase
+print("hello".islower())  # True
+print("Hello".islower())  # False
+
+# Check if all characters are uppercase
+print("HELLO".isupper())  # True
+
+# Check if string starts/ends with something
+print("Hello".startswith("He"))  # True
+print("Hello".endswith("lo"))  # True</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: String Cleaning</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Clean and format strings:
+        <pre><code>text = "  Hello, World!  "
+
+# Remove whitespace from ends
+cleaned = text.strip()
+print(f"'{cleaned}'")
+
+# Remove from left only
+left_cleaned = text.lstrip()
+print(f"'{left_cleaned}'")
+
+# Remove from right only
+right_cleaned = text.rstrip()
+print(f"'{right_cleaned}'")
+
+# Replace characters
+new_text = text.replace("World", "Python")
+print(new_text)
+
+# Remove all spaces
+no_spaces = text.replace(" ", "")
+print(no_spaces)</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Case Conversion</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Change the case of strings:
+        <pre><code>text = "Hello, World!"
+
+# Convert to uppercase
+print(text.upper())  # "HELLO, WORLD!"
+
+# Convert to lowercase
+print(text.lower())  # "hello, world!"
+
+# Title case (first letter of each word)
+print(text.title())  # "Hello, World!"
+
+# Capitalise (first letter only)
+print(text.capitalize())  # "Hello, world!"
+
+# Swap case
+print(text.swapcase())  # "hELLO, wORLD!"</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Finding and Counting</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Find and count occurrences:
+        <pre><code>text = "Hello, hello, hello!"
+
+# Find first occurrence
+position = text.find("hello")
+print(position)  # 7
+
+# Find from specific position
+position = text.find("hello", 10)
+print(position)
+
+# Count occurrences
+count = text.count("hello")
+print(count)  # 3
+
+# Check if substring exists
+if "hello" in text:
+    print("Found!")
+
+# Find index (raises error if not found)
+try:
+    index = text.index("world")
+except ValueError:
+    print("Not found!")</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Practical Example</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a text processing program:
+        <pre><code>def process_text(text):
+    # Remove extra spaces
+    text = " ".join(text.split())
+    
+    # Convert to title case
+    text = text.title()
+    
+    # Count words
+    words = text.split()
+    word_count = len(words)
+    
+    # Count characters
+    char_count = len(text)
+    
+    return text, word_count, char_count
+
+user_text = input("Enter some text: ")
+processed, words, chars = process_text(user_text)
+
+print(f"\nProcessed text: {processed}")
+print(f"Word count: {words}")
+print(f"Character count: {chars}")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Asks for a sentence</li>
+          <li>Counts how many words are in it</li>
+          <li>Finds the longest word</li>
+          <li>Reverses each word</li>
+          <li>Checks if it's a palindrome (reads same forwards and backwards)</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>split():</strong> Divides a string into a list</li>
+        <li><strong>join():</strong> Combines a list into a string</li>
+        <li><strong>strip():</strong> Removes whitespace from ends</li>
+        <li><strong>replace():</strong> Replaces characters in a string</li>
+        <li><strong>isalpha(), isdigit(), etc.:</strong> Check string properties</li>
+        <li><strong>find():</strong> Finds position of substring</li>
+        <li><strong>count():</strong> Counts occurrences of substring</li>
+        <li><strong>Case methods:</strong> upper(), lower(), title(), capitalize()</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You now know many string methods. Next session, we'll explore more list methods and operations!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

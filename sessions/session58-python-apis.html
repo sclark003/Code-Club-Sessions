@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 58: Working with APIs - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 58: Working with APIs</h1>
+      <p>Getting data from the internet</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what APIs are</li>
+        <li>Make HTTP requests in Python</li>
+        <li>Parse JSON responses</li>
+        <li>Handle API errors</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+        <li>Internet connection</li>
+        <li>The requests library (may need to install: pip install requests)</li>
+      </ul>
+
+      <h2>🚀 Activity 1: What is an API?</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> API stands for Application Programming Interface. It's a way for programs to talk to each other over the internet.
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Many websites offer APIs to get data. We'll use simple, free APIs that don't require keys.
+      </div>
+
+      <div class="tip">
+        Some APIs require an API key (like a password). For learning, we'll use free APIs that don't need keys!
+      </div>
+
+      <h2>💻 Activity 2: Making Your First Request</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use the <code>requests</code> library to get data:
+        <pre><code>import requests
+
+# Simple GET request
+response = requests.get("https://api.github.com")
+
+# Check status code (200 means success)
+print(f"Status code: {response.status_code}")
+
+# Get the response as text
+print(response.text[:200])  # First 200 characters</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> If you get an error, you might need to install requests:
+        <pre><code># In terminal: pip install requests</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Working with JSON APIs</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Many APIs return JSON data:
+        <pre><code>import requests
+import json
+
+# Get data from a free API
+response = requests.get("https://jsonplaceholder.typicode.com/posts/1")
+
+# Check if request was successful
+if response.status_code == 200:
+    # Parse JSON response
+    data = response.json()
+    print(f"Title: {data['title']}")
+    print(f"Body: {data['body']}")
+else:
+    print(f"Error: {response.status_code}")</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Handling Errors</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Always handle potential errors:
+        <pre><code>import requests
+
+def get_data(url):
+    try:
+        response = requests.get(url, timeout=5)
+        response.raise_for_status()  # Raises error for bad status codes
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error making request: {e}")
+        return None
+
+# Use the function
+data = get_data("https://jsonplaceholder.typicode.com/posts/1")
+if data:
+    print(data['title'])</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Simple Weather API (Example)</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Here's an example structure (note: this is a template - real weather APIs need keys):
+        <pre><code>import requests
+
+def get_weather_info(city):
+    # Note: This is a template - real APIs need API keys
+    # For learning, you can use mock data or free APIs
+    print(f"Getting weather for {city}...")
+    # In a real app, you'd make a request here
+    # response = requests.get(f"https://api.weather.com/data/{city}")
+    return {"temperature": 20, "condition": "sunny"}
+
+city = input("Enter a city: ")
+weather = get_weather_info(city)
+print(f"Temperature: {weather['temperature']}°C")
+print(f"Condition: {weather['condition']}")</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Fetching Multiple Items</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Get a list of items from an API:
+        <pre><code>import requests
+
+def get_posts():
+    try:
+        response = requests.get("https://jsonplaceholder.typicode.com/posts")
+        if response.status_code == 200:
+            posts = response.json()
+            return posts
+        return []
+    except Exception as e:
+        print(f"Error: {e}")
+        return []
+
+# Get and display posts
+posts = get_posts()
+print(f"Found {len(posts)} posts")
+for i, post in enumerate(posts[:5], 1):  # Show first 5
+    print(f"{i}. {post['title']}")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Fetches data from a free API</li>
+          <li>Displays the data in a readable format</li>
+          <li>Handles errors gracefully</li>
+          <li>Saves the data to a JSON file</li>
+          <li>Allows the user to search or filter the data</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>API:</strong> Application Programming Interface - a way for programs to communicate</li>
+        <li><strong>HTTP Request:</strong> Asking for data from a server</li>
+        <li><strong>GET request:</strong> Requesting data from a server</li>
+        <li><strong>Status code:</strong> Number indicating if request was successful (200 = success)</li>
+        <li><strong>JSON:</strong> JavaScript Object Notation - common data format for APIs</li>
+        <li><strong>requests library:</strong> Python library for making HTTP requests</li>
+        <li><strong>Error handling:</strong> Dealing with network errors and API failures</li>
+        <li><strong>Timeout:</strong> Maximum time to wait for a response</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You can now get data from the internet. Next session, we'll learn about data visualisation - creating charts and graphs!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

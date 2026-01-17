@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 45: While Loops - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 45: While Loops</h1>
+      <p>Repeating code while a condition is true</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what while loops are and when to use them</li>
+        <li>Learn the difference between for and while loops</li>
+        <li>Use break and continue statements</li>
+        <li>Create interactive programs with while loops</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Basic While Loop</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> A while loop repeats code as long as a condition is True:
+        <pre><code>count = 1
+
+while count <= 5:
+    print(f"Count: {count}")
+    count = count + 1
+
+print("Done!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> The loop continues until the condition becomes False
+      </div>
+
+      <div class="tip">
+        Be careful with while loops! Make sure the condition will eventually become False, or you'll create an infinite loop!
+      </div>
+
+      <h2>💻 Activity 2: Interactive While Loop</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> While loops are great for interactive programs:
+        <pre><code>name = ""
+
+while name == "":
+    name = input("What is your name? ")
+    if name == "":
+        print("Please enter a name!")
+
+print(f"Hello, {name}!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> This keeps asking until the user enters something
+      </div>
+
+      <h2>🎨 Activity 3: Using break</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use <code>break</code> to exit a loop early:
+        <pre><code>while True:
+    answer = input("Say 'quit' to exit: ")
+    if answer == "quit":
+        break
+    print(f"You said: {answer}")
+
+print("Goodbye!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> <code>while True:</code> creates a loop that runs forever until you break out of it
+      </div>
+
+      <h2>📊 Activity 4: Using continue</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use <code>continue</code> to skip to the next iteration:
+        <pre><code>count = 0
+
+while count < 10:
+    count = count + 1
+    if count % 2 == 0:  # If count is even
+        continue  # Skip the rest and go to next iteration
+    print(count)  # Only prints odd numbers</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Number Guessing Game</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a number guessing game:
+        <pre><code>import random
+
+secret_number = random.randint(1, 100)
+guesses = 0
+
+print("I'm thinking of a number between 1 and 100!")
+
+while True:
+    guess = int(input("Guess the number: "))
+    guesses = guesses + 1
+    
+    if guess < secret_number:
+        print("Too low! Try again.")
+    elif guess > secret_number:
+        print("Too high! Try again.")
+    else:
+        print(f"Correct! You guessed it in {guesses} tries!")
+        break</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Menu System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a simple menu that loops:
+        <pre><code>while True:
+    print("\nMenu:")
+    print("1. Say hello")
+    print("2. Count to 5")
+    print("3. Quit")
+    
+    choice = input("Choose an option (1-3): ")
+    
+    if choice == "1":
+        print("Hello!")
+    elif choice == "2":
+        for i in range(1, 6):
+            print(i)
+    elif choice == "3":
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid choice. Try again.")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Asks the user to enter numbers</li>
+          <li>Keeps asking until they enter 0</li>
+          <li>Calculates and displays the sum of all numbers entered</li>
+          <li>Shows how many numbers were entered</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>while loop:</strong> Repeats code as long as a condition is True</li>
+        <li><strong>Condition:</strong> The expression that determines if the loop continues</li>
+        <li><strong>Infinite loop:</strong> A loop that never stops (usually a mistake!)</li>
+        <li><strong>break:</strong> Exits the loop immediately</li>
+        <li><strong>continue:</strong> Skips to the next iteration of the loop</li>
+        <li><strong>while True:</strong> Creates a loop that runs until you break out</li>
+        <li><strong>Difference from for:</strong> while loops repeat based on a condition; for loops repeat for each item in a collection</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You now know how to use while loops. Next session, we'll learn about functions - a way to organise your code into reusable blocks!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

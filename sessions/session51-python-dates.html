@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 51: Working with Dates - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 51: Working with Dates</h1>
+      <p>Handling dates and times in Python</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Create and format dates</li>
+        <li>Calculate differences between dates</li>
+        <li>Parse dates from strings</li>
+        <li>Work with time zones</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Creating Dates</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create dates using the <code>datetime</code> module:
+        <pre><code>from datetime import date, datetime
+
+# Today's date
+today = date.today()
+print(f"Today: {today}")
+
+# Specific date
+birthday = date(2010, 5, 15)
+print(f"Birthday: {birthday}")
+
+# Current date and time
+now = datetime.now()
+print(f"Now: {now}")
+
+# Specific date and time
+event = datetime(2024, 12, 25, 10, 30, 0)
+print(f"Event: {event}")</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Formatting Dates</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Format dates in different ways:
+        <pre><code>from datetime import datetime
+
+now = datetime.now()
+
+# Different formats
+print(now.strftime("%Y-%m-%d"))           # 2024-12-25
+print(now.strftime("%d/%m/%Y"))           # 25/12/2024
+print(now.strftime("%A, %B %d, %Y"))      # Wednesday, December 25, 2024
+print(now.strftime("%H:%M:%S"))           # 14:30:45
+print(now.strftime("%I:%M %p"))           # 02:30 PM</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Common format codes:
+        <ul>
+          <li><code>%Y</code> - Year (4 digits)</li>
+          <li><code>%m</code> - Month (01-12)</li>
+          <li><code>%d</code> - Day (01-31)</li>
+          <li><code>%H</code> - Hour (00-23)</li>
+          <li><code>%M</code> - Minute (00-59)</li>
+          <li><code>%A</code> - Weekday name</li>
+          <li><code>%B</code> - Month name</li>
+        </ul>
+      </div>
+
+      <h2>🎨 Activity 3: Date Arithmetic</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Calculate differences and add/subtract time:
+        <pre><code>from datetime import date, timedelta
+
+today = date.today()
+birthday = date(2010, 5, 15)
+
+# Calculate age
+age = today - birthday
+print(f"Days old: {age.days}")
+print(f"Years old: {age.days // 365}")
+
+# Add/subtract days
+next_week = today + timedelta(days=7)
+yesterday = today - timedelta(days=1)
+print(f"Next week: {next_week}")
+print(f"Yesterday: {yesterday}")
+
+# Add weeks, hours, etc.
+future = today + timedelta(weeks=2, days=3)
+print(f"Future date: {future}")</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Parsing Dates</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Convert strings to dates:
+        <pre><code>from datetime import datetime
+
+# Parse a date string
+date_string = "2024-12-25"
+parsed_date = datetime.strptime(date_string, "%Y-%m-%d")
+print(parsed_date)
+
+# Parse with time
+datetime_string = "2024-12-25 14:30:00"
+parsed_datetime = datetime.strptime(datetime_string, "%Y-%m-%d %H:%M:%S")
+print(parsed_datetime)</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Age Calculator</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create an age calculator:
+        <pre><code>from datetime import date
+
+def calculate_age(birth_year, birth_month, birth_day):
+    today = date.today()
+    birthday = date(birth_year, birth_month, birth_day)
+    age = today - birthday
+    years = age.days // 365
+    remaining_days = age.days % 365
+    return years, remaining_days
+
+birth_year = int(input("Enter birth year: "))
+birth_month = int(input("Enter birth month: "))
+birth_day = int(input("Enter birth day: "))
+
+years, days = calculate_age(birth_year, birth_month, birth_day)
+print(f"You are {years} years and {days} days old!")</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Days Until Event</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Calculate days until a future event:
+        <pre><code>from datetime import date
+
+def days_until_event(event_year, event_month, event_day):
+    today = date.today()
+    event_date = date(event_year, event_month, event_day)
+    difference = event_date - today
+    return difference.days
+
+event_year = int(input("Event year: "))
+event_month = int(input("Event month: "))
+event_day = int(input("Event day: "))
+
+days = days_until_event(event_year, event_month, event_day)
+
+if days > 0:
+    print(f"{days} days until the event!")
+elif days == 0:
+    print("The event is today!")
+else:
+    print(f"The event was {abs(days)} days ago.")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Asks for your birthday</li>
+          <li>Calculates your age in years, months, and days</li>
+          <li>Shows how many days until your next birthday</li>
+          <li>Displays your birthday in different formats</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>date:</strong> Represents a date (year, month, day)</li>
+        <li><strong>datetime:</strong> Represents both date and time</li>
+        <li><strong>timedelta:</strong> Represents a duration (difference between dates)</li>
+        <li><strong>strftime():</strong> Formats a date/time as a string</li>
+        <li><strong>strptime():</strong> Parses a string into a date/time</li>
+        <li><strong>today():</strong> Gets today's date</li>
+        <li><strong>now():</strong> Gets current date and time</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You can now work with dates and times. Next session, we'll explore more string methods and advanced string operations!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

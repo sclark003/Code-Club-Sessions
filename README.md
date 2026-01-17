@@ -1,5 +1,5 @@
 # Code-Club-Sessions
-Sessions run at a local school code club using BBC Microbits, Smart Cutebot robots, and Arcade game consoles. 
+Sessions run at a local school code club using BBC Microbits, Smart Cutebot robots, Arcade game consoles, and Python programming. 
 
 ---
 
@@ -9,6 +9,7 @@ Sessions run at a local school code club using BBC Microbits, Smart Cutebot robo
 - Introduce students to robotics with Cutebot, e.g. movement control, line following, obstacle avoidance
 - Introduce students to game development with Arcade console, e.g. sprites, animation, scoring, game mechanics
 - Introduce students to advanced game development, e.g. game design, power-ups, boss battles, level systems, game polish
+- Introduce students to Python programming, e.g. variables, functions, file handling, object-oriented programming, data visualisation
 - Encourage students to think beyond sessions and independently add new features based on the content presented
 - Have fun!
 
@@ -54,6 +55,30 @@ Sessions run at a local school code club using BBC Microbits, Smart Cutebot robo
 | **34** | Levels & Boss Battles | Level design, boss mechanics | Create multiple levels and epic boss battles |
 | **35** | Menus & Game Polish | UI, menus, polish | Add menus, UI elements, and final polish |
 | **36** | Testing & Sharing | Testing, debugging, sharing | Test, debug, balance, and share your completed game |
+| **37** | Introduction to Python | Python basics, IDLE, first program | Write and run your first Python program |
+| **38** | Variables and Data Types | Variables, strings, integers, floats, booleans | Store and work with different types of data |
+| **39** | Input and Output | input(), type conversion, interactive programs | Make programs that interact with users |
+| **40** | Basic Math Operations | Arithmetic operators, math module | Perform calculations in Python |
+| **41** | Working with Strings | String operations, indexing, slicing, methods | Manipulate and work with text |
+| **42** | Lists | Lists, list methods, storing multiple items | Store multiple items in Python lists |
+| **43** | Conditionals (if/else) | if/else, elif, comparison operators | Make decisions in your programs |
+| **44** | For Loops | for loops, range(), iteration | Repeat actions with for loops |
+| **45** | While Loops | while loops, break, continue | Repeat code while a condition is true |
+| **46** | Functions | Functions, parameters, return values | Create reusable blocks of code |
+| **47** | Dictionaries | Dictionaries, key-value pairs, methods | Store data with keys and values |
+| **48** | File Handling Basics | Reading files, writing files, file modes | Read from and write to files |
+| **49** | Error Handling | try/except, error types, exceptions | Deal with errors gracefully |
+| **50** | Modules and Libraries | import, built-in modules, external libraries | Use code written by others |
+| **51** | Working with Dates | datetime module, date formatting, arithmetic | Handle dates and times |
+| **52** | String Methods | Advanced string methods, splitting, joining | Advanced string manipulation |
+| **53** | List Methods | Advanced list operations, sorting, filtering | Advanced list operations and methods |
+| **54** | Tuples and Sets | Tuples, sets, immutable data, set operations | Other ways to store collections |
+| **55** | List Comprehensions | List comprehensions, filtering, transforming | Create lists the Pythonic way |
+| **56** | Working with Files (Advanced) | CSV files, JSON files, file utilities | Advanced file operations |
+| **57** | Object-Oriented Programming Basics | Classes, objects, methods, attributes | Create classes and objects |
+| **58** | Working with APIs | APIs, HTTP requests, JSON responses | Get data from the internet |
+| **59** | Data Visualisation | matplotlib, charts, graphs | Create charts and graphs |
+| **60** | Final Python Project | Project planning, combining concepts | Combine everything you've learned! |
 
 ---
 
@@ -79,6 +104,8 @@ View all sessions on the [GitHub Pages site](https://sclark003.github.io/Code-Cl
 - [Cutebot MakeCode Extension](https://makecode.microbit.org/pkg/elecfreaks/pxt-cutebot)
 - [Cutebot - ElecFreaks Docs](https://www.elecfreaks.com/learn-en/microbitKit/smart_cutebot)
 - [Arcade Console Documentation](https://wiki.elecfreaks.com/en/microbit/arcade/) - Arcade console resources
+- [Python Official Website](https://www.python.org/) - Python programming language
+- [Python Documentation](https://docs.python.org/3/) - Official Python documentation
 
 ---
 

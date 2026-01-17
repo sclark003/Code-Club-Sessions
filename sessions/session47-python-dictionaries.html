@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 47: Dictionaries - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 47: Dictionaries</h1>
+      <p>Storing data with keys and values</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what dictionaries are and when to use them</li>
+        <li>Learn to create and access dictionary items</li>
+        <li>Add, modify, and remove items from dictionaries</li>
+        <li>Loop through dictionaries</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Creating Dictionaries</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> A dictionary stores data as key-value pairs. Think of it like a real dictionary - you look up a word (key) to find its meaning (value):
+        <pre><code># Dictionary of student information
+student = {
+    "name": "Sarah",
+    "age": 12,
+    "grade": 7,
+    "favourite_subject": "Maths"
+}
+
+print(student)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Dictionaries use curly braces {} and colons : to separate keys and values
+      </div>
+
+      <div class="tip">
+        Dictionaries are like lists, but instead of using numbers (0, 1, 2...), you use keys (like "name", "age") to access values!
+      </div>
+
+      <h2>💻 Activity 2: Accessing Dictionary Values</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Access values using their keys:
+        <pre><code>student = {
+    "name": "Sarah",
+    "age": 12,
+    "grade": 7
+}
+
+print(student["name"])   # Sarah
+print(student["age"])   # 12
+print(student["grade"]) # 7</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> You can also use <code>.get()</code> which is safer:
+        <pre><code>print(student.get("name"))        # Sarah
+print(student.get("height", "Unknown"))  # "Unknown" if key doesn't exist</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Modifying Dictionaries</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add or change items:
+        <pre><code>student = {"name": "Sarah", "age": 12}
+
+# Add new item
+student["grade"] = 7
+print(student)
+
+# Change existing item
+student["age"] = 13
+print(student)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Remove items:
+        <pre><code>student = {"name": "Sarah", "age": 12, "grade": 7}
+
+# Remove an item
+del student["grade"]
+print(student)
+
+# Or use pop()
+age = student.pop("age")
+print(f"Removed age: {age}")
+print(student)</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Dictionary Methods</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Useful dictionary methods:
+        <pre><code>student = {"name": "Sarah", "age": 12, "grade": 7}
+
+# Get all keys
+print(student.keys())
+
+# Get all values
+print(student.values())
+
+# Get all items (key-value pairs)
+print(student.items())
+
+# Check if key exists
+print("name" in student)  # True
+print("height" in student)  # False</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Looping Through Dictionaries</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Loop through keys, values, or both:
+        <pre><code>student = {"name": "Sarah", "age": 12, "grade": 7}
+
+# Loop through keys
+for key in student:
+    print(key)
+
+# Loop through keys and values
+for key, value in student.items():
+    print(f"{key}: {value}")
+
+# Loop through values only
+for value in student.values():
+    print(value)</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Practical Example</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a simple contact book:
+        <pre><code>contacts = {}
+
+while True:
+    print("\nContact Book")
+    print("1. Add contact")
+    print("2. View contact")
+    print("3. List all contacts")
+    print("4. Quit")
+    
+    choice = input("Choose an option: ")
+    
+    if choice == "1":
+        name = input("Name: ")
+        phone = input("Phone: ")
+        email = input("Email: ")
+        contacts[name] = {"phone": phone, "email": email}
+        print("Contact added!")
+    
+    elif choice == "2":
+        name = input("Name to look up: ")
+        if name in contacts:
+            print(f"Phone: {contacts[name]['phone']}")
+            print(f"Email: {contacts[name]['email']}")
+        else:
+            print("Contact not found!")
+    
+    elif choice == "3":
+        for name, info in contacts.items():
+            print(f"{name}: {info['phone']}, {info['email']}")
+    
+    elif choice == "4":
+        break</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Stores information about 3 students (name, age, favourite subject)</li>
+          <li>Allows you to look up a student by name</li>
+          <li>Allows you to update a student's information</li>
+          <li>Displays all students and their information</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Dictionary:</strong> A collection of key-value pairs stored in curly braces {}</li>
+        <li><strong>Key:</strong> The identifier used to access a value (like "name")</li>
+        <li><strong>Value:</strong> The data stored with a key (like "Sarah")</li>
+        <li><strong>Key-Value Pair:</strong> A combination of a key and its value</li>
+        <li><strong>.get():</strong> Safely gets a value, with optional default if key doesn't exist</li>
+        <li><strong>.keys():</strong> Returns all keys in the dictionary</li>
+        <li><strong>.values():</strong> Returns all values in the dictionary</li>
+        <li><strong>.items():</strong> Returns all key-value pairs</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! Dictionaries are very useful for storing related data. Next session, we'll learn about file handling - reading from and writing to files!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 43: Conditionals (if/else) - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 43: Conditionals (if/else)</h1>
+      <p>Making decisions in your programs</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand if/else statements</li>
+        <li>Learn comparison operators (==, !=, <, >, <=, >=)</li>
+        <li>Use elif for multiple conditions</li>
+        <li>Create programs that make decisions</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Simple if Statements</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> An if statement checks a condition and runs code only if it's True:
+        <pre><code>age = 15
+
+if age >= 13:
+    print("You are a teenager!")
+
+print("This always runs")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Notice the colon (:) and the indentation! The code inside the if statement must be indented.
+      </div>
+
+      <div class="tip">
+        In Python, indentation is very important! Use 4 spaces (or 1 tab) to indent code inside if statements.
+      </div>
+
+      <h2>💻 Activity 2: if/else Statements</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use else to run code when the condition is False:
+        <pre><code>age = int(input("How old are you? "))
+
+if age >= 18:
+    print("You are an adult!")
+else:
+    print("You are not yet an adult.")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try running this with different ages!
+      </div>
+
+      <h2>🎨 Activity 3: Comparison Operators</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Python has several comparison operators:
+        <pre><code># Equal to
+5 == 5  # True
+
+# Not equal to
+5 != 3  # True
+
+# Less than
+3 < 5   # True
+
+# Greater than
+5 > 3   # True
+
+# Less than or equal to
+5 <= 5  # True
+
+# Greater than or equal to
+5 >= 3  # True</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try using these in if statements:
+        <pre><code>score = int(input("What was your score? "))
+
+if score >= 90:
+    print("Excellent! Grade: A")
+elif score >= 80:
+    print("Good job! Grade: B")
+elif score >= 70:
+    print("Well done! Grade: C")
+elif score >= 60:
+    print("Keep trying! Grade: D")
+else:
+    print("You can do better! Grade: F")</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Multiple Conditions with elif</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use elif (else if) to check multiple conditions:
+        <pre><code>weather = input("What's the weather like? (sunny/rainy/cloudy): ")
+
+if weather == "sunny":
+    print("Great day for a picnic!")
+elif weather == "rainy":
+    print("Don't forget your umbrella!")
+elif weather == "cloudy":
+    print("Might rain later, bring a jacket.")
+else:
+    print("I'm not sure about that weather!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create your own program with multiple conditions!
+      </div>
+
+      <h2>🎯 Activity 5: Logical Operators</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can combine conditions using and, or, and not:
+        <pre><code>age = int(input("How old are you? "))
+has_license = input("Do you have a license? (yes/no): ")
+
+if age >= 18 and has_license == "yes":
+    print("You can drive!")
+elif age >= 18 and has_license == "no":
+    print("You're old enough but need a license.")
+else:
+    print("You're too young to drive.")
+
+# Using 'or'
+temperature = int(input("What's the temperature? "))
+if temperature < 0 or temperature > 35:
+    print("Extreme weather!")
+else:
+    print("Normal temperature.")</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Building a Decision Program</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a program that helps decide what to do:
+        <pre><code>print("What should I do today?")
+print("=" * 25)
+
+weather = input("Is it sunny? (yes/no): ")
+homework = input("Is homework done? (yes/no): ")
+
+if weather == "yes" and homework == "yes":
+    print("Great! Go outside and play!")
+elif weather == "yes" and homework == "no":
+    print("Finish homework first, then you can play!")
+elif weather == "no" and homework == "yes":
+    print("Perfect day to read a book or play games inside.")
+else:
+    print("Time to do homework!")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Asks for a number</li>
+          <li>Tells if it's positive, negative, or zero</li>
+          <li>Tells if it's even or odd</li>
+          <li>Tells if it's a single digit or multiple digits</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>if statement:</strong> Runs code only if a condition is True</li>
+        <li><strong>else:</strong> Runs code when the if condition is False</li>
+        <li><strong>elif:</strong> Checks another condition if the previous ones were False</li>
+        <li><strong>Comparison Operators:</strong> == (equal), != (not equal), <, >, <=, >=</li>
+        <li><strong>Logical Operators:</strong> and, or, not</li>
+        <li><strong>Indentation:</strong> Code inside if/else must be indented (4 spaces)</li>
+        <li><strong>Condition:</strong> An expression that evaluates to True or False</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now make your programs make decisions. Next session, we'll learn about for loops to repeat actions multiple times!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

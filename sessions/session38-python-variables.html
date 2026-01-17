@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 38: Variables and Data Types - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 38: Variables and Data Types</h1>
+      <p>Storing and working with different types of data</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what variables are and how to use them</li>
+        <li>Learn about different data types: strings, integers, and floats</li>
+        <li>Create and assign values to variables</li>
+        <li>Use variables in print statements</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: What is a Variable?</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> A variable is like a labelled box where you can store information. You give it a name and put a value inside.
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Think of it like a name tag - you write your name on it, and whenever someone sees that tag, they know it's you!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> In Python, you create a variable by giving it a name and using the equals sign (=) to assign a value
+      </div>
+
+      <h2>💻 Activity 2: Creating Variables</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Open Python IDLE and create a new file
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Type this code:
+        <pre><code>name = "Sarah"
+age = 12
+favourite_colour = "blue"
+
+print(name)
+print(age)
+print(favourite_colour)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Run the program and see what happens! Each variable's value is printed.
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Change the values to your own information and run it again
+      </div>
+
+      <div class="tip">
+        Variable names can contain letters, numbers, and underscores, but they can't start with a number. Use descriptive names like <code>student_name</code> instead of <code>sn</code>!
+      </div>
+
+      <h2>🎨 Activity 3: Using Variables in Messages</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can combine variables with text in print statements:
+        <pre><code>name = "Alex"
+print("Hello, " + name + "!")
+print("Nice to meet you, " + name)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try using f-strings (a special way to format strings):
+        <pre><code>name = "Alex"
+age = 12
+print(f"My name is {name} and I am {age} years old.")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Notice the <code>f</code> before the quotes and the curly braces <code>{}</code> around the variable names!
+      </div>
+
+      <h2>📊 Activity 4: Different Data Types</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Python has different types of data. Let's explore them:
+        <pre><code># String - text (in quotes)
+name = "Python"
+greeting = "Hello"
+
+# Integer - whole numbers
+age = 15
+score = 100
+
+# Float - decimal numbers
+height = 1.65
+temperature = 23.5
+
+# Boolean - True or False
+is_student = True
+is_weekend = False
+
+print(name, age, height, is_student)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try creating variables of each type with your own values
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Use the <code>type()</code> function to check what type a variable is:
+        <pre><code>name = "Python"
+age = 15
+print(type(name))
+print(type(age))</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that stores information about yourself:
+        <ul>
+          <li>Your name (string)</li>
+          <li>Your age (integer)</li>
+          <li>Your height in metres (float)</li>
+          <li>Whether you like coding (boolean)</li>
+          <li>Print all this information in a nice message using f-strings</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Variable:</strong> A named container that stores a value</li>
+        <li><strong>String:</strong> Text data, written in quotes (e.g., "Hello")</li>
+        <li><strong>Integer:</strong> Whole numbers (e.g., 5, 100, -3)</li>
+        <li><strong>Float:</strong> Decimal numbers (e.g., 3.14, 2.5)</li>
+        <li><strong>Boolean:</strong> True or False values</li>
+        <li><strong>Assignment:</strong> Using = to give a variable a value</li>
+        <li><strong>f-string:</strong> A formatted string that lets you insert variables easily</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You now know how to store data in variables. Next session, we'll learn how to get input from the user and make your programs interactive!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

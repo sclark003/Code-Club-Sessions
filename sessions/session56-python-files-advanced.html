@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 56: Working with Files (Advanced) - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 56: Working with Files (Advanced)</h1>
+      <p>Advanced file operations and CSV files</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Read and write CSV files</li>
+        <li>Work with JSON files</li>
+        <li>Handle different file encodings</li>
+        <li>Process large files efficiently</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Working with CSV Files</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> CSV (Comma-Separated Values) files store data in rows. Use the <code>csv</code> module:
+        <pre><code>import csv
+
+# Write to CSV
+with open("students.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Name", "Age", "Grade"])
+    writer.writerow(["Sarah", 12, 7])
+    writer.writerow(["Alex", 13, 8])
+    writer.writerow(["Jordan", 12, 7])
+
+print("CSV file created!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Read from CSV:
+        <pre><code>import csv
+
+with open("students.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: CSV with Dictionaries</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use DictReader and DictWriter for easier access:
+        <pre><code>import csv
+
+# Write using dictionaries
+with open("students.csv", "w", newline="") as file:
+    fieldnames = ["name", "age", "grade"]
+    writer = csv.DictWriter(file, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerow({"name": "Sarah", "age": 12, "grade": 7})
+    writer.writerow({"name": "Alex", "age": 13, "grade": 8})
+
+# Read using dictionaries
+with open("students.csv", "r") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        print(f"{row['name']} is {row['age']} years old")</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Working with JSON</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> JSON is great for storing structured data:
+        <pre><code>import json
+
+# Data to save
+student_data = {
+    "students": [
+        {"name": "Sarah", "age": 12, "grade": 7},
+        {"name": "Alex", "age": 13, "grade": 8}
+    ]
+}
+
+# Write to JSON file
+with open("students.json", "w") as file:
+    json.dump(student_data, file, indent=2)
+
+# Read from JSON file
+with open("students.json", "r") as file:
+    data = json.load(file)
+    print(data)
+    for student in data["students"]:
+        print(f"{student['name']}: Grade {student['grade']}")</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Processing Large Files</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Process files line by line to save memory:
+        <pre><code># Instead of reading entire file
+# with open("large_file.txt", "r") as file:
+#     content = file.read()  # Uses lots of memory!
+
+# Process line by line
+with open("large_file.txt", "r") as file:
+    line_count = 0
+    for line in file:
+        line_count += 1
+        # Process each line
+        if "error" in line.lower():
+            print(f"Found error on line {line_count}")
+
+print(f"Total lines: {line_count}")</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: File Utilities</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Useful file operations:
+        <pre><code>import os
+import shutil
+
+# Check if file exists
+if os.path.exists("my_file.txt"):
+    print("File exists!")
+
+# Get file size
+size = os.path.getsize("my_file.txt")
+print(f"File size: {size} bytes")
+
+# Copy a file
+shutil.copy("source.txt", "backup.txt")
+
+# Rename a file
+os.rename("old_name.txt", "new_name.txt")
+
+# Delete a file
+if os.path.exists("temp.txt"):
+    os.remove("temp.txt")</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Student Management System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a system that saves to CSV:
+        <pre><code>import csv
+import os
+
+def add_student(name, age, grade):
+    file_exists = os.path.exists("students.csv")
+    with open("students.csv", "a", newline="") as file:
+        writer = csv.writer(file)
+        if not file_exists:
+            writer.writerow(["Name", "Age", "Grade"])
+        writer.writerow([name, age, grade])
+
+def view_students():
+    if not os.path.exists("students.csv"):
+        print("No students yet!")
+        return
+    
+    with open("students.csv", "r") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            print(f"{row['Name']}: Age {row['Age']}, Grade {row['Grade']}")
+
+# Use the functions
+add_student("Sarah", 12, 7)
+add_student("Alex", 13, 8)
+view_students()</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Reads student data from a CSV file</li>
+          <li>Calculates the average grade</li>
+          <li>Finds the student with the highest grade</li>
+          <li>Saves the results to a JSON file</li>
+          <li>Creates a backup of the original CSV file</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>CSV:</strong> Comma-Separated Values file format</li>
+        <li><strong>csv module:</strong> Python module for reading/writing CSV files</li>
+        <li><strong>DictReader/DictWriter:</strong> Read/write CSV as dictionaries</li>
+        <li><strong>JSON:</strong> JavaScript Object Notation - a data format</li>
+        <li><strong>json module:</strong> Python module for reading/writing JSON</li>
+        <li><strong>Line-by-line processing:</strong> More memory-efficient for large files</li>
+        <li><strong>os module:</strong> Operating system interface functions</li>
+        <li><strong>shutil module:</strong> High-level file operations</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now work with different file formats. Next session, we'll learn about object-oriented programming basics!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

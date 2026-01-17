@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 39: Input and Output - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 39: Input and Output</h1>
+      <p>Making your programs interactive</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Learn how to get input from the user</li>
+        <li>Understand the input() function</li>
+        <li>Convert input to different data types</li>
+        <li>Create interactive programs that respond to user input</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Getting Text Input</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> The <code>input()</code> function lets your program ask the user for information
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create a new Python file and type this:
+        <pre><code>name = input("What is your name? ")
+print("Hello, " + name + "!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Run the program. It will wait for you to type something and press Enter
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Type your name and press Enter. The program will greet you!
+      </div>
+
+      <div class="tip">
+        The text inside the <code>input()</code> function is called a "prompt" - it tells the user what to type!
+      </div>
+
+      <h2>💻 Activity 2: Multiple Inputs</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can ask for multiple pieces of information:
+        <pre><code>first_name = input("What is your first name? ")
+last_name = input("What is your last name? ")
+print(f"Nice to meet you, {first_name} {last_name}!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Run the program and answer both questions
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Try creating a program that asks for:
+        <ul>
+          <li>Your favourite colour</li>
+          <li>Your favourite food</li>
+          <li>Your favourite hobby</li>
+        </ul>
+        Then print them all in a sentence!
+      </div>
+
+      <h2>🎨 Activity 3: Converting Input Types</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> By default, <code>input()</code> always returns a string (text). If you want a number, you need to convert it:
+        <pre><code>age = input("How old are you? ")
+print(type(age))  # This will show it's a string
+
+age = int(input("How old are you? "))
+print(type(age))  # Now it's an integer!</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try this program:
+        <pre><code>age = int(input("How old are you? "))
+next_year = age + 1
+print(f"Next year you will be {next_year} years old!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> For decimal numbers, use <code>float()</code>:
+        <pre><code>height = float(input("What is your height in metres? "))
+print(f"You are {height} metres tall!")</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Creating an Interactive Story</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Let's create a simple interactive story:
+        <pre><code>print("Welcome to the Adventure Story!")
+name = input("What is your name? ")
+place = input("Where would you like to go? ")
+animal = input("What is your favourite animal? ")
+
+print(f"\nOnce upon a time, {name} went to {place}.")
+print(f"While there, {name} met a friendly {animal}.")
+print(f"{name} and the {animal} became best friends!")
+print("The end!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Run the program and fill in the story with your answers
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Try adding more questions to make the story longer!
+      </div>
+
+      <h2>🎯 Activity 5: Simple Calculator</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a simple calculator:
+        <pre><code>num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+result = num1 + num2
+print(f"{num1} + {num2} = {result}")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try modifying it to do subtraction, multiplication, or division
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Asks for the user's name</li>
+          <li>Asks for their birth year</li>
+          <li>Calculates and displays their age</li>
+          <li>Asks how many pets they have</li>
+          <li>Creates a personalised message with all this information</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>input():</strong> A function that gets text from the user</li>
+        <li><strong>Prompt:</strong> The message shown to the user asking for input</li>
+        <li><strong>Type Conversion:</strong> Changing data from one type to another (e.g., string to integer)</li>
+        <li><strong>int():</strong> Converts a value to an integer (whole number)</li>
+        <li><strong>float():</strong> Converts a value to a float (decimal number)</li>
+        <li><strong>Interactive Program:</strong> A program that responds to user input</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now make programs that interact with users. Next session, we'll learn about mathematical operations and how to do calculations in Python!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

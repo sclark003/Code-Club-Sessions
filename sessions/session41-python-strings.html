@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 41: Working with Strings - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 41: Working with Strings</h1>
+      <p>Manipulating and working with text in Python</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Learn string operations (concatenation, repetition)</li>
+        <li>Understand string indexing and slicing</li>
+        <li>Use common string methods</li>
+        <li>Format strings in different ways</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: String Concatenation</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can join strings together using the <code>+</code> operator:
+        <pre><code>first_name = "Alex"
+last_name = "Smith"
+full_name = first_name + " " + last_name
+print(full_name)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> You can also repeat strings using <code>*</code>:
+        <pre><code>cheer = "Hip " * 3 + "Hooray!"
+print(cheer)
+
+separator = "-" * 20
+print(separator)</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: String Indexing</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Each character in a string has a position (index). The first character is at position 0:
+        <pre><code>word = "Python"
+print(word[0])  # P
+print(word[1])  # y
+print(word[2])  # t
+print(word[5])  # n</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> You can also count from the end using negative numbers:
+        <pre><code>word = "Python"
+print(word[-1])  # n (last character)
+print(word[-2])  # o (second to last)</code></pre>
+      </div>
+
+      <div class="tip">
+        Remember: Python starts counting at 0, not 1! The first character is at index 0.
+      </div>
+
+      <h2>🎨 Activity 3: String Slicing</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can get parts of a string using slicing:
+        <pre><code>text = "Hello, World!"
+
+# Get characters from position 0 to 5 (not including 5)
+print(text[0:5])  # Hello
+
+# Get from position 7 to the end
+print(text[7:])  # World!
+
+# Get from start to position 5
+print(text[:5])  # Hello
+
+# Get every other character
+print(text[::2])  # Hlo ol!</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try slicing your own strings!
+      </div>
+
+      <h2>📊 Activity 4: String Methods</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Strings have built-in methods (functions) you can use:
+        <pre><code>text = "  Hello, Python!  "
+
+# Convert to uppercase
+print(text.upper())
+
+# Convert to lowercase
+print(text.lower())
+
+# Remove whitespace from ends
+print(text.strip())
+
+# Replace text
+print(text.replace("Python", "World"))
+
+# Find position of text
+print(text.find("Hello"))
+
+# Count occurrences
+print("Hello, Hello, World".count("Hello"))</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try these methods with your own strings
+      </div>
+
+      <h2>🎯 Activity 5: String Formatting</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> We've seen f-strings, but there are other ways to format:
+        <pre><code>name = "Alex"
+age = 12
+
+# f-string (modern way)
+print(f"My name is {name} and I am {age} years old.")
+
+# .format() method
+print("My name is {} and I am {} years old.".format(name, age))
+
+# % formatting (older way)
+print("My name is %s and I am %d years old." % (name, age))</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> f-strings are usually the easiest and most readable!
+      </div>
+
+      <h2>🌟 Activity 6: String Challenges</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a program that:
+        <pre><code># Gets a word from the user
+word = input("Enter a word: ")
+
+# Prints it in uppercase
+print(word.upper())
+
+# Prints the first and last letters
+print(f"First letter: {word[0]}")
+print(f"Last letter: {word[-1]}")
+
+# Prints the length
+print(f"Length: {len(word)} characters")
+
+# Reverses the word
+print(f"Reversed: {word[::-1]}")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Asks for a sentence</li>
+          <li>Counts how many words are in it (hint: use .split())</li>
+          <li>Finds the longest word</li>
+          <li>Replaces all spaces with dashes</li>
+          <li>Prints the sentence backwards</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>String:</strong> A sequence of characters (text)</li>
+        <li><strong>Concatenation:</strong> Joining strings together with +</li>
+        <li><strong>Index:</strong> The position of a character in a string (starts at 0)</li>
+        <li><strong>Slicing:</strong> Getting part of a string using [start:end]</li>
+        <li><strong>Method:</strong> A function that belongs to an object (like .upper())</li>
+        <li><strong>len():</strong> A function that returns the length of a string</li>
+        <li><strong>f-string:</strong> A formatted string that lets you insert variables</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You now know how to work with strings. Next session, we'll learn about lists - a way to store multiple items together!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

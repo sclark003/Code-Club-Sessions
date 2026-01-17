@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 42: Lists - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 42: Lists</h1>
+      <p>Storing multiple items in Python</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what lists are and how to create them</li>
+        <li>Learn to access and modify list items</li>
+        <li>Use common list methods (append, remove, etc.)</li>
+        <li>Work with lists of different data types</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Creating Lists</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> A list is a collection of items stored in order. Create lists using square brackets:
+        <pre><code># List of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# List of strings
+fruits = ["apple", "banana", "orange"]
+
+# List of mixed types
+mixed = ["hello", 42, 3.14, True]
+
+# Empty list
+empty = []
+
+print(numbers)
+print(fruits)
+print(mixed)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try creating your own lists with things you like!
+      </div>
+
+      <h2>💻 Activity 2: Accessing List Items</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Like strings, you can access list items by index:
+        <pre><code>fruits = ["apple", "banana", "orange", "grape"]
+
+print(fruits[0])  # apple (first item)
+print(fruits[1])  # banana
+print(fruits[-1])  # grape (last item)
+print(fruits[-2])  # orange</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> You can also slice lists:
+        <pre><code>fruits = ["apple", "banana", "orange", "grape", "kiwi"]
+print(fruits[1:3])  # ['banana', 'orange']
+print(fruits[:2])   # ['apple', 'banana']
+print(fruits[2:])   # ['orange', 'grape', 'kiwi']</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Modifying Lists</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can change items in a list:
+        <pre><code>fruits = ["apple", "banana", "orange"]
+fruits[1] = "pear"
+print(fruits)  # ['apple', 'pear', 'orange']</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Add items to a list:
+        <pre><code>fruits = ["apple", "banana"]
+fruits.append("orange")  # Add to the end
+print(fruits)
+
+fruits.insert(1, "grape")  # Insert at position 1
+print(fruits)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Remove items:
+        <pre><code>fruits = ["apple", "banana", "orange"]
+fruits.remove("banana")  # Remove by value
+print(fruits)
+
+fruits.pop()  # Remove last item
+print(fruits)
+
+fruits.pop(0)  # Remove item at index 0
+print(fruits)</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Useful List Methods</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Lists have many useful methods:
+        <pre><code>numbers = [3, 1, 4, 1, 5, 9, 2, 6]
+
+# Length of list
+print(len(numbers))
+
+# Sort the list
+numbers.sort()
+print(numbers)
+
+# Reverse the list
+numbers.reverse()
+print(numbers)
+
+# Count occurrences
+print(numbers.count(1))
+
+# Find index
+print(numbers.index(4))</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Working with Lists</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a shopping list program:
+        <pre><code>shopping_list = []
+
+print("Shopping List Manager")
+print("=" * 20)
+
+while True:
+    item = input("Enter an item (or 'done' to finish): ")
+    if item.lower() == "done":
+        break
+    shopping_list.append(item)
+    print(f"Added: {item}")
+
+print("\nYour shopping list:")
+for item in shopping_list:
+    print(f"- {item}")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Run the program and add items to your list!
+      </div>
+
+      <h2>🌟 Activity 6: List Operations</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can combine lists and do other operations:
+        <pre><code>list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+
+# Combine lists
+combined = list1 + list2
+print(combined)
+
+# Repeat a list
+repeated = [1, 2] * 3
+print(repeated)
+
+# Check if item is in list
+fruits = ["apple", "banana", "orange"]
+print("apple" in fruits)  # True
+print("grape" in fruits)   # False</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Stores a list of your favourite foods</li>
+          <li>Allows you to add new foods</li>
+          <li>Allows you to remove foods</li>
+          <li>Displays the list in alphabetical order</li>
+          <li>Shows how many items are in the list</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>List:</strong> An ordered collection of items stored in square brackets []</li>
+        <li><strong>Index:</strong> The position of an item in a list (starts at 0)</li>
+        <li><strong>append():</strong> Adds an item to the end of a list</li>
+        <li><strong>insert():</strong> Adds an item at a specific position</li>
+        <li><strong>remove():</strong> Removes an item by value</li>
+        <li><strong>pop():</strong> Removes an item by index (or last item if no index given)</li>
+        <li><strong>sort():</strong> Arranges list items in order</li>
+        <li><strong>len():</strong> Returns the number of items in a list</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! Lists are very useful for storing multiple items. Next session, we'll learn about conditionals (if/else statements) to make decisions in your programs!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

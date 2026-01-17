@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 54: Tuples and Sets - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 54: Tuples and Sets</h1>
+      <p>Other ways to store collections</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what tuples are and when to use them</li>
+        <li>Learn about sets and their unique properties</li>
+        <li>Compare tuples, lists, and sets</li>
+        <li>Use tuples and sets in practical programs</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Tuples</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Tuples are like lists, but they can't be changed (immutable):
+        <pre><code># Create a tuple
+coordinates = (10, 20)
+print(coordinates)
+
+# Tuple with multiple items
+person = ("Sarah", 12, "London")
+print(person)
+
+# Access items (like lists)
+print(person[0])  # Sarah
+print(person[1])  # 12
+
+# Tuples can't be modified
+# person[1] = 13  # This would cause an error!</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Tuples are useful when you want data that shouldn't change:
+        <pre><code># RGB colour values
+red = (255, 0, 0)
+green = (0, 255, 0)
+blue = (0, 0, 255)
+
+# Coordinates
+point1 = (3, 4)
+point2 = (7, 2)</code></pre>
+      </div>
+
+      <div class="tip">
+        Tuples use parentheses () instead of square brackets []. They're faster than lists and use less memory!
+      </div>
+
+      <h2>💻 Activity 2: Tuple Operations</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can do some operations with tuples:
+        <pre><code>tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+
+# Concatenate
+combined = tuple1 + tuple2
+print(combined)  # (1, 2, 3, 4, 5, 6)
+
+# Repeat
+repeated = tuple1 * 2
+print(repeated)  # (1, 2, 3, 1, 2, 3)
+
+# Check if item exists
+print(2 in tuple1)  # True
+
+# Count and index
+numbers = (1, 2, 3, 2, 4, 2)
+print(numbers.count(2))  # 3
+print(numbers.index(3))  # 2</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Sets</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Sets store unique items (no duplicates) and are unordered:
+        <pre><code># Create a set
+fruits = {"apple", "banana", "orange"}
+print(fruits)
+
+# Add items
+fruits.add("grape")
+print(fruits)
+
+# Remove items
+fruits.remove("banana")
+print(fruits)
+
+# Sets automatically remove duplicates
+numbers = {1, 2, 2, 3, 3, 3, 4}
+print(numbers)  # {1, 2, 3, 4}</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Sets are great for finding unique items:
+        <pre><code># Find unique items in a list
+numbers = [1, 2, 2, 3, 3, 3, 4, 4]
+unique = set(numbers)
+print(unique)  # {1, 2, 3, 4}
+
+# Convert back to list
+unique_list = list(unique)
+print(unique_list)</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Set Operations</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Sets support mathematical operations:
+        <pre><code>set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+# Union (all items from both)
+union = set1 | set2
+print(union)  # {1, 2, 3, 4, 5, 6, 7, 8}
+
+# Intersection (items in both)
+intersection = set1 & set2
+print(intersection)  # {4, 5}
+
+# Difference (items only in first set)
+difference = set1 - set2
+print(difference)  # {1, 2, 3}
+
+# Check if subset
+print({1, 2} <= set1)  # True</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: When to Use Each</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Choose the right data structure:
+        <pre><code># Use a LIST when:
+# - You need to modify items
+# - Order matters
+# - You need duplicates
+shopping_list = ["milk", "bread", "eggs"]
+
+# Use a TUPLE when:
+# - Data shouldn't change
+# - Order matters
+# - You want it to be faster
+coordinates = (10, 20)
+
+# Use a SET when:
+# - You need unique items
+# - Order doesn't matter
+# - You need set operations
+unique_tags = {"python", "coding", "fun"}</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Practical Example</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a program that finds common interests:
+        <pre><code># Students and their interests
+student1_interests = {"coding", "reading", "music", "sports"}
+student2_interests = {"coding", "music", "art", "reading"}
+student3_interests = {"sports", "music", "coding", "gaming"}
+
+# Find common interests between students
+common_1_2 = student1_interests & student2_interests
+print(f"Student 1 and 2 both like: {common_1_2}")
+
+# Find all unique interests
+all_interests = student1_interests | student2_interests | student3_interests
+print(f"All interests: {all_interests}")
+
+# Find interests only student 1 has
+only_student1 = student1_interests - student2_interests - student3_interests
+print(f"Only student 1 likes: {only_student1}")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Uses a tuple to store a person's name, age, and city</li>
+          <li>Uses a set to store unique favourite colours</li>
+          <li>Finds common colours between two people</li>
+          <li>Converts a list with duplicates to a set to remove them</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Tuple:</strong> An immutable (unchangeable) ordered collection</li>
+        <li><strong>Set:</strong> An unordered collection of unique items</li>
+        <li><strong>Immutable:</strong> Cannot be changed after creation</li>
+        <li><strong>Unique:</strong> No duplicate items allowed</li>
+        <li><strong>Union (|):</strong> Combines items from both sets</li>
+        <li><strong>Intersection (&):</strong> Items that are in both sets</li>
+        <li><strong>Difference (-):</strong> Items only in the first set</li>
+        <li><strong>When to use:</strong> Lists for modifiable data, tuples for fixed data, sets for unique items</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You now know about tuples and sets. Next session, we'll dive deeper into list comprehensions - a powerful way to create lists!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

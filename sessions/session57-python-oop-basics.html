@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 57: Object-Oriented Programming Basics - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 57: Object-Oriented Programming Basics</h1>
+      <p>Creating classes and objects</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what classes and objects are</li>
+        <li>Learn to create classes</li>
+        <li>Create objects from classes</li>
+        <li>Use methods and attributes</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: What are Classes and Objects?</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> A class is like a blueprint, and an object is something made from that blueprint:
+        <pre><code># Class definition (the blueprint)
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def bark(self):
+        return f"{self.name} says Woof!"
+    
+    def get_info(self):
+        return f"{self.name} is {self.age} years old"
+
+# Create objects (instances)
+dog1 = Dog("Buddy", 3)
+dog2 = Dog("Max", 5)
+
+print(dog1.bark())
+print(dog2.get_info())</code></pre>
+      </div>
+
+      <div class="tip">
+        Think of a class as a cookie cutter and objects as the cookies! The cookie cutter (class) defines the shape, and you can make many cookies (objects) from it.
+      </div>
+
+      <h2>💻 Activity 2: Creating a Simple Class</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a Student class:
+        <pre><code>class Student:
+    def __init__(self, name, age, grade):
+        self.name = name
+        self.age = age
+        self.grade = grade
+        self.scores = []
+    
+    def add_score(self, score):
+        self.scores.append(score)
+    
+    def get_average(self):
+        if len(self.scores) == 0:
+            return 0
+        return sum(self.scores) / len(self.scores)
+    
+    def get_info(self):
+        return f"{self.name}, age {self.age}, grade {self.grade}"
+
+# Create student objects
+student1 = Student("Sarah", 12, 7)
+student1.add_score(85)
+student1.add_score(90)
+student1.add_score(88)
+
+print(student1.get_info())
+print(f"Average: {student1.get_average():.1f}")</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: More Class Examples</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a Rectangle class:
+        <pre><code>class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    def area(self):
+        return self.width * self.height
+    
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+    
+    def is_square(self):
+        return self.width == self.height
+
+# Create rectangles
+rect1 = Rectangle(5, 5)
+rect2 = Rectangle(4, 6)
+
+print(f"Rect1 area: {rect1.area()}")
+print(f"Rect1 is square: {rect1.is_square()}")
+print(f"Rect2 perimeter: {rect2.perimeter()}")
+print(f"Rect2 is square: {rect2.is_square()})</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Class Attributes</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Class attributes are shared by all objects:
+        <pre><code>class Car:
+    # Class attribute (shared by all cars)
+    wheels = 4
+    
+    def __init__(self, make, model, year):
+        # Instance attributes (unique to each car)
+        self.make = make
+        self.model = model
+        self.year = year
+        self.speed = 0
+    
+    def accelerate(self, amount):
+        self.speed += amount
+    
+    def brake(self, amount):
+        self.speed = max(0, self.speed - amount)
+    
+    def get_info(self):
+        return f"{self.year} {self.make} {self.model}, speed: {self.speed} km/h"
+
+car1 = Car("Toyota", "Corolla", 2020)
+car2 = Car("Honda", "Civic", 2021)
+
+car1.accelerate(50)
+car2.accelerate(60)
+
+print(car1.get_info())
+print(car2.get_info())
+print(f"All cars have {Car.wheels} wheels")</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: String Representation</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use <code>__str__</code> to define how objects are printed:
+        <pre><code>class Book:
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+    
+    def __str__(self):
+        return f"'{self.title}' by {self.author} ({self.pages} pages)"
+    
+    def is_long(self):
+        return self.pages > 300
+
+book1 = Book("Python Guide", "John Smith", 450)
+book2 = Book("Short Story", "Jane Doe", 150)
+
+print(book1)  # Uses __str__ method
+print(book2)
+print(f"Is long: {book1.is_long()}")</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Library System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a simple library system:
+        <pre><code>class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+        self.is_borrowed = False
+    
+    def borrow(self):
+        if not self.is_borrowed:
+            self.is_borrowed = True
+            return True
+        return False
+    
+    def return_book(self):
+        self.is_borrowed = False
+
+class Library:
+    def __init__(self):
+        self.books = []
+    
+    def add_book(self, book):
+        self.books.append(book)
+    
+    def find_book(self, title):
+        for book in self.books:
+            if book.title == title:
+                return book
+        return None
+
+# Create library
+library = Library()
+library.add_book(Book("Python Basics", "Alice"))
+library.add_book(Book("Advanced Python", "Bob"))
+
+# Borrow a book
+book = library.find_book("Python Basics")
+if book:
+    if book.borrow():
+        print(f"Borrowed: {book.title}")
+    else:
+        print(f"{book.title} is already borrowed!")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program with classes for:
+        <ul>
+          <li>A BankAccount class with deposit, withdraw, and balance methods</li>
+          <li>A Circle class that calculates area and circumference</li>
+          <li>A Person class that tracks name, age, and can have a birthday</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Class:</strong> A blueprint for creating objects</li>
+        <li><strong>Object/Instance:</strong> A specific example created from a class</li>
+        <li><strong>__init__:</strong> Special method that runs when an object is created</li>
+        <li><strong>self:</strong> Reference to the current object</li>
+        <li><strong>Method:</strong> A function that belongs to a class</li>
+        <li><strong>Attribute:</strong> A variable that belongs to an object</li>
+        <li><strong>Class attribute:</strong> Shared by all objects of the class</li>
+        <li><strong>Instance attribute:</strong> Unique to each object</li>
+        <li><strong>__str__:</strong> Defines how an object is converted to a string</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You've learned the basics of object-oriented programming. Next session, we'll learn about working with APIs to get data from the internet!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

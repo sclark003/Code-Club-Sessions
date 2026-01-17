@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 50: Modules and Libraries - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 50: Modules and Libraries</h1>
+      <p>Using code written by others</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what modules and libraries are</li>
+        <li>Learn to import and use modules</li>
+        <li>Explore Python's built-in modules</li>
+        <li>Use external libraries</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+        <li>Internet connection (for installing libraries)</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Importing Modules</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> A module is a file containing Python code. Import it with <code>import</code>:
+        <pre><code>import math
+
+print(math.pi)
+print(math.sqrt(16))
+print(math.pow(2, 3))</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> You can import specific functions:
+        <pre><code>from math import sqrt, pi
+
+print(pi)
+print(sqrt(25))</code></pre>
+      </div>
+
+      <div class="tip">
+        Python comes with many built-in modules - you don't need to install them!
+      </div>
+
+      <h2>💻 Activity 2: The random Module</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> The <code>random</code> module generates random numbers:
+        <pre><code>import random
+
+# Random integer between 1 and 10
+number = random.randint(1, 10)
+print(number)
+
+# Random float between 0 and 1
+decimal = random.random()
+print(decimal)
+
+# Choose a random item from a list
+fruits = ["apple", "banana", "orange"]
+choice = random.choice(fruits)
+print(choice)
+
+# Shuffle a list
+numbers = [1, 2, 3, 4, 5]
+random.shuffle(numbers)
+print(numbers)</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: The datetime Module</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Work with dates and times:
+        <pre><code>from datetime import datetime, date, timedelta
+
+# Current date and time
+now = datetime.now()
+print(f"Current time: {now}")
+
+# Just the date
+today = date.today()
+print(f"Today: {today}")
+
+# Format the date
+formatted = now.strftime("%Y-%m-%d %H:%M:%S")
+print(f"Formatted: {formatted}")
+
+# Add days
+future = today + timedelta(days=7)
+print(f"One week from today: {future}")</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: The os Module</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Interact with the operating system:
+        <pre><code>import os
+
+# Get current directory
+current_dir = os.getcwd()
+print(f"Current directory: {current_dir}")
+
+# List files in directory
+files = os.listdir(".")
+print("Files in current directory:")
+for file in files:
+    print(f"  - {file}")
+
+# Check if file exists
+if os.path.exists("my_file.txt"):
+    print("File exists!")
+else:
+    print("File doesn't exist.")</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Installing External Libraries</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Some libraries need to be installed. Use <code>pip</code> in the terminal:
+        <pre><code># In terminal/command prompt:
+# pip install requests
+
+# Then in Python:
+import requests
+
+response = requests.get("https://www.python.org")
+print(f"Status code: {response.status_code}")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Note: You might need permission to install libraries on school computers
+      </div>
+
+      <h2>🌟 Activity 6: Creating Your Own Module</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can create your own modules! Create a file called <code>my_module.py</code>:
+        <pre><code># my_module.py
+def greet(name):
+    return f"Hello, {name}!"
+
+def add(a, b):
+    return a + b
+
+PI = 3.14159</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Then use it in another file:
+        <pre><code>import my_module
+
+print(my_module.greet("Sarah"))
+print(my_module.add(5, 3))
+print(my_module.PI)</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Uses random to generate a random password</li>
+          <li>Uses datetime to display the current date and time</li>
+          <li>Uses os to check if a file exists</li>
+          <li>Creates your own module with useful functions</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Module:</strong> A file containing Python code that can be imported</li>
+        <li><strong>Library:</strong> A collection of modules</li>
+        <li><strong>import:</strong> Keyword to bring in a module</li>
+        <li><strong>Built-in modules:</strong> Modules that come with Python (math, random, datetime, etc.)</li>
+        <li><strong>External libraries:</strong> Modules you need to install (using pip)</li>
+        <li><strong>pip:</strong> Package installer for Python</li>
+        <li><strong>from...import:</strong> Import specific functions from a module</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now use modules to add powerful features to your programs. Next session, we'll learn more about working with dates and times!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

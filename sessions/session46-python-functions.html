@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 46: Functions - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 46: Functions</h1>
+      <p>Creating reusable blocks of code</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what functions are and why we use them</li>
+        <li>Learn to define and call functions</li>
+        <li>Use parameters and return values</li>
+        <li>Organise code into reusable functions</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Defining a Simple Function</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> A function is a block of code that performs a specific task. Define one with <code>def</code>:
+        <pre><code>def greet():
+    print("Hello!")
+    print("Welcome to Code Club!")
+
+# Call the function
+greet()</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> You can call the function as many times as you want:
+        <pre><code>greet()
+greet()
+greet()</code></pre>
+      </div>
+
+      <div class="tip">
+        Functions help you avoid repeating code. Write it once, use it many times!
+      </div>
+
+      <h2>💻 Activity 2: Functions with Parameters</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Functions can accept input values called parameters:
+        <pre><code>def greet(name):
+    print(f"Hello, {name}!")
+    print("Welcome to Code Club!")
+
+greet("Sarah")
+greet("Alex")
+greet("Jordan")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Functions can have multiple parameters:
+        <pre><code>def introduce(name, age):
+    print(f"My name is {name} and I am {age} years old.")
+
+introduce("Sarah", 12)
+introduce("Alex", 14)</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Return Values</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Functions can return values using <code>return</code>:
+        <pre><code>def add_numbers(a, b):
+    result = a + b
+    return result
+
+sum = add_numbers(5, 3)
+print(sum)  # 8
+
+# Or use it directly
+print(add_numbers(10, 20))  # 30</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try creating a function that multiplies two numbers:
+        <pre><code>def multiply(x, y):
+    return x * y
+
+result = multiply(4, 7)
+print(result)</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: More Function Examples</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a function to check if a number is even:
+        <pre><code>def is_even(number):
+    if number % 2 == 0:
+        return True
+    else:
+        return False
+
+print(is_even(4))   # True
+print(is_even(7))   # False</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create a function to find the maximum of two numbers:
+        <pre><code>def max_number(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+
+print(max_number(5, 10))  # 10
+print(max_number(20, 3))  # 20</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Default Parameters</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can give parameters default values:
+        <pre><code>def greet(name, greeting="Hello"):
+    print(f"{greeting}, {name}!")
+
+greet("Sarah")                    # Uses default "Hello"
+greet("Alex", "Hi")                # Uses "Hi"
+greet("Jordan", "Good morning")   # Uses "Good morning"</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Organising Code with Functions</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a calculator program using functions:
+        <pre><code>def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Cannot divide by zero!"
+
+# Use the functions
+print(add(10, 5))
+print(subtract(10, 5))
+print(multiply(10, 5))
+print(divide(10, 5))</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program with functions that:
+        <ul>
+          <li>Calculates the area of a rectangle (length × width)</li>
+          <li>Calculates the area of a circle (π × radius²)</li>
+          <li>Converts temperature from Celsius to Fahrenheit</li>
+          <li>Checks if a number is prime</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Function:</strong> A reusable block of code that performs a specific task</li>
+        <li><strong>def:</strong> Keyword used to define a function</li>
+        <li><strong>Parameter:</strong> A variable that receives a value when the function is called</li>
+        <li><strong>Argument:</strong> The value passed to a function when it's called</li>
+        <li><strong>return:</strong> Sends a value back from the function</li>
+        <li><strong>Call:</strong> To execute a function by writing its name with parentheses</li>
+        <li><strong>Default parameter:</strong> A parameter with a default value if none is provided</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! Functions help you organise and reuse code. Next session, we'll learn about dictionaries - another way to store data!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

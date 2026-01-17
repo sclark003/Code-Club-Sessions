@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 48: File Handling Basics - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 48: File Handling Basics</h1>
+      <p>Reading from and writing to files</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Learn to read data from files</li>
+        <li>Learn to write data to files</li>
+        <li>Understand different file modes</li>
+        <li>Handle files safely with proper error handling</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Writing to a File</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use <code>open()</code> to create or open a file, then write to it:
+        <pre><code># Create and write to a file
+file = open("my_file.txt", "w")
+file.write("Hello, World!\n")
+file.write("This is my first file.\n")
+file.write("Python is fun!")
+file.close()
+
+print("File written successfully!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> The <code>"w"</code> mode means "write" - it creates a new file or overwrites an existing one
+      </div>
+
+      <div class="tip">
+        Always close files when you're done! The <code>\n</code> creates a new line.
+      </div>
+
+      <h2>💻 Activity 2: Reading from a File</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Read from a file using <code>"r"</code> mode (read):
+        <pre><code># Read the entire file
+file = open("my_file.txt", "r")
+content = file.read()
+print(content)
+file.close()</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Read line by line:
+        <pre><code>file = open("my_file.txt", "r")
+for line in file:
+    print(line.strip())  # strip() removes newline characters
+file.close()</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Or read all lines into a list:
+        <pre><code>file = open("my_file.txt", "r")
+lines = file.readlines()
+for line in lines:
+    print(line.strip())
+file.close()</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Using 'with' Statement</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> The <code>with</code> statement automatically closes the file - it's safer!
+        <pre><code># Writing
+with open("my_file.txt", "w") as file:
+    file.write("Line 1\n")
+    file.write("Line 2\n")
+    file.write("Line 3\n")
+# File is automatically closed here
+
+# Reading
+with open("my_file.txt", "r") as file:
+    content = file.read()
+    print(content)
+# File is automatically closed here</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Always use <code>with</code> when working with files - it's the best practice!
+      </div>
+
+      <h2>📊 Activity 4: Appending to Files</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use <code>"a"</code> mode to append (add to the end) instead of overwriting:
+        <pre><code># First, write some content
+with open("diary.txt", "w") as file:
+    file.write("Day 1: Started learning Python!\n")
+
+# Later, append more content
+with open("diary.txt", "a") as file:
+    file.write("Day 2: Learned about files!\n")
+    file.write("Day 3: Making great progress!\n")
+
+# Read it back
+with open("diary.txt", "r") as file:
+    print(file.read())</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: File Modes</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Different file modes:
+        <pre><code># "r" - Read (file must exist)
+# "w" - Write (creates new or overwrites existing)
+# "a" - Append (adds to end, creates if doesn't exist)
+# "x" - Create (only if file doesn't exist, error if it does)
+
+# You can also add "b" for binary mode or "+" for read+write
+# "r+" - Read and write
+# "w+" - Write and read (overwrites)</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Practical Example</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a simple note-taking program:
+        <pre><code>print("Simple Note Taker")
+print("=" * 20)
+
+while True:
+    print("\n1. Add note")
+    print("2. View notes")
+    print("3. Quit")
+    
+    choice = input("Choose an option: ")
+    
+    if choice == "1":
+        note = input("Enter your note: ")
+        with open("notes.txt", "a") as file:
+            file.write(note + "\n")
+        print("Note saved!")
+    
+    elif choice == "2":
+        try:
+            with open("notes.txt", "r") as file:
+                print("\nYour notes:")
+                print("-" * 20)
+                for line in file:
+                    print(line.strip())
+        except FileNotFoundError:
+            print("No notes yet!")
+    
+    elif choice == "3":
+        break</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Asks for student names and grades</li>
+          <li>Saves them to a file</li>
+          <li>Can read and display all students and their grades</li>
+          <li>Calculates and displays the average grade</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>File:</strong> A collection of data stored on disk</li>
+        <li><strong>open():</strong> Function to open or create a file</li>
+        <li><strong>File modes:</strong> "r" (read), "w" (write), "a" (append)</li>
+        <li><strong>write():</strong> Method to write data to a file</li>
+        <li><strong>read():</strong> Method to read all content from a file</li>
+        <li><strong>readlines():</strong> Method to read all lines into a list</li>
+        <li><strong>with statement:</strong> Automatically closes files (best practice)</li>
+        <li><strong>close():</strong> Method to close a file (important!)</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now work with files. Next session, we'll learn about error handling - how to deal with problems that might occur in your programs!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 60: Final Python Project - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 60: Final Python Project</h1>
+      <p>Combine everything you've learned!</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Plan and design a complete Python project</li>
+        <li>Use multiple concepts together</li>
+        <li>Create a useful, working program</li>
+        <li>Test and debug your code</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+        <li>All the knowledge from previous sessions!</li>
+      </ul>
+
+      <h2>🚀 Project Ideas</h2>
+      
+      <div class="step">
+        <span class="step-number">Option 1:</span> <strong>Student Grade Manager</strong>
+        <ul>
+          <li>Store student information (name, age, grades)</li>
+          <li>Calculate averages</li>
+          <li>Find highest/lowest scores</li>
+          <li>Save data to CSV or JSON files</li>
+          <li>Display statistics</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Option 2:</span> <strong>Personal Budget Tracker</strong>
+        <ul>
+          <li>Add income and expenses</li>
+          <li>Calculate total balance</li>
+          <li>Show spending by category</li>
+          <li>Save transactions to a file</li>
+          <li>Display summary reports</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Option 3:</span> <strong>To-Do List Application</strong>
+        <ul>
+          <li>Add, remove, and complete tasks</li>
+          <li>Mark tasks as done</li>
+          <li>Save tasks to a file</li>
+          <li>Display tasks by priority or date</li>
+          <li>Search for specific tasks</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Option 4:</span> <strong>Quiz Game</strong>
+        <ul>
+          <li>Store questions and answers</li>
+          <li>Ask questions to the user</li>
+          <li>Track score</li>
+          <li>Show results at the end</li>
+          <li>Save high scores</li>
+        </ul>
+      </div>
+
+      <h2>💻 Planning Your Project</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> <strong>Choose Your Project</strong>
+        <ul>
+          <li>Pick something you're interested in</li>
+          <li>Make sure it's achievable in the time you have</li>
+          <li>Start simple - you can always add features!</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> <strong>Break It Down</strong>
+        <ul>
+          <li>List all the features you want</li>
+          <li>Decide what data you need to store</li>
+          <li>Plan the main functions you'll need</li>
+          <li>Think about the user interface (menus, prompts)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> <strong>Start Coding</strong>
+        <ul>
+          <li>Begin with the basic structure</li>
+          <li>Add one feature at a time</li>
+          <li>Test each feature as you add it</li>
+          <li>Don't worry if it's not perfect at first!</li>
+        </ul>
+      </div>
+
+      <h2>🎨 Project Structure Template</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Here's a template to get you started:
+        <pre><code># Your Project Name
+# Description of what it does
+
+import json
+import os
+
+# Data storage
+data_file = "project_data.json"
+
+def load_data():
+    """Load data from file"""
+    if os.path.exists(data_file):
+        with open(data_file, 'r') as f:
+            return json.load(f)
+    return []
+
+def save_data(data):
+    """Save data to file"""
+    with open(data_file, 'w') as f:
+        json.dump(data, f, indent=2)
+
+def display_menu():
+    """Show the main menu"""
+    print("\n" + "=" * 30)
+    print("Main Menu")
+    print("=" * 30)
+    print("1. Add item")
+    print("2. View items")
+    print("3. Remove item")
+    print("4. Quit")
+    print("=" * 30)
+
+def main():
+    """Main program loop"""
+    data = load_data()
+    
+    while True:
+        display_menu()
+        choice = input("Choose an option: ")
+        
+        if choice == "1":
+            # Add item code here
+            pass
+        elif choice == "2":
+            # View items code here
+            pass
+        elif choice == "3":
+            # Remove item code here
+            pass
+        elif choice == "4":
+            save_data(data)
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+if __name__ == "__main__":
+    main()</code></pre>
+      </div>
+
+      <h2>📊 Features to Include</h2>
+
+      <div class="step">
+        <span class="step-number">Must Have:</span>
+        <ul>
+          <li>User input and output</li>
+          <li>Data storage (variables, lists, dictionaries)</li>
+          <li>Functions to organise code</li>
+          <li>File handling (save/load data)</li>
+          <li>Error handling (try/except)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Nice to Have:</span>
+        <ul>
+          <li>Classes and objects</li>
+          <li>Data validation</li>
+          <li>Search and filter features</li>
+          <li>Statistics and calculations</li>
+          <li>Data visualisation (if you learned it)</li>
+        </ul>
+      </div>
+
+      <h2>🎯 Testing Your Project</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Test each feature:
+        <ul>
+          <li>Try normal inputs</li>
+          <li>Try edge cases (empty input, very long input, etc.)</li>
+          <li>Try invalid inputs (wrong type, out of range, etc.)</li>
+          <li>Test saving and loading data</li>
+          <li>Make sure the program doesn't crash!</li>
+        </ul>
+      </div>
+
+      <h2>🌟 Presentation Tips</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> When showing your project:
+        <ul>
+          <li>Explain what it does</li>
+          <li>Demonstrate the main features</li>
+          <li>Talk about what you learned</li>
+          <li>Share what you'd add next if you had more time</li>
+          <li>Be proud of what you created!</li>
+        </ul>
+      </div>
+
+      <div class="challenge">
+        <strong>Your Challenge:</strong>
+        <ul>
+          <li>Create a complete Python project</li>
+          <li>Use at least 5 different concepts from previous sessions</li>
+          <li>Make it useful or fun</li>
+          <li>Test it thoroughly</li>
+          <li>Add comments to explain your code</li>
+          <li>Share it with others!</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts to Review</h2>
+      <ul>
+        <li>Variables and data types</li>
+        <li>Input and output</li>
+        <li>Lists and dictionaries</li>
+        <li>Conditionals (if/else)</li>
+        <li>Loops (for and while)</li>
+        <li>Functions</li>
+        <li>File handling</li>
+        <li>Error handling</li>
+        <li>Classes (if you learned them)</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Congratulations! You've completed 24 Python sessions! You now have a solid foundation in Python programming. Keep practising, keep building projects, and most importantly - keep having fun with coding!</p>
+      <p><strong>Remember:</strong> The best way to learn is by doing. Try building your own projects, solving problems, and exploring new Python features. Happy coding! 🐍✨</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

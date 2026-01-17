@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 44: For Loops - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 44: For Loops</h1>
+      <p>Repeating actions with for loops</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what for loops are and when to use them</li>
+        <li>Loop through lists and strings</li>
+        <li>Use the range() function</li>
+        <li>Create programs that repeat actions</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Looping Through Lists</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> A for loop repeats code for each item in a collection:
+        <pre><code>fruits = ["apple", "banana", "orange"]
+
+for fruit in fruits:
+    print(fruit)
+    print("I like " + fruit)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> The variable <code>fruit</code> takes each value from the list, one at a time
+      </div>
+
+      <div class="tip">
+        The variable name after "for" can be anything you want - it's just a name for each item as you loop through!
+      </div>
+
+      <h2>💻 Activity 2: Looping Through Strings</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can loop through strings character by character:
+        <pre><code>word = "Python"
+
+for letter in word:
+    print(letter)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try counting letters:
+        <pre><code>word = "Hello"
+count = 0
+
+for letter in word:
+    if letter == "l":
+        count = count + 1
+
+print(f"The letter 'l' appears {count} times.")</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: The range() Function</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use <code>range()</code> to loop a specific number of times:
+        <pre><code># Loop 5 times (0 to 4)
+for i in range(5):
+    print(i)
+
+# Loop from 1 to 10
+for i in range(1, 11):
+    print(i)
+
+# Loop with steps
+for i in range(0, 10, 2):  # 0, 2, 4, 6, 8
+    print(i)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create a countdown:
+        <pre><code>for i in range(10, 0, -1):
+    print(i)
+print("Blast off!")</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Nested Loops</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can put loops inside other loops:
+        <pre><code># Multiplication table
+for i in range(1, 6):
+    for j in range(1, 6):
+        result = i * j
+        print(f"{i} x {j} = {result}")
+    print()  # Blank line between tables</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Using enumerate()</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Sometimes you need both the item and its index:
+        <pre><code>fruits = ["apple", "banana", "orange"]
+
+for index, fruit in enumerate(fruits):
+    print(f"{index + 1}. {fruit}")</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Practical Examples</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a program that prints a pattern:
+        <pre><code># Print stars
+for i in range(1, 6):
+    print("*" * i)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Calculate the sum of numbers:
+        <pre><code>numbers = [1, 2, 3, 4, 5]
+total = 0
+
+for number in numbers:
+    total = total + number
+
+print(f"The sum is {total}")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Find the largest number:
+        <pre><code>numbers = [3, 7, 2, 9, 1, 5]
+largest = numbers[0]
+
+for number in numbers:
+    if number > largest:
+        largest = number
+
+print(f"The largest number is {largest}")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Asks for 5 numbers from the user</li>
+          <li>Stores them in a list</li>
+          <li>Finds and displays the sum, average, largest, and smallest</li>
+          <li>Uses for loops to process the list</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>for loop:</strong> Repeats code for each item in a collection</li>
+        <li><strong>range():</strong> Generates a sequence of numbers</li>
+        <li><strong>Iteration:</strong> One time through the loop</li>
+        <li><strong>Loop variable:</strong> The variable that holds each item during the loop</li>
+        <li><strong>Nested loop:</strong> A loop inside another loop</li>
+        <li><strong>enumerate():</strong> Gets both index and value when looping</li>
+        <li><strong>Indentation:</strong> Code inside the loop must be indented</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You can now repeat actions with for loops. Next session, we'll learn about while loops - another way to repeat code!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

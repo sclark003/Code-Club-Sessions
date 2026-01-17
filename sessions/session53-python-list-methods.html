@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 53: List Methods - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 53: List Methods</h1>
+      <p>Advanced list operations and methods</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Explore more list methods</li>
+        <li>Learn list comprehension basics</li>
+        <li>Sort and filter lists</li>
+        <li>Work with nested lists</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: More List Methods</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Explore additional list methods:
+        <pre><code>numbers = [3, 1, 4, 1, 5, 9, 2, 6]
+
+# Sort (modifies the list)
+numbers.sort()
+print(numbers)  # [1, 1, 2, 3, 4, 5, 6, 9]
+
+# Reverse
+numbers.reverse()
+print(numbers)  # [9, 6, 5, 4, 3, 2, 1, 1]
+
+# Count occurrences
+count = numbers.count(1)
+print(f"Number 1 appears {count} times")
+
+# Find index
+index = numbers.index(5)
+print(f"Number 5 is at index {index}")
+
+# Clear all items
+numbers.clear()
+print(numbers)  # []</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Sorting Lists</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Sort lists in different ways:
+        <pre><code># Sort numbers
+numbers = [3, 1, 4, 1, 5, 9, 2, 6]
+numbers.sort()
+print(numbers)
+
+# Sort in reverse
+numbers.sort(reverse=True)
+print(numbers)
+
+# Sort strings
+fruits = ["banana", "apple", "orange", "grape"]
+fruits.sort()
+print(fruits)
+
+# Sort without modifying (returns new list)
+numbers = [3, 1, 4, 1, 5]
+sorted_numbers = sorted(numbers)
+print(f"Original: {numbers}")
+print(f"Sorted: {sorted_numbers}")</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Filtering Lists</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Filter lists based on conditions:
+        <pre><code>numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Get even numbers (using list comprehension)
+evens = [n for n in numbers if n % 2 == 0]
+print(evens)  # [2, 4, 6, 8, 10]
+
+# Get numbers greater than 5
+large = [n for n in numbers if n > 5]
+print(large)  # [6, 7, 8, 9, 10]
+
+# Traditional way with loop
+evens = []
+for n in numbers:
+    if n % 2 == 0:
+        evens.append(n)
+print(evens)</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Transforming Lists</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Transform list items:
+        <pre><code>numbers = [1, 2, 3, 4, 5]
+
+# Square each number
+squares = [n * n for n in numbers]
+print(squares)  # [1, 4, 9, 16, 25]
+
+# Double each number
+doubled = [n * 2 for n in numbers]
+print(doubled)  # [2, 4, 6, 8, 10]
+
+# Convert to strings
+strings = [str(n) for n in numbers]
+print(strings)  # ['1', '2', '3', '4', '5']</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Nested Lists</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Work with lists inside lists:
+        <pre><code># Matrix (grid)
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Access elements
+print(matrix[0][0])  # 1 (first row, first column)
+print(matrix[1][2])  # 6 (second row, third column)
+
+# Loop through nested list
+for row in matrix:
+    for item in row:
+        print(item, end=" ")
+    print()  # New line after each row</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Practical Example</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a grade management system:
+        <pre><code>students = [
+    ["Sarah", 85, 90, 88],
+    ["Alex", 92, 87, 95],
+    ["Jordan", 78, 82, 80]
+]
+
+# Calculate average for each student
+for student in students:
+    name = student[0]
+    grades = student[1:]
+    average = sum(grades) / len(grades)
+    print(f"{name}: {average:.1f}")
+
+# Find student with highest average
+averages = []
+for student in students:
+    grades = student[1:]
+    average = sum(grades) / len(grades)
+    averages.append(average)
+
+highest_index = averages.index(max(averages))
+print(f"Highest average: {students[highest_index][0]}")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Stores a list of numbers</li>
+          <li>Finds the sum, average, maximum, and minimum</li>
+          <li>Removes duplicates</li>
+          <li>Sorts the list</li>
+          <li>Finds numbers greater than the average</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>sort():</strong> Sorts a list in place</li>
+        <li><strong>sorted():</strong> Returns a new sorted list</li>
+        <li><strong>reverse():</strong> Reverses the order of a list</li>
+        <li><strong>List comprehension:</strong> A concise way to create lists</li>
+        <li><strong>Filtering:</strong> Selecting items that meet a condition</li>
+        <li><strong>Transforming:</strong> Changing items in a list</li>
+        <li><strong>Nested lists:</strong> Lists containing other lists</li>
+        <li><strong>sum():</strong> Built-in function to sum numbers in a list</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You now know many list operations. Next session, we'll learn about tuples and sets - other ways to store collections of data!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

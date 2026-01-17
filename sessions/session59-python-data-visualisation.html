@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 59: Data Visualisation - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 59: Data Visualisation</h1>
+      <p>Creating charts and graphs with Python</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Install and use matplotlib</li>
+        <li>Create line charts, bar charts, and pie charts</li>
+        <li>Customise charts with labels and colours</li>
+        <li>Save charts as images</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+        <li>matplotlib library (may need to install: pip install matplotlib)</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Installing matplotlib</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Install matplotlib if needed:
+        <pre><code># In terminal/command prompt:
+# pip install matplotlib</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Import it in your Python program:
+        <pre><code>import matplotlib.pyplot as plt</code></pre>
+      </div>
+
+      <div class="tip">
+        If you can't install libraries on your school computer, you can still learn the concepts! Ask your teacher for help.
+      </div>
+
+      <h2>💻 Activity 2: Creating a Simple Line Chart</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create your first chart:
+        <pre><code>import matplotlib.pyplot as plt
+
+# Data
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# Create the chart
+plt.plot(x, y)
+plt.title("Simple Line Chart")
+plt.xlabel("X values")
+plt.ylabel("Y values")
+plt.show()</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> This will open a window showing your chart!
+      </div>
+
+      <h2>🎨 Activity 3: Bar Chart</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a bar chart:
+        <pre><code>import matplotlib.pyplot as plt
+
+# Data
+subjects = ["Maths", "Science", "English", "History"]
+scores = [85, 90, 88, 82]
+
+# Create bar chart
+plt.bar(subjects, scores, color=['red', 'blue', 'green', 'orange'])
+plt.title("Test Scores by Subject")
+plt.xlabel("Subjects")
+plt.ylabel("Scores")
+plt.ylim(0, 100)  # Set y-axis range
+plt.show()</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Pie Chart</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a pie chart:
+        <pre><code>import matplotlib.pyplot as plt
+
+# Data
+fruits = ["Apple", "Banana", "Orange", "Grape"]
+quantities = [30, 25, 20, 25]
+colours = ['red', 'yellow', 'orange', 'purple']
+
+# Create pie chart
+plt.pie(quantities, labels=fruits, colors=colours, autopct='%1.1f%%')
+plt.title("Fruit Distribution")
+plt.show()</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Multiple Lines on One Chart</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Compare multiple datasets:
+        <pre><code>import matplotlib.pyplot as plt
+
+# Data for two students
+months = ["Jan", "Feb", "Mar", "Apr", "May"]
+sarah_scores = [85, 87, 90, 88, 92]
+alex_scores = [82, 85, 88, 90, 91]
+
+# Plot both lines
+plt.plot(months, sarah_scores, marker='o', label='Sarah')
+plt.plot(months, alex_scores, marker='s', label='Alex')
+plt.title("Test Scores Over Time")
+plt.xlabel("Month")
+plt.ylabel("Score")
+plt.legend()  # Show legend
+plt.grid(True)  # Add grid
+plt.show()</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Saving Charts</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Save your chart as an image:
+        <pre><code>import matplotlib.pyplot as plt
+
+# Create a chart
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+plt.plot(x, y)
+plt.title("My Chart")
+plt.xlabel("X")
+plt.ylabel("Y")
+
+# Save as image
+plt.savefig("my_chart.png")
+print("Chart saved as my_chart.png")
+
+# You can also save as PDF, SVG, etc.
+# plt.savefig("my_chart.pdf")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create visualisations for:
+        <ul>
+          <li>Your monthly test scores (line chart)</li>
+          <li>Favourite subjects survey results (bar chart)</li>
+          <li>How you spend your time (pie chart)</li>
+          <li>Compare your scores with a friend (multiple lines)</li>
+          <li>Save all charts as images</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>matplotlib:</strong> Python library for creating charts and graphs</li>
+        <li><strong>plt.plot():</strong> Creates a line chart</li>
+        <li><strong>plt.bar():</strong> Creates a bar chart</li>
+        <li><strong>plt.pie():</strong> Creates a pie chart</li>
+        <li><strong>plt.title():</strong> Adds a title to the chart</li>
+        <li><strong>plt.xlabel()/ylabel():</strong> Adds axis labels</li>
+        <li><strong>plt.legend():</strong> Shows a legend for multiple datasets</li>
+        <li><strong>plt.show():</strong> Displays the chart</li>
+        <li><strong>plt.savefig():</strong> Saves the chart as an image file</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now create visualisations of your data. Next session is your final Python project where you'll combine everything you've learned!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 55: List Comprehensions - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 55: List Comprehensions</h1>
+      <p>Creating lists the Pythonic way</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what list comprehensions are</li>
+        <li>Create lists using comprehensions</li>
+        <li>Use conditions in comprehensions</li>
+        <li>Write more concise and readable code</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Basic List Comprehensions</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> List comprehensions are a concise way to create lists:
+        <pre><code># Traditional way
+squares = []
+for x in range(1, 6):
+    squares.append(x * x)
+print(squares)  # [1, 4, 9, 16, 25]
+
+# Using list comprehension (shorter!)
+squares = [x * x for x in range(1, 6)]
+print(squares)  # [1, 4, 9, 16, 25]</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> More examples:
+        <pre><code># Double each number
+numbers = [1, 2, 3, 4, 5]
+doubled = [n * 2 for n in numbers]
+print(doubled)  # [2, 4, 6, 8, 10]
+
+# Convert to strings
+strings = [str(n) for n in numbers]
+print(strings)  # ['1', '2', '3', '4', '5']
+
+# Uppercase all words
+words = ["hello", "world", "python"]
+uppercase = [w.upper() for w in words]
+print(uppercase)  # ['HELLO', 'WORLD', 'PYTHON']</code></pre>
+      </div>
+
+      <div class="tip">
+        List comprehensions are more Pythonic (the "Python way") and often faster than loops!
+      </div>
+
+      <h2>💻 Activity 2: Comprehensions with Conditions</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add conditions to filter items:
+        <pre><code># Get even numbers only
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+evens = [n for n in numbers if n % 2 == 0]
+print(evens)  # [2, 4, 6, 8, 10]
+
+# Get words longer than 4 characters
+words = ["hello", "hi", "python", "code", "world"]
+long_words = [w for w in words if len(w) > 4]
+print(long_words)  # ['hello', 'python', 'world']
+
+# Get positive numbers only
+numbers = [-5, -2, 0, 3, 7, -1, 4]
+positive = [n for n in numbers if n > 0]
+print(positive)  # [3, 7, 4]</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Comprehensions with Transformations</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Combine filtering and transforming:
+        <pre><code># Square only even numbers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_squares = [n * n for n in numbers if n % 2 == 0]
+print(even_squares)  # [4, 16, 36, 64, 100]
+
+# Capitalise words that start with 'h'
+words = ["hello", "world", "hi", "python", "happy"]
+h_words = [w.capitalize() for w in words if w.startswith('h')]
+print(h_words)  # ['Hello', 'Hi', 'Happy']</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Nested Comprehensions</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create nested structures:
+        <pre><code># Create a multiplication table
+table = [[i * j for j in range(1, 6)] for i in range(1, 6)]
+for row in table:
+    print(row)
+
+# Flatten a nested list
+nested = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+flat = [item for sublist in nested for item in sublist]
+print(flat)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Dictionary and Set Comprehensions</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can also use comprehensions for dictionaries and sets:
+        <pre><code># Dictionary comprehension
+squares_dict = {n: n * n for n in range(1, 6)}
+print(squares_dict)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# Set comprehension
+even_squares_set = {n * n for n in range(1, 11) if n % 2 == 0}
+print(even_squares_set)  # {16, 4, 100, 36, 64}</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Practical Examples</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Process student data:
+        <pre><code># Student scores
+students = [
+    {"name": "Sarah", "scores": [85, 90, 88]},
+    {"name": "Alex", "scores": [92, 87, 95]},
+    {"name": "Jordan", "scores": [78, 82, 80]}
+]
+
+# Calculate averages using comprehension
+averages = [
+    {"name": s["name"], "average": sum(s["scores"]) / len(s["scores"])}
+    for s in students
+]
+
+for student in averages:
+    print(f"{student['name']}: {student['average']:.1f}")
+
+# Find students with average above 85
+high_achievers = [s["name"] for s in averages if s["average"] > 85]
+print(f"High achievers: {high_achievers}")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create programs using list comprehensions that:
+        <ul>
+          <li>Generate a list of all even numbers from 1 to 100</li>
+          <li>Create a list of squares of numbers divisible by 3</li>
+          <li>Extract all vowels from a sentence</li>
+          <li>Convert a list of temperatures from Celsius to Fahrenheit</li>
+          <li>Find all words in a list that are palindromes</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>List comprehension:</strong> A concise way to create lists</li>
+        <li><strong>Syntax:</strong> [expression for item in iterable]</li>
+        <li><strong>With condition:</strong> [expression for item in iterable if condition]</li>
+        <li><strong>More Pythonic:</strong> Preferred way to create lists in Python</li>
+        <li><strong>Dictionary comprehension:</strong> {key: value for item in iterable}</li>
+        <li><strong>Set comprehension:</strong> {expression for item in iterable}</li>
+        <li><strong>Nested comprehensions:</strong> Comprehensions inside comprehensions</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! List comprehensions make your code more elegant. Next session, we'll learn more about working with files in advanced ways!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

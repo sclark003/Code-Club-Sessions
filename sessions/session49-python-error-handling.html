@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 49: Error Handling - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 49: Error Handling</h1>
+      <p>Dealing with errors gracefully</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what errors are and why they happen</li>
+        <li>Learn to use try/except blocks</li>
+        <li>Handle different types of errors</li>
+        <li>Create programs that don't crash when errors occur</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: What are Errors?</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Errors happen when Python can't run your code. Try this:
+        <pre><code># This will cause an error
+number = int(input("Enter a number: "))
+result = 10 / number
+print(result)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> What happens if you enter 0? Or if you enter text instead of a number?
+      </div>
+
+      <div class="tip">
+        Errors are normal! The important thing is to handle them gracefully so your program doesn't crash.
+      </div>
+
+      <h2>💻 Activity 2: Using try/except</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use <code>try</code> and <code>except</code> to catch errors:
+        <pre><code>try:
+    number = int(input("Enter a number: "))
+    result = 10 / number
+    print(f"10 divided by {number} is {result}")
+except:
+    print("Something went wrong!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Now the program won't crash - it will show a friendly message instead!
+      </div>
+
+      <h2>🎨 Activity 3: Specific Error Types</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can catch specific types of errors:
+        <pre><code>try:
+    number = int(input("Enter a number: "))
+    result = 10 / number
+    print(f"Result: {result}")
+except ValueError:
+    print("That's not a valid number!")
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+except Exception as e:
+    print(f"An error occurred: {e}")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Each error type gets its own message - much more helpful!
+      </div>
+
+      <h2>📊 Activity 4: else and finally</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use <code>else</code> for code that runs if no error occurs, and <code>finally</code> for code that always runs:
+        <pre><code>try:
+    number = int(input("Enter a number: "))
+    result = 10 / number
+except ValueError:
+    print("Invalid input!")
+except ZeroDivisionError:
+    print("Can't divide by zero!")
+else:
+    print(f"Success! Result is {result}")
+finally:
+    print("This always runs, whether there was an error or not.")</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: File Error Handling</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Always handle file errors:
+        <pre><code>try:
+    with open("my_file.txt", "r") as file:
+        content = file.read()
+        print(content)
+except FileNotFoundError:
+    print("File not found!")
+except PermissionError:
+    print("You don't have permission to read this file!")
+except Exception as e:
+    print(f"An error occurred: {e}")</code></pre>
+      </div>
+
+      <h2>🌟 Activity 6: Robust Input Program</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a program that keeps asking until it gets valid input:
+        <pre><code>while True:
+    try:
+        age = int(input("How old are you? "))
+        if age < 0 or age > 120:
+            print("Please enter a realistic age!")
+            continue
+        print(f"You are {age} years old.")
+        break
+    except ValueError:
+        print("Please enter a valid number!")
+    except Exception as e:
+        print(f"An error occurred: {e}")</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a calculator program that:
+        <ul>
+          <li>Handles division by zero</li>
+          <li>Handles invalid number input</li>
+          <li>Handles invalid operators</li>
+          <li>Keeps asking until the user wants to quit</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Error/Exception:</strong> A problem that occurs when running code</li>
+        <li><strong>try:</strong> Block of code that might cause an error</li>
+        <li><strong>except:</strong> Block that handles errors</li>
+        <li><strong>ValueError:</strong> Error when value is wrong type</li>
+        <li><strong>ZeroDivisionError:</strong> Error when dividing by zero</li>
+        <li><strong>FileNotFoundError:</strong> Error when file doesn't exist</li>
+        <li><strong>else:</strong> Runs if no error occurred</li>
+        <li><strong>finally:</strong> Always runs, regardless of errors</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! Your programs are now more robust. Next session, we'll learn about modules and libraries - using code that others have written!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

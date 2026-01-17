@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 40: Basic Math Operations - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 40: Basic Math Operations</h1>
+      <p>Performing calculations in Python</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Learn Python's math operators (+, -, *, /, //, %, **)</li>
+        <li>Understand operator precedence (order of operations)</li>
+        <li>Use the math module for advanced calculations</li>
+        <li>Create programs that perform calculations</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Python installed on your computer</li>
+        <li>Python IDLE or a text editor</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Basic Arithmetic Operators</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Python can do all the basic math operations. Try these in IDLE:
+        <pre><code># Addition
+print(5 + 3)
+
+# Subtraction
+print(10 - 4)
+
+# Multiplication
+print(6 * 7)
+
+# Division
+print(15 / 3)
+
+# Integer division (rounds down)
+print(17 // 5)
+
+# Modulo (remainder)
+print(17 % 5)
+
+# Exponentiation (power)
+print(2 ** 3)  # 2 to the power of 3</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Run each line and see what the result is
+      </div>
+
+      <div class="tip">
+        The <code>//</code> operator does "floor division" - it divides and rounds down to the nearest whole number. The <code>%</code> operator gives you the remainder after division!
+      </div>
+
+      <h2>💻 Activity 2: Using Variables in Math</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> You can use variables in calculations:
+        <pre><code>num1 = 10
+num2 = 3
+
+addition = num1 + num2
+subtraction = num1 - num2
+multiplication = num1 * num2
+division = num1 / num2
+
+print(f"{num1} + {num2} = {addition}")
+print(f"{num1} - {num2} = {subtraction}")
+print(f"{num1} * {num2} = {multiplication}")
+print(f"{num1} / {num2} = {division}")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try changing the values of <code>num1</code> and <code>num2</code> and see what happens
+      </div>
+
+      <h2>🎨 Activity 3: Order of Operations</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Python follows the same order of operations as maths (PEMDAS/BODMAS):
+        <pre><code># Multiplication happens before addition
+result1 = 2 + 3 * 4
+print(result1)  # 14, not 20!
+
+# Use parentheses to change the order
+result2 = (2 + 3) * 4
+print(result2)  # 20</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try these examples:
+        <pre><code>print(10 - 2 * 3)
+print((10 - 2) * 3)
+print(2 ** 3 + 1)
+print(2 ** (3 + 1))</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: The Math Module</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Python has a <code>math</code> module with advanced functions. First, you need to import it:
+        <pre><code>import math
+
+# Square root
+print(math.sqrt(16))
+
+# Power (same as **)
+print(math.pow(2, 3))
+
+# Pi (3.14159...)
+print(math.pi)
+
+# Round up
+print(math.ceil(4.3))  # 5
+
+# Round down
+print(math.floor(4.7))  # 4</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Try calculating the area of a circle:
+        <pre><code>import math
+
+radius = 5
+area = math.pi * radius ** 2
+print(f"The area of a circle with radius {radius} is {area}")</code></pre>
+      </div>
+
+      <h2>🎯 Activity 5: Building a Calculator</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a simple calculator program:
+        <pre><code>print("Simple Calculator")
+print("=" * 20)
+
+num1 = float(input("Enter first number: "))
+operator = input("Enter operator (+, -, *, /): ")
+num2 = float(input("Enter second number: "))
+
+if operator == "+":
+    result = num1 + num2
+elif operator == "-":
+    result = num1 - num2
+elif operator == "*":
+    result = num1 * num2
+elif operator == "/":
+    result = num1 / num2
+else:
+    result = "Invalid operator"
+
+print(f"{num1} {operator} {num2} = {result}")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Run the program and test it with different numbers and operators
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Asks for the radius of a circle</li>
+          <li>Calculates and displays the area</li>
+          <li>Calculates and displays the circumference</li>
+          <li>Uses the math module for pi</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Arithmetic Operators:</strong> + (add), - (subtract), * (multiply), / (divide)</li>
+        <li><strong>Integer Division (//):</strong> Divides and rounds down to whole number</li>
+        <li><strong>Modulo (%):</strong> Returns the remainder after division</li>
+        <li><strong>Exponentiation (**):</strong> Raises a number to a power</li>
+        <li><strong>Operator Precedence:</strong> The order in which operations are performed</li>
+        <li><strong>Module:</strong> A collection of functions you can import and use</li>
+        <li><strong>import:</strong> A keyword that brings in code from modules</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You can now perform calculations in Python. Next session, we'll learn more about working with text (strings) and all the things you can do with them!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>
