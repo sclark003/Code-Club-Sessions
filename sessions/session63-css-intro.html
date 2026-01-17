@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 63: Introduction to CSS - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 63: Introduction to CSS</h1>
+      <p>Making your webpages look beautiful</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what CSS is and how it works</li>
+        <li>Learn how to add CSS to your HTML</li>
+        <li>Use basic CSS properties (colour, font, size)</li>
+        <li>Style your first webpage</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Code editor</li>
+        <li>Web browser</li>
+        <li>An HTML file to style</li>
+      </ul>
+
+      <h2>🚀 Activity 1: What is CSS?</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> CSS (Cascading Style Sheets) controls how your webpage looks - colours, fonts, sizes, spacing, and layout.
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Think of HTML as the structure (walls of a house) and CSS as the decoration (paint, furniture, layout)!
+      </div>
+
+      <h2>💻 Activity 2: Adding CSS to HTML</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> There are three ways to add CSS:
+        <ul>
+          <li><strong>Inline:</strong> Style directly in the HTML tag</li>
+          <li><strong>Internal:</strong> Style in a &lt;style&gt; tag in the &lt;head&gt;</li>
+          <li><strong>External:</strong> Style in a separate .css file (best practice!)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Let's start with internal CSS (in the &lt;head&gt;):
+        <pre><code>&lt;head&gt;
+    &lt;style&gt;
+        h1 {
+            color: blue;
+            font-size: 32px;
+        }
+        p {
+            color: green;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Basic CSS Properties</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Change text colour:
+        <pre><code>h1 {
+    color: blue;
+}
+
+p {
+    color: #ff0000;  /* Red in hex code */
+}</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Change font size:
+        <pre><code>h1 {
+    font-size: 32px;
+}
+
+p {
+    font-size: 16px;
+}</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Change font family:
+        <pre><code>body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-family: "Times New Roman", serif;
+}</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete styled webpage:
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Styled Webpage&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+        }
+        
+        h1 {
+            color: #0066cc;
+            font-size: 36px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #009900;
+            font-size: 24px;
+        }
+        
+        p {
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            background-color: yellow;
+            padding: 2px 5px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Styled Webpage!&lt;/h1&gt;
+    &lt;h2&gt;About This Page&lt;/h2&gt;
+    &lt;p&gt;This page uses CSS to make it look &lt;span class="highlight"&gt;beautiful&lt;/span&gt;!&lt;/p&gt;
+    &lt;p&gt;CSS controls colours, fonts, sizes, and much more.&lt;/p&gt;
+    &lt;h2&gt;What I've Learned&lt;/h2&gt;
+    &lt;p&gt;I can now style my webpages with CSS!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a styled webpage with:
+        <ul>
+          <li>A heading with a custom colour and large font size</li>
+          <li>Paragraphs with a different colour</li>
+          <li>A background colour for the page</li>
+          <li>Centred text for the heading</li>
+        </ul>
+        <p><strong>Example solution:</strong></p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Styled Page&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            background-color: lightblue;
+        }
+        h1 {
+            color: darkblue;
+            font-size: 40px;
+            text-align: center;
+        }
+        p {
+            color: darkgreen;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My Amazing Page&lt;/h1&gt;
+    &lt;p&gt;This is styled with CSS!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>CSS:</strong> Cascading Style Sheets - controls appearance</li>
+        <li><strong>Selector:</strong> The part that selects which element to style (like h1 or p)</li>
+        <li><strong>Property:</strong> What you're changing (like color or font-size)</li>
+        <li><strong>Value:</strong> The setting for the property (like blue or 32px)</li>
+        <li><strong>Declaration:</strong> A property and value together (color: blue;)</li>
+        <li><strong>Rule:</strong> A selector and its declarations</li>
+        <li><strong>Class:</strong> A way to style multiple elements (using .classname)</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now style your webpages. Next session, we'll learn more CSS properties including borders, margins, and padding!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

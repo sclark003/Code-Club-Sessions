@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 83: React Best Practices - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 83: React Best Practices</h1>
+      <p>Writing clean and maintainable React code</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Organise your React code</li>
+        <li>Follow naming conventions</li>
+        <li>Use proper file structure</li>
+        <li>Write reusable components</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>React app set up</li>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: File Organisation</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Organise your files:
+        <pre><code>src/
+  components/
+    Button/
+      Button.js
+      Button.css
+    Card/
+      Card.js
+      Card.css
+  pages/
+    Home.js
+    About.js
+  contexts/
+    ThemeContext.js
+  App.js
+  index.js</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Component Structure</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Keep components small and focused:
+        <pre><code>// Good: Small, focused component
+function Button({ text, onClick }) {
+  return &lt;button onClick={onClick}&gt;{text}&lt;/button&gt;;
+}
+
+// Bad: Component does too much
+function BigComponent() {
+  // 200 lines of code doing everything
+}</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a well-organised React app structure:
+        <pre><code>// components/Button/Button.js
+import './Button.css';
+
+function Button({ children, onClick, variant = 'primary' }) {
+  return (
+    &lt;button 
+      className={`btn btn-${variant}`}
+      onClick={onClick}
+    &gt;
+      {children}
+    &lt;/button&gt;
+  );
+}
+
+export default Button;
+
+// components/Card/Card.js
+import './Card.css';
+
+function Card({ title, children }) {
+  return (
+    &lt;div className="card"&gt;
+      {title && &lt;h3 className="card-title"&gt;{title}&lt;/h3&gt;}
+      &lt;div className="card-content"&gt;
+        {children}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Card;
+
+// App.js
+import Button from './components/Button/Button';
+import Card from './components/Card/Card';
+
+function App() {
+  return (
+    &lt;div className="App"&gt;
+      &lt;Card title="Welcome"&gt;
+        &lt;p&gt;This is a well-organised React app!&lt;/p&gt;
+        &lt;Button onClick={() => alert('Clicked!')}&gt;
+          Click Me
+        &lt;/Button&gt;
+      &lt;/Card&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+      </div>
+
+      <div class="challenge">
+        Refactor a component to:
+        <ul>
+          <li>Break it into smaller components</li>
+          <li>Extract reusable parts</li>
+              <li>Organise files properly</li>
+          <li>Add proper prop types or comments</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Component organisation:</strong> Keep related files together</li>
+        <li><strong>Small components:</strong> Easier to understand and reuse</li>
+        <li><strong>Naming:</strong> Use clear, descriptive names</li>
+        <li><strong>Props:</strong> Pass data down, not up</li>
+        <li><strong>Reusability:</strong> Make components flexible with props</li>
+        <li><strong>Comments:</strong> Explain why, not what</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You know React best practices. Next session is your final React project where you'll combine everything!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

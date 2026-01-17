@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 74: React Components - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 74: React Components</h1>
+      <p>Creating reusable UI components</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Create custom React components</li>
+        <li>Use components inside other components</li>
+        <li>Pass data with props</li>
+        <li>Organise components in separate files</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>React app set up</li>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Creating a Component</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a new component file <code>Welcome.js</code>:
+        <pre><code>function Welcome() {
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Welcome to Code Club!&lt;/h2&gt;
+      &lt;p&gt;We're learning React!&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Welcome;</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use it in <code>App.js</code>:
+        <pre><code>import Welcome from './Welcome';
+
+function App() {
+  return (
+    &lt;div className="App"&gt;
+      &lt;Welcome /&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Using Props</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Pass data to components with props:
+        <pre><code>// Welcome.js
+function Welcome(props) {
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Welcome, {props.name}!&lt;/h2&gt;
+      &lt;p&gt;You are {props.age} years old.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+// App.js
+&lt;Welcome name="Sarah" age={12} /&gt;</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete example with multiple components:
+        <pre><code>// StudentCard.js
+function StudentCard(props) {
+  return (
+    &lt;div className="student-card"&gt;
+      &lt;h3&gt;{props.name}&lt;/h3&gt;
+      &lt;p&gt;Age: {props.age}&lt;/p&gt;
+      &lt;p&gt;Grade: {props.grade}&lt;/p&gt;
+      &lt;p&gt;Favourite Subject: {props.subject}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default StudentCard;
+
+// App.js
+import './App.css';
+import StudentCard from './StudentCard';
+
+function App() {
+  return (
+    &lt;div className="App"&gt;
+      &lt;h1&gt;Student Directory&lt;/h1&gt;
+      &lt;div className="students-container"&gt;
+        &lt;StudentCard 
+          name="Sarah" 
+          age={12} 
+          grade={7} 
+          subject="Maths" 
+        /&gt;
+        &lt;StudentCard 
+          name="Alex" 
+          age={13} 
+          grade={8} 
+          subject="Science" 
+        /&gt;
+        &lt;StudentCard 
+          name="Jordan" 
+          age={12} 
+          grade={7} 
+          subject="English" 
+        /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+
+// App.css
+.students-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.student-card {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #0066cc;
+  min-width: 200px;
+}
+
+.student-card h3 {
+  color: #0066cc;
+  margin-top: 0;
+}</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a React app with:
+        <ul>
+          <li>A BookCard component that displays book information</li>
+          <li>Use props for title, author, and pages</li>
+          <li>Display at least 3 different books</li>
+          <li>Style the cards nicely</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Component:</strong> A reusable piece of UI</li>
+        <li><strong>Props:</strong> Data passed to a component</li>
+        <li><strong>JSX:</strong> HTML-like syntax in JavaScript</li>
+        <li><strong>Import/Export:</strong> How to share components between files</li>
+        <li><strong>Component name:</strong> Must start with capital letter</li>
+        <li><strong>Props are read-only:</strong> Components can't change their props</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You can now create reusable components. Next session, we'll learn about React state - making components interactive!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

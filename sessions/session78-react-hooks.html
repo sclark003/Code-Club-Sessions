@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 78: React Hooks - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 78: React Hooks</h1>
+      <p>Using useEffect and other hooks</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what hooks are</li>
+        <li>Use useEffect for side effects</li>
+        <li>Learn about dependency arrays</li>
+        <li>Use multiple hooks together</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>React app set up</li>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: What are Hooks?</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Hooks are special functions that let you use React features. They always start with "use".
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Common hooks:
+        <ul>
+          <li><code>useState</code> - For state</li>
+          <li><code>useEffect</code> - For side effects (like API calls, timers)</li>
+          <li><code>useContext</code> - For context</li>
+        </ul>
+      </div>
+
+      <h2>💻 Activity 2: useEffect Hook</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> useEffect runs code after render:
+        <pre><code>import { useState, useEffect } from 'react';
+
+function Timer() {
+  const [seconds, setSeconds] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds(seconds => seconds + 1);
+    }, 1000);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  return &lt;div&gt;Time: {seconds}s&lt;/div&gt;;
+}</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete example using hooks:
+        <pre><code>// TimerAndCounter.js
+import { useState, useEffect } from 'react';
+import './TimerAndCounter.css';
+
+function TimerAndCounter() {
+  const [count, setCount] = useState(0);
+  const [timer, setTimer] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  
+  // Effect for timer
+  useEffect(() => {
+    let interval = null;
+    if (isRunning) {
+      interval = setInterval(() => {
+        setTimer(timer => timer + 1);
+      }, 1000);
+    } else {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [isRunning]);
+  
+  // Effect that runs when count changes
+  useEffect(() => {
+    document.title = `Count: ${count}`;
+  }, [count]);
+  
+  const reset = () => {
+    setTimer(0);
+    setIsRunning(false);
+  };
+  
+  return (
+    &lt;div className="timer-container"&gt;
+      &lt;h2&gt;Timer and Counter&lt;/h2&gt;
+      
+      &lt;div className="section"&gt;
+        &lt;h3&gt;Counter: {count}&lt;/h3&gt;
+        &lt;button onClick={() => setCount(count + 1)}&gt;Increment&lt;/button&gt;
+        &lt;button onClick={() => setCount(count - 1)}&gt;Decrement&lt;/button&gt;
+        &lt;button onClick={() => setCount(0)}&gt;Reset&lt;/button&gt;
+      &lt;/div&gt;
+      
+      &lt;div className="section"&gt;
+        &lt;h3&gt;Timer: {timer}s&lt;/h3&gt;
+        &lt;button onClick={() => setIsRunning(!isRunning)}&gt;
+          {isRunning ? 'Pause' : 'Start'}
+        &lt;/button&gt;
+        &lt;button onClick={reset}&gt;Reset Timer&lt;/button&gt;
+      &lt;/div&gt;
+      
+      &lt;p className="info"&gt;Check the browser tab title - it shows the count!&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default TimerAndCounter;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a component that:
+        <ul>
+          <li>Fetches and displays the current time</li>
+          <li>Updates every second using useEffect</li>
+          <li>Has a button to toggle the timer on/off</li>
+          <li>Shows how long the timer has been running</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Hook:</strong> Special function starting with "use"</li>
+        <li><strong>useEffect:</strong> Runs code after render</li>
+        <li><strong>Dependency array:</strong> Controls when effect runs</li>
+        <li><strong>Cleanup function:</strong> Code that runs when component unmounts</li>
+        <li><strong>Side effect:</strong> Something that affects something outside the component</li>
+        <li><strong>Empty array []:</strong> Effect runs only once on mount</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You understand React hooks. Next session, we'll learn about building forms in React!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

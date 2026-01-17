@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 77: React Lists and Keys - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 77: React Lists and Keys</h1>
+      <p>Rendering lists of data</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Render lists using map()</li>
+        <li>Understand why keys are important</li>
+        <li>Create dynamic lists from arrays</li>
+        <li>Filter and display data</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>React app set up</li>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Rendering Lists</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use <code>map()</code> to render lists:
+        <pre><code>function FruitList() {
+  const fruits = ["apple", "banana", "orange"];
+  
+  return (
+    &lt;ul&gt;
+      {fruits.map((fruit) => (
+        &lt;li key={fruit}&gt;{fruit}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}</code></pre>
+      </div>
+
+      <div class="tip">
+        Always include a <code>key</code> prop when rendering lists - it helps React track which items have changed!
+      </div>
+
+      <h2>💻 Activity 2: Lists with Objects</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Render lists of objects:
+        <pre><code>const students = [
+  { id: 1, name: "Sarah", grade: 7 },
+  { id: 2, name: "Alex", grade: 8 }
+];
+
+{students.map((student) => (
+  &lt;div key={student.id}&gt;
+    &lt;h3&gt;{student.name}&lt;/h3&gt;
+    &lt;p&gt;Grade: {student.grade}&lt;/p&gt;
+  &lt;/div&gt;
+))}</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete list component:
+        <pre><code>// StudentList.js
+import { useState } from 'react';
+import './StudentList.css';
+
+function StudentList() {
+  const [students] = useState([
+    { id: 1, name: "Sarah", age: 12, grade: 7, subject: "Maths" },
+    { id: 2, name: "Alex", age: 13, grade: 8, subject: "Science" },
+    { id: 3, name: "Jordan", age: 12, grade: 7, subject: "English" },
+    { id: 4, name: "Taylor", age: 13, grade: 8, subject: "History" }
+  ]);
+  
+  const [filterGrade, setFilterGrade] = useState('all');
+  
+  const filteredStudents = filterGrade === 'all' 
+    ? students 
+    : students.filter(s => s.grade === parseInt(filterGrade));
+  
+  return (
+    &lt;div className="student-list-container"&gt;
+      &lt;h2&gt;Student Directory&lt;/h2&gt;
+      
+      &lt;div className="filter"&gt;
+        &lt;label&gt;Filter by Grade:&lt;/label&gt;
+        &lt;select 
+          value={filterGrade} 
+          onChange={(e) => setFilterGrade(e.target.value)}
+        &gt;
+          &lt;option value="all"&gt;All Grades&lt;/option&gt;
+          &lt;option value="7"&gt;Grade 7&lt;/option&gt;
+          &lt;option value="8"&gt;Grade 8&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      
+      &lt;div className="students-grid"&gt;
+        {filteredStudents.map((student) => (
+          &lt;div key={student.id} className="student-card"&gt;
+            &lt;h3&gt;{student.name}&lt;/h3&gt;
+            &lt;p&gt;&lt;strong&gt;Age:&lt;/strong&gt; {student.age}&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Grade:&lt;/strong&gt; {student.grade}&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Subject:&lt;/strong&gt; {student.subject}&lt;/p&gt;
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+      
+      &lt;p className="count"&gt;
+        Showing {filteredStudents.length} of {students.length} students
+      &lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default StudentList;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a component that:
+        <ul>
+          <li>Displays a list of books</li>
+          <li>Each book shows title, author, and pages</li>
+          <li>Has a filter to show only long books (over 300 pages)</li>
+          <li>Shows the total number of books</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>map():</strong> Creates a new array by transforming each item</li>
+        <li><strong>key:</strong> Unique identifier for list items</li>
+        <li><strong>filter():</strong> Creates a new array with filtered items</li>
+        <li><strong>Conditional rendering:</strong> Showing different content based on conditions</li>
+        <li><strong>Unique keys:</strong> Each item needs a unique key (usually an ID)</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now render lists in React. Next session, we'll learn about more React hooks like useEffect!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

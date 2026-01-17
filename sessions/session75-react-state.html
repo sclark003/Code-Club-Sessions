@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 75: React State - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 75: React State</h1>
+      <p>Making components interactive with state</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what state is</li>
+        <li>Use useState hook</li>
+        <li>Update state with setState</li>
+        <li>Create interactive components</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>React app set up</li>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: What is State?</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> State is data that can change in a component. When state changes, React automatically updates the display!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use the <code>useState</code> hook to add state:
+        <pre><code>import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() => setCount(count + 1)}&gt;Increment&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Updating State</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Always use the setter function to update state:
+        <pre><code>const [name, setName] = useState("Sarah");
+
+// Update state
+setName("Alex");
+
+// Don't do this!
+// name = "Alex";  // Wrong!</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete interactive counter:
+        <pre><code>// Counter.js
+import { useState } from 'react';
+import './Counter.css';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  
+  const increment = () => {
+    setCount(count + 1);
+  };
+  
+  const decrement = () => {
+    setCount(count - 1);
+  };
+  
+  const reset = () => {
+    setCount(0);
+  };
+  
+  return (
+    &lt;div className="counter-container"&gt;
+      &lt;h2&gt;Counter&lt;/h2&gt;
+      &lt;div className="count-display"&gt;{count}&lt;/div&gt;
+      &lt;div className="buttons"&gt;
+        &lt;button onClick={decrement}&gt;-&lt;/button&gt;
+        &lt;button onClick={reset}&gt;Reset&lt;/button&gt;
+        &lt;button onClick={increment}&gt;+&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Counter;
+
+// Counter.css
+.counter-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.count-display {
+  font-size: 48px;
+  font-weight: bold;
+  color: #0066cc;
+  margin: 20px 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: #0052a3;
+}</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a component with state that:
+        <ul>
+          <li>Tracks a person's name</li>
+          <li>Has an input field to change the name</li>
+          <li>Displays a greeting with the current name</li>
+          <li>Has a button to reset to default name</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>State:</strong> Data that can change in a component</li>
+        <li><strong>useState:</strong> Hook to add state to a component</li>
+        <li><strong>Hook:</strong> Special function that starts with "use"</li>
+        <li><strong>setState:</strong> Function to update state</li>
+        <li><strong>Re-render:</strong> React updates the display when state changes</li>
+        <li><strong>Never mutate state directly:</strong> Always use setState</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now make components interactive with state. Next session, we'll learn about handling events in React!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

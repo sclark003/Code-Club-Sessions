@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 71: JavaScript Arrays and Loops - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 71: JavaScript Arrays and Loops</h1>
+      <p>Working with lists and repeating actions</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Create and work with arrays</li>
+        <li>Use for loops and forEach</li>
+        <li>Add and remove array items</li>
+        <li>Display arrays on a webpage</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Creating Arrays</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create arrays:
+        <pre><code>let fruits = ["apple", "banana", "orange"];
+let numbers = [1, 2, 3, 4, 5];
+let mixed = ["hello", 42, true];</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Looping Through Arrays</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use for loops:
+        <pre><code>for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+// forEach method
+fruits.forEach(function(fruit) {
+    console.log(fruit);
+});
+
+// Modern arrow function
+fruits.forEach(fruit => console.log(fruit));</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete array manipulation example:
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Arrays and Loops&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        #list {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+        .list-item {
+            padding: 5px;
+            margin: 5px 0;
+            background-color: white;
+            border-radius: 3px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Array Manager&lt;/h1&gt;
+    &lt;input type="text" id="itemInput" placeholder="Enter item"&gt;
+    &lt;button onclick="addItem()"&gt;Add Item&lt;/button&gt;
+    &lt;button onclick="removeLast()"&gt;Remove Last&lt;/button&gt;
+    &lt;button onclick="clearAll()"&gt;Clear All&lt;/button&gt;
+    &lt;button onclick="sortItems()"&gt;Sort&lt;/button&gt;
+    
+    &lt;div id="list"&gt;&lt;/div&gt;
+    &lt;div id="count"&gt;&lt;/div&gt;
+    
+    &lt;script&gt;
+        let items = ["apple", "banana", "orange"];
+        
+        function displayList() {
+            const listDiv = document.getElementById('list');
+            const countDiv = document.getElementById('count');
+            
+            if (items.length === 0) {
+                listDiv.innerHTML = '&lt;p&gt;No items in list&lt;/p&gt;';
+            } else {
+                listDiv.innerHTML = '';
+                items.forEach((item, index) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'list-item';
+                    itemDiv.textContent = `${index + 1}. ${item}`;
+                    listDiv.appendChild(itemDiv);
+                });
+            }
+            
+            countDiv.textContent = `Total items: ${items.length}`;
+        }
+        
+        function addItem() {
+            const input = document.getElementById('itemInput');
+            const newItem = input.value.trim();
+            
+            if (newItem) {
+                items.push(newItem);
+                input.value = '';
+                displayList();
+            }
+        }
+        
+        function removeLast() {
+            if (items.length > 0) {
+                items.pop();
+                displayList();
+            }
+        }
+        
+        function clearAll() {
+            items = [];
+            displayList();
+        }
+        
+        function sortItems() {
+            items.sort();
+            displayList();
+        }
+        
+        // Display initial list
+        displayList();
+        
+        // Allow Enter key to add item
+        document.getElementById('itemInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                addItem();
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Stores a list of tasks</li>
+          <li>Allows adding and removing tasks</li>
+          <li>Shows the total number of tasks</li>
+          <li>Can mark tasks as complete</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Array:</strong> A list of items</li>
+        <li><strong>Index:</strong> Position in array (starts at 0)</li>
+        <li><strong>push():</strong> Adds item to end of array</li>
+        <li><strong>pop():</strong> Removes last item</li>
+        <li><strong>forEach():</strong> Loops through array</li>
+        <li><strong>length:</strong> Number of items in array</li>
+        <li><strong>sort():</strong> Sorts array alphabetically</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now work with arrays and loops. Next session, we'll learn about objects and how to structure data!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

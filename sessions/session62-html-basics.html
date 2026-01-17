@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 62: HTML Basics - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 62: HTML Basics</h1>
+      <p>Learning essential HTML elements</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Learn common HTML elements (headings, paragraphs, lists)</li>
+        <li>Understand how to create links and images</li>
+        <li>Learn about HTML attributes</li>
+        <li>Create a well-structured HTML page</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Headings</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> HTML has 6 levels of headings, from h1 (largest) to h6 (smallest):
+        <pre><code>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;h3&gt;Smaller Heading&lt;/h3&gt;
+&lt;h4&gt;Even Smaller&lt;/h4&gt;
+&lt;h5&gt;Very Small&lt;/h5&gt;
+&lt;h6&gt;Smallest&lt;/h6&gt;</code></pre>
+      </div>
+
+      <div class="tip">
+        Use h1 only once per page for the main title. Use h2, h3, etc. for sections and subsections!
+      </div>
+
+      <h2>💻 Activity 2: Text Formatting</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Format text with these elements:
+        <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;strong&gt;This text is bold.&lt;/strong&gt;
+&lt;em&gt;This text is italic.&lt;/em&gt;
+&lt;br&gt;This creates a line break.
+&lt;hr&gt;This creates a horizontal line.</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Lists</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create ordered (numbered) and unordered (bulleted) lists:
+        <pre><code>&lt;!-- Unordered list (bullets) --&gt;
+&lt;ul&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered list (numbers) --&gt;
+&lt;ol&gt;
+    &lt;li&gt;First step&lt;/li&gt;
+    &lt;li&gt;Second step&lt;/li&gt;
+    &lt;li&gt;Third step&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+      </div>
+
+      <h2>📊 Activity 4: Links and Images</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create links to other pages:
+        <pre><code>&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;
+&lt;a href="page2.html"&gt;Go to Page 2&lt;/a&gt;
+&lt;a href="#section1"&gt;Jump to Section 1&lt;/a&gt;</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Add images:
+        <pre><code>&lt;img src="image.jpg" alt="Description of image"&gt;
+&lt;img src="https://example.com/image.png" alt="Online image"&gt;</code></pre>
+      </div>
+
+      <div class="tip">
+        Always include the <code>alt</code> attribute for images - it helps screen readers and shows text if the image doesn't load!
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete HTML page using all these elements:
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Favourite Things&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My Favourite Things&lt;/h1&gt;
+    
+    &lt;h2&gt;About Me&lt;/h2&gt;
+    &lt;p&gt;Hi! My name is &lt;strong&gt;Sarah&lt;/strong&gt; and these are some of my favourite things.&lt;/p&gt;
+    
+    &lt;hr&gt;
+    
+    &lt;h2&gt;Favourite Foods&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Pizza&lt;/li&gt;
+        &lt;li&gt;Ice cream&lt;/li&gt;
+        &lt;li&gt;Chocolate&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Top 3 Hobbies&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li&gt;Coding&lt;/li&gt;
+        &lt;li&gt;Reading&lt;/li&gt;
+        &lt;li&gt;Gaming&lt;/li&gt;
+    &lt;/ol&gt;
+    
+    &lt;h2&gt;Useful Links&lt;/h2&gt;
+    &lt;p&gt;Visit &lt;a href="https://www.python.org"&gt;Python's website&lt;/a&gt; to learn more!&lt;/p&gt;
+    &lt;p&gt;Check out &lt;a href="https://www.w3schools.com"&gt;W3Schools&lt;/a&gt; for web development tutorials.&lt;/p&gt;
+    
+    &lt;hr&gt;
+    &lt;p&gt;&lt;em&gt;Thanks for visiting my page!&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a webpage about your favourite book or film that includes:
+        <ul>
+          <li>A main heading with the title</li>
+          <li>A paragraph describing why you like it</li>
+          <li>A list of main characters</li>
+          <li>A link to more information</li>
+          <li>Use bold and italic text for emphasis</li>
+        </ul>
+        <p><strong>Example solution:</strong></p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Favourite Book&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Harry Potter and the Philosopher's Stone&lt;/h1&gt;
+    &lt;p&gt;This is my &lt;strong&gt;favourite&lt;/strong&gt; book because it's full of &lt;em&gt;magic and adventure&lt;/em&gt;!&lt;/p&gt;
+    &lt;h2&gt;Main Characters&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Harry Potter&lt;/li&gt;
+        &lt;li&gt;Hermione Granger&lt;/li&gt;
+        &lt;li&gt;Ron Weasley&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Learn more at &lt;a href="https://www.wizardingworld.com"&gt;Wizarding World&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Element:</strong> A piece of HTML code (like &lt;h1&gt; or &lt;p&gt;)</li>
+        <li><strong>Tag:</strong> The HTML code that creates an element</li>
+        <li><strong>Opening tag:</strong> &lt;h1&gt; - starts an element</li>
+        <li><strong>Closing tag:</strong> &lt;/h1&gt; - ends an element</li>
+        <li><strong>Attribute:</strong> Extra information in a tag (like href in &lt;a&gt; or src in &lt;img&gt;)</li>
+        <li><strong>Self-closing tag:</strong> Tags that don't need closing (like &lt;br&gt; or &lt;img&gt;)</li>
+        <li><strong>Nested elements:</strong> Elements inside other elements</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You now know the basics of HTML. Next session, we'll learn about CSS to make your pages look beautiful!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

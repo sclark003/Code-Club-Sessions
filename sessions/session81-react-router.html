@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 81: React Router - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 81: React Router</h1>
+      <p>Adding navigation to your React app</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Install and set up React Router</li>
+        <li>Create routes for different pages</li>
+        <li>Add navigation links</li>
+        <li>Use URL parameters</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>React app set up</li>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Installing React Router</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Install React Router:
+        <pre><code>npm install react-router-dom</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Setting Up Routes</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Set up routing in your app:
+        <pre><code>import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
+
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;Routes&gt;
+        &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+        &lt;Route path="/about" element={&lt;About /&gt;} /&gt;
+        &lt;Route path="/contact" element={&lt;Contact /&gt;} /&gt;
+      &lt;/Routes&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete app with routing:
+        <pre><code>// App.js
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Students from './pages/Students';
+import './App.css';
+
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;div className="App"&gt;
+        &lt;nav className="navbar"&gt;
+          &lt;Link to="/"&gt;Home&lt;/Link&gt;
+          &lt;Link to="/about"&gt;About&lt;/Link&gt;
+          &lt;Link to="/students"&gt;Students&lt;/Link&gt;
+        &lt;/nav&gt;
+        
+        &lt;Routes&gt;
+          &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+          &lt;Route path="/about" element={&lt;About /&gt;} /&gt;
+          &lt;Route path="/students" element={&lt;Students /&gt;} /&gt;
+        &lt;/Routes&gt;
+      &lt;/div&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+
+export default App;
+
+// pages/Home.js
+function Home() {
+  return (
+    &lt;div className="page"&gt;
+      &lt;h1&gt;Welcome to Code Club!&lt;/h1&gt;
+      &lt;p&gt;This is the home page.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Home;
+
+// pages/About.js
+function About() {
+  return (
+    &lt;div className="page"&gt;
+      &lt;h1&gt;About Us&lt;/h1&gt;
+      &lt;p&gt;We're learning React and web development!&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default About;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a multi-page app with:
+        <ul>
+          <li>Home, About, and Projects pages</li>
+          <li>Navigation menu</li>
+          <li>Each page with different content</li>
+          <li>Styled navigation</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>React Router:</strong> Library for navigation in React</li>
+        <li><strong>BrowserRouter:</strong> Enables routing</li>
+        <li><strong>Routes:</strong> Container for route definitions</li>
+        <li><strong>Route:</strong> Defines a path and component</li>
+        <li><strong>Link:</strong> Navigation link (like &lt;a&gt; but for React)</li>
+        <li><strong>path:</strong> URL path for the route</li>
+        <li><strong>element:</strong> Component to render for that route</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now create multi-page React apps. Next session, we'll learn about React Context for sharing data!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

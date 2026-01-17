@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 73: Introduction to React - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 73: Introduction to React</h1>
+      <p>Building modern user interfaces</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what React is and why we use it</li>
+        <li>Set up a React development environment</li>
+        <li>Create your first React component</li>
+        <li>Understand JSX syntax</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Node.js installed (<a href="https://nodejs.org/" target="_blank">nodejs.org</a>)</li>
+        <li>Code editor (VS Code recommended)</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: What is React?</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> React is a JavaScript library for building user interfaces. It makes it easier to create interactive webpages!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> React uses components - reusable pieces of code that represent parts of your webpage.
+      </div>
+
+      <div class="tip">
+        React is used by many big companies like Facebook, Netflix, and Instagram. It's very popular for building modern websites!
+      </div>
+
+      <h2>💻 Activity 2: Setting Up React</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Install Node.js from <a href="https://nodejs.org/" target="_blank">nodejs.org</a> (if not already installed)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create a new React app using Create React App:
+        <pre><code># In terminal/command prompt:
+npx create-react-app my-first-app
+cd my-first-app
+npm start</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> This will open your app in the browser at <code>http://localhost:3000</code>
+      </div>
+
+      <h2>🎨 Activity 3: Your First Component</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Open <code>src/App.js</code> and see your first component:
+        <pre><code>function App() {
+  return (
+    &lt;div className="App"&gt;
+      &lt;h1&gt;Hello, React!&lt;/h1&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Notice JSX - it looks like HTML but it's JavaScript! JSX lets you write HTML-like code in JavaScript.
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete first React component:
+        <pre><code>// App.js
+import './App.css';
+
+function App() {
+  return (
+    &lt;div className="App"&gt;
+      &lt;header className="App-header"&gt;
+        &lt;h1&gt;Welcome to React!&lt;/h1&gt;
+        &lt;p&gt;This is my first React application.&lt;/p&gt;
+        &lt;div className="info-box"&gt;
+          &lt;h2&gt;What is React?&lt;/h2&gt;
+          &lt;ul&gt;
+            &lt;li&gt;A JavaScript library&lt;/li&gt;
+            &lt;li&gt;For building user interfaces&lt;/li&gt;
+            &lt;li&gt;Uses components&lt;/li&gt;
+            &lt;li&gt;Very popular!&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/header&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Example CSS:</span> Style your component:
+        <pre><code>/* App.css */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-box {
+  background-color: #61dafb;
+  color: #282c34;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  max-width: 500px;
+}
+
+.info-box ul {
+  text-align: left;
+}</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create your first React app that displays:
+        <ul>
+          <li>Your name as a heading</li>
+          <li>A paragraph about why you're learning React</li>
+          <li>A list of things you want to build</li>
+          <li>Styled with CSS</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>React:</strong> A JavaScript library for building UIs</li>
+        <li><strong>Component:</strong> A reusable piece of UI code</li>
+        <li><strong>JSX:</strong> JavaScript syntax that looks like HTML</li>
+        <li><strong>Create React App:</strong> Tool to set up React projects</li>
+        <li><strong>npm:</strong> Node Package Manager - installs packages</li>
+        <li><strong>className:</strong> JSX uses className instead of class</li>
+        <li><strong>export default:</strong> Makes component available to other files</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You've created your first React app. Next session, we'll learn about React components and how to create reusable UI pieces!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

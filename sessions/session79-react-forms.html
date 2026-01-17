@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 79: React Forms - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 79: React Forms</h1>
+      <p>Building and validating forms in React</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Create controlled form inputs</li>
+        <li>Handle form submission</li>
+        <li>Validate form data</li>
+        <li>Show error messages</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>React app set up</li>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Controlled Inputs</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> In React, form inputs are "controlled" - their value comes from state:
+        <pre><code>const [name, setName] = useState('');
+
+&lt;input 
+  type="text" 
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+/&gt;</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Form Validation</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Validate before submission:
+        <pre><code>const [errors, setErrors] = useState({});
+
+const validate = () => {
+  const newErrors = {};
+  if (!name) newErrors.name = 'Name is required';
+  if (name.length < 3) newErrors.name = 'Name must be at least 3 characters';
+  return newErrors;
+};</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete form with validation:
+        <pre><code>// ContactForm.js
+import { useState } from 'react';
+import './ContactForm.css';
+
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: ''
+      });
+    }
+  };
+  
+  const validate = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    } else if (formData.name.length < 2) {
+      newErrors.name = 'Name must be at least 2 characters';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    } else if (formData.message.length < 10) {
+      newErrors.message = 'Message must be at least 10 characters';
+    }
+    
+    return newErrors;
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    
+    if (Object.keys(validationErrors).length === 0) {
+      // Form is valid - submit it
+      console.log('Form submitted:', formData);
+      setSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      setErrors(validationErrors);
+    }
+  };
+  
+  if (submitted) {
+    return (
+      &lt;div className="success-message"&gt;
+        &lt;h2&gt;Thank you!&lt;/h2&gt;
+        &lt;p&gt;Your message has been sent successfully.&lt;/p&gt;
+        &lt;button onClick={() => setSubmitted(false)}&gt;Send Another&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+  
+  return (
+    &lt;form className="contact-form" onSubmit={handleSubmit}&gt;
+      &lt;h2&gt;Contact Form&lt;/h2&gt;
+      
+      &lt;div className="form-group"&gt;
+        &lt;label htmlFor="name"&gt;Name:&lt;/label&gt;
+        &lt;input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          className={errors.name ? 'error' : ''}
+        /&gt;
+        {errors.name && &lt;span className="error-message"&gt;{errors.name}&lt;/span&gt;}
+      &lt;/div&gt;
+      
+      &lt;div className="form-group"&gt;
+        &lt;label htmlFor="email"&gt;Email:&lt;/label&gt;
+        &lt;input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className={errors.email ? 'error' : ''}
+        /&gt;
+        {errors.email && &lt;span className="error-message"&gt;{errors.email}&lt;/span&gt;}
+      &lt;/div&gt;
+      
+      &lt;div className="form-group"&gt;
+        &lt;label htmlFor="message"&gt;Message:&lt;/label&gt;
+        &lt;textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          rows="5"
+          className={errors.message ? 'error' : ''}
+        /&gt;
+        {errors.message && &lt;span className="error-message"&gt;{errors.message}&lt;/span&gt;}
+        &lt;div className="char-count"&gt;
+          {formData.message.length} / 500 characters
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;button type="submit"&gt;Send Message&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+
+export default ContactForm;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a registration form with:
+        <ul>
+          <li>Username, email, password, and confirm password fields</li>
+          <li>Real-time validation</li>
+          <li>Password strength indicator</li>
+          <li>Success message on submission</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Controlled component:</strong> Input value controlled by state</li>
+        <li><strong>onChange:</strong> Updates state when input changes</li>
+        <li><strong>onSubmit:</strong> Handles form submission</li>
+        <li><strong>Validation:</strong> Checking if data is correct</li>
+        <li><strong>Error state:</strong> Storing validation errors</li>
+        <li><strong>Spread operator:</strong> ... used to copy objects</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now build forms in React. Next session, we'll learn about making API calls and fetching data!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

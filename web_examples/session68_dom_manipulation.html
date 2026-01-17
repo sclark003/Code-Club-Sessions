@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        #content {
+            padding: 20px;
+            border: 2px solid #333;
+            margin: 20px 0;
+            min-height: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="mainHeading">DOM Manipulation Demo</h1>
+    <div id="content">This content can be changed!</div>
+    
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeColour()">Change Colour</button>
+    <button onclick="addElement()">Add Element</button>
+    <button onclick="removeElement()">Remove Element</button>
+    <button onclick="reset()">Reset</button>
+    
+    <script>
+        function changeText() {
+            const content = document.getElementById('content');
+            content.textContent = 'Text changed with JavaScript!';
+        }
+        
+        function changeColour() {
+            const content = document.getElementById('content');
+            const colours = ['red', 'blue', 'green', 'purple', 'orange'];
+            const randomColour = colours[Math.floor(Math.random() * colours.length)];
+            content.style.backgroundColor = randomColour;
+            content.style.color = 'white';
+        }
+        
+        function addElement() {
+            const content = document.getElementById('content');
+            const newElement = document.createElement('p');
+            newElement.textContent = 'New element added!';
+            newElement.className = 'highlight';
+            content.appendChild(newElement);
+        }
+        
+        function removeElement() {
+            const content = document.getElementById('content');
+            if (content.children.length > 0) {
+                content.removeChild(content.lastChild);
+            }
+        }
+        
+        function reset() {
+            const content = document.getElementById('content');
+            content.innerHTML = 'This content can be changed!';
+            content.style.backgroundColor = '';
+            content.style.color = '';
+        }
+    </script>
+</body>
+</html>

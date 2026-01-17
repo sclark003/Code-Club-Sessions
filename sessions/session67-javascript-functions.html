@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 67: JavaScript Functions - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 67: JavaScript Functions</h1>
+      <p>Creating reusable blocks of code</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what functions are</li>
+        <li>Learn to create and call functions</li>
+        <li>Use parameters and return values</li>
+        <li>Create interactive programs with functions</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Creating Functions</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a function using the <code>function</code> keyword:
+        <pre><code>function greet() {
+    console.log("Hello!");
+}
+
+// Call the function
+greet();</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Functions with parameters:
+        <pre><code>function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+greet("Sarah");</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Return Values</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Functions can return values:
+        <pre><code>function add(a, b) {
+    return a + b;
+}
+
+let result = add(5, 3);
+console.log(result);  // 8</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a calculator using functions:
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Function Calculator&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            width: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #009900;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Function Calculator&lt;/h1&gt;
+    &lt;input type="number" id="num1" placeholder="Number 1"&gt;
+    &lt;input type="number" id="num2" placeholder="Number 2"&gt;
+    &lt;br&gt;
+    &lt;button onclick="calculate('add')"&gt;Add&lt;/button&gt;
+    &lt;button onclick="calculate('subtract')"&gt;Subtract&lt;/button&gt;
+    &lt;button onclick="calculate('multiply')"&gt;Multiply&lt;/button&gt;
+    &lt;button onclick="calculate('divide')"&gt;Divide&lt;/button&gt;
+    &lt;div id="result"&gt;&lt;/div&gt;
+    
+    &lt;script&gt;
+        function add(a, b) {
+            return a + b;
+        }
+        
+        function subtract(a, b) {
+            return a - b;
+        }
+        
+        function multiply(a, b) {
+            return a * b;
+        }
+        
+        function divide(a, b) {
+            if (b === 0) {
+                return "Cannot divide by zero!";
+            }
+            return a / b;
+        }
+        
+        function calculate(operation) {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            let result;
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').textContent = "Please enter valid numbers!";
+                return;
+            }
+            
+            switch(operation) {
+                case 'add':
+                    result = add(num1, num2);
+                    break;
+                case 'subtract':
+                    result = subtract(num1, num2);
+                    break;
+                case 'multiply':
+                    result = multiply(num1, num2);
+                    break;
+                case 'divide':
+                    result = divide(num1, num2);
+                    break;
+            }
+            
+            document.getElementById('result').textContent = `Result: ${result}`;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program with functions that:
+        <ul>
+          <li>Converts temperature from Celsius to Fahrenheit</li>
+          <li>Calculates the area of a circle</li>
+          <li>Checks if a number is even or odd</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Function:</strong> A reusable block of code</li>
+        <li><strong>Parameter:</strong> Input to a function</li>
+        <li><strong>Return:</strong> Output from a function</li>
+        <li><strong>Call:</strong> To execute a function</li>
+        <li><strong>Arrow function:</strong> A shorter way to write functions (() => {})</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now create reusable functions. Next session, we'll learn about DOM manipulation - changing webpage content with JavaScript!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

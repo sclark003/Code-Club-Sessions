@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 69: JavaScript Events - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 69: JavaScript Events</h1>
+      <p>Responding to user actions</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what events are</li>
+        <li>Learn common events (click, input, change)</li>
+        <li>Add event listeners</li>
+        <li>Create interactive webpages</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Common Events</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Common events include:
+        <ul>
+          <li><code>click</code> - When something is clicked</li>
+          <li><code>input</code> - When input field changes</li>
+          <li><code>change</code> - When value changes</li>
+          <li><code>mouseover</code> - When mouse hovers</li>
+          <li><code>keydown</code> - When key is pressed</li>
+        </ul>
+      </div>
+
+      <h2>💻 Activity 2: Adding Event Listeners</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add event listeners:
+        <pre><code>// Method 1: Inline
+&lt;button onclick="doSomething()"&gt;Click Me&lt;/button&gt;
+
+// Method 2: addEventListener (better!)
+button.addEventListener('click', function() {
+    console.log('Clicked!');
+});</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete interactive example:
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;JavaScript Events&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: #0066cc;
+            margin: 20px auto;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        button, input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Event Examples&lt;/h1&gt;
+    
+    &lt;button id="clickBtn"&gt;Click Me!&lt;/button&gt;
+    &lt;button id="hoverBtn"&gt;Hover Over Me!&lt;/button&gt;
+    &lt;br&gt;
+    &lt;input type="text" id="textInput" placeholder="Type something..."&gt;
+    &lt;br&gt;
+    &lt;div id="box"&gt;&lt;/div&gt;
+    &lt;div id="output"&gt;&lt;/div&gt;
+    
+    &lt;script&gt;
+        // Click event
+        document.getElementById('clickBtn').addEventListener('click', function() {
+            document.getElementById('output').textContent = 'Button was clicked!';
+            document.getElementById('box').style.backgroundColor = 'green';
+        });
+        
+        // Mouseover event
+        document.getElementById('hoverBtn').addEventListener('mouseover', function() {
+            this.style.backgroundColor = 'orange';
+        });
+        
+        document.getElementById('hoverBtn').addEventListener('mouseout', function() {
+            this.style.backgroundColor = '#0066cc';
+        });
+        
+        // Input event
+        document.getElementById('textInput').addEventListener('input', function(e) {
+            document.getElementById('output').textContent = 'You typed: ' + e.target.value;
+        });
+        
+        // Box click
+        document.getElementById('box').addEventListener('click', function() {
+            const colours = ['red', 'blue', 'green', 'purple', 'orange'];
+            const randomColour = colours[Math.floor(Math.random() * colours.length)];
+            this.style.backgroundColor = randomColour;
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create an interactive page with:
+        <ul>
+          <li>A button that changes colour on hover</li>
+          <li>An input that shows character count as you type</li>
+          <li>A div that changes size when clicked</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Event:</strong> An action that happens (click, type, hover)</li>
+        <li><strong>Event Listener:</strong> Code that waits for an event</li>
+        <li><strong>addEventListener():</strong> Method to add event listeners</li>
+        <li><strong>Event Object:</strong> Contains information about the event</li>
+        <li><strong>this:</strong> Refers to the element that triggered the event</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now respond to user actions. Next session, we'll learn about forms and form validation!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 66: JavaScript Variables - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 66: JavaScript Variables</h1>
+      <p>Storing and working with data in JavaScript</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Learn to declare variables (let, const, var)</li>
+        <li>Understand different data types</li>
+        <li>Use variables in your code</li>
+        <li>Create interactive programs with variables</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Declaring Variables</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Use <code>let</code> for variables that can change:
+        <pre><code>let name = "Sarah";
+let age = 12;
+let isStudent = true;</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use <code>const</code> for values that won't change:
+        <pre><code>const pi = 3.14159;
+const schoolName = "Code Club School";</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Data Types</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> JavaScript has different data types:
+        <pre><code>// String (text)
+let name = "Sarah";
+let greeting = 'Hello';
+
+// Number
+let age = 12;
+let price = 9.99;
+
+// Boolean (true/false)
+let isStudent = true;
+let isWeekend = false;
+
+// Array (list)
+let fruits = ["apple", "banana", "orange"];
+
+// Object
+let person = {
+    name: "Sarah",
+    age: 12,
+    isStudent: true
+};</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete example using variables:
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;JavaScript Variables&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;JavaScript Variables Demo&lt;/h1&gt;
+    &lt;button onclick="showVariables()"&gt;Show Variables&lt;/button&gt;
+    &lt;button onclick="doMath()"&gt;Do Math&lt;/button&gt;
+    &lt;button onclick="showArray()"&gt;Show Array&lt;/button&gt;
+    &lt;button onclick="showObject()"&gt;Show Object&lt;/button&gt;
+    
+    &lt;div id="output"&gt;Click a button to see variables in action!&lt;/div&gt;
+    
+    &lt;script&gt;
+        // Variables
+        const name = "Sarah";
+        let age = 12;
+        const isStudent = true;
+        const fruits = ["apple", "banana", "orange"];
+        const person = {
+            name: "Sarah",
+            age: 12,
+            school: "Code Club School"
+        };
+        
+        function showVariables() {
+            let output = `Name: ${name}&lt;br&gt;`;
+            output += `Age: ${age}&lt;br&gt;`;
+            output += `Is Student: ${isStudent}`;
+            document.getElementById('output').innerHTML = output;
+        }
+        
+        function doMath() {
+            let num1 = 10;
+            let num2 = 5;
+            let sum = num1 + num2;
+            let product = num1 * num2;
+            
+            let output = `${num1} + ${num2} = ${sum}&lt;br&gt;`;
+            output += `${num1} × ${num2} = ${product}`;
+            document.getElementById('output').innerHTML = output;
+        }
+        
+        function showArray() {
+            let output = "Fruits:&lt;br&gt;";
+            fruits.forEach((fruit, index) => {
+                output += `${index + 1}. ${fruit}&lt;br&gt;`;
+            });
+            document.getElementById('output').innerHTML = output;
+        }
+        
+        function showObject() {
+            let output = "Person Information:&lt;br&gt;";
+            output += `Name: ${person.name}&lt;br&gt;`;
+            output += `Age: ${person.age}&lt;br&gt;`;
+            output += `School: ${person.school}`;
+            document.getElementById('output').innerHTML = output;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Stores your name, age, and favourite colour in variables</li>
+          <li>Has a button that displays all this information</li>
+          <li>Uses template literals (backticks) to format the output</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>let:</strong> Declares a variable that can be changed</li>
+        <li><strong>const:</strong> Declares a constant (can't be changed)</li>
+        <li><strong>String:</strong> Text data (in quotes)</li>
+        <li><strong>Number:</strong> Numeric data (integers or decimals)</li>
+        <li><strong>Boolean:</strong> True or false values</li>
+        <li><strong>Array:</strong> A list of items</li>
+        <li><strong>Object:</strong> A collection of key-value pairs</li>
+        <li><strong>Template literal:</strong> Strings using backticks with ${} for variables</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You can now store data in variables. Next session, we'll learn about JavaScript functions and how to organise your code!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

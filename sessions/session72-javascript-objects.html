@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 72: JavaScript Objects - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 72: JavaScript Objects</h1>
+      <p>Structuring data with objects</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what objects are</li>
+        <li>Create and access object properties</li>
+        <li>Use object methods</li>
+        <li>Work with arrays of objects</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Creating Objects</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create objects with properties:
+        <pre><code>let person = {
+    name: "Sarah",
+    age: 12,
+    school: "Code Club School",
+    isStudent: true
+};</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Access properties:
+        <pre><code>console.log(person.name);  // "Sarah"
+console.log(person['age']);  // 12</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Object Methods</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add functions to objects:
+        <pre><code>let person = {
+    name: "Sarah",
+    age: 12,
+    greet: function() {
+        return "Hello, I'm " + this.name;
+    }
+};
+
+console.log(person.greet());</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete example with objects:
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;JavaScript Objects&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .student-card {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #0066cc;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Student Management&lt;/h1&gt;
+    &lt;button onclick="displayAll()"&gt;Display All Students&lt;/button&gt;
+    &lt;button onclick="findStudent()"&gt;Find Student&lt;/button&gt;
+    &lt;button onclick="showAverages()"&gt;Show Averages&lt;/button&gt;
+    
+    &lt;div id="output"&gt;&lt;/div&gt;
+    
+    &lt;script&gt;
+        // Array of student objects
+        let students = [
+            {
+                name: "Sarah",
+                age: 12,
+                grade: 7,
+                scores: [85, 90, 88],
+                getAverage: function() {
+                    const sum = this.scores.reduce((a, b) => a + b, 0);
+                    return (sum / this.scores.length).toFixed(1);
+                }
+            },
+            {
+                name: "Alex",
+                age: 13,
+                grade: 8,
+                scores: [92, 87, 95],
+                getAverage: function() {
+                    const sum = this.scores.reduce((a, b) => a + b, 0);
+                    return (sum / this.scores.length).toFixed(1);
+                }
+            },
+            {
+                name: "Jordan",
+                age: 12,
+                grade: 7,
+                scores: [78, 82, 80],
+                getAverage: function() {
+                    const sum = this.scores.reduce((a, b) => a + b, 0);
+                    return (sum / this.scores.length).toFixed(1);
+                }
+            }
+        ];
+        
+        function displayAll() {
+            const output = document.getElementById('output');
+            let html = '&lt;h2&gt;All Students&lt;/h2&gt;';
+            
+            students.forEach(student => {
+                html += `&lt;div class="student-card"&gt;`;
+                html += `&lt;strong&gt;${student.name}&lt;/strong&gt; (Age ${student.age}, Grade ${student.grade})&lt;br&gt;`;
+                html += `Scores: ${student.scores.join(', ')}&lt;br&gt;`;
+                html += `Average: ${student.getAverage()}`;
+                html += `&lt;/div&gt;`;
+            });
+            
+            output.innerHTML = html;
+        }
+        
+        function findStudent() {
+            const name = prompt("Enter student name:");
+            const student = students.find(s => s.name.toLowerCase() === name.toLowerCase());
+            
+            const output = document.getElementById('output');
+            if (student) {
+                output.innerHTML = `
+                    &lt;h2&gt;Student Found&lt;/h2&gt;
+                    &lt;div class="student-card"&gt;
+                        &lt;strong&gt;${student.name}&lt;/strong&gt;&lt;br&gt;
+                        Age: ${student.age}&lt;br&gt;
+                        Grade: ${student.grade}&lt;br&gt;
+                        Average Score: ${student.getAverage()}
+                    &lt;/div&gt;
+                `;
+            } else {
+                output.innerHTML = '&lt;p&gt;Student not found!&lt;/p&gt;';
+            }
+        }
+        
+        function showAverages() {
+            const output = document.getElementById('output');
+            let html = '&lt;h2&gt;Student Averages&lt;/h2&gt;';
+            
+            students.forEach(student => {
+                html += `&lt;p&gt;&lt;strong&gt;${student.name}:&lt;/strong&gt; ${student.getAverage()}&lt;/p&gt;`;
+            });
+            
+            const totalAverage = students.reduce((sum, s) => sum + parseFloat(s.getAverage()), 0) / students.length;
+            html += `&lt;p&gt;&lt;strong&gt;Class Average:&lt;/strong&gt; ${totalAverage.toFixed(1)}&lt;/p&gt;`;
+            
+            output.innerHTML = html;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Stores information about books (title, author, pages)</li>
+          <li>Has a method to check if a book is long (over 300 pages)</li>
+          <li>Displays all books in cards</li>
+          <li>Finds books by author</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Object:</strong> A collection of properties</li>
+        <li><strong>Property:</strong> A key-value pair in an object</li>
+        <li><strong>Method:</strong> A function that belongs to an object</li>
+        <li><strong>this:</strong> Refers to the current object</li>
+        <li><strong>Dot notation:</strong> object.property</li>
+        <li><strong>Bracket notation:</strong> object['property']</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You now understand JavaScript fundamentals. Next session, we'll start learning React - a powerful library for building user interfaces!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

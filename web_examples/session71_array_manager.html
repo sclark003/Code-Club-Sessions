@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays and Loops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        #list {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+        .list-item {
+            padding: 5px;
+            margin: 5px 0;
+            background-color: white;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array Manager</h1>
+    <input type="text" id="itemInput" placeholder="Enter item">
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeLast()">Remove Last</button>
+    <button onclick="clearAll()">Clear All</button>
+    <button onclick="sortItems()">Sort</button>
+    
+    <div id="list"></div>
+    <div id="count"></div>
+    
+    <script>
+        let items = ["apple", "banana", "orange"];
+        
+        function displayList() {
+            const listDiv = document.getElementById('list');
+            const countDiv = document.getElementById('count');
+            
+            if (items.length === 0) {
+                listDiv.innerHTML = '<p>No items in list</p>';
+            } else {
+                listDiv.innerHTML = '';
+                items.forEach((item, index) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'list-item';
+                    itemDiv.textContent = `${index + 1}. ${item}`;
+                    listDiv.appendChild(itemDiv);
+                });
+            }
+            
+            countDiv.textContent = `Total items: ${items.length}`;
+        }
+        
+        function addItem() {
+            const input = document.getElementById('itemInput');
+            const newItem = input.value.trim();
+            
+            if (newItem) {
+                items.push(newItem);
+                input.value = '';
+                displayList();
+            }
+        }
+        
+        function removeLast() {
+            if (items.length > 0) {
+                items.pop();
+                displayList();
+            }
+        }
+        
+        function clearAll() {
+            items = [];
+            displayList();
+        }
+        
+        function sortItems() {
+            items.sort();
+            displayList();
+        }
+        
+        displayList();
+        
+        document.getElementById('itemInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                addItem();
+            }
+        });
+    </script>
+</body>
+</html>

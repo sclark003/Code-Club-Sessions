@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Variables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Variables Demo</h1>
+    <button onclick="showVariables()">Show Variables</button>
+    <button onclick="doMath()">Do Math</button>
+    <button onclick="showArray()">Show Array</button>
+    <button onclick="showObject()">Show Object</button>
+    
+    <div id="output">Click a button to see variables in action!</div>
+    
+    <script>
+        // Variables
+        const name = "Sarah";
+        let age = 12;
+        const isStudent = true;
+        const fruits = ["apple", "banana", "orange"];
+        const person = {
+            name: "Sarah",
+            age: 12,
+            school: "Code Club School"
+        };
+        
+        function showVariables() {
+            let output = `Name: ${name}<br>`;
+            output += `Age: ${age}<br>`;
+            output += `Is Student: ${isStudent}`;
+            document.getElementById('output').innerHTML = output;
+        }
+        
+        function doMath() {
+            let num1 = 10;
+            let num2 = 5;
+            let sum = num1 + num2;
+            let product = num1 * num2;
+            
+            let output = `${num1} + ${num2} = ${sum}<br>`;
+            output += `${num1} × ${num2} = ${product}`;
+            document.getElementById('output').innerHTML = output;
+        }
+        
+        function showArray() {
+            let output = "Fruits:<br>";
+            fruits.forEach((fruit, index) => {
+                output += `${index + 1}. ${fruit}<br>`;
+            });
+            document.getElementById('output').innerHTML = output;
+        }
+        
+        function showObject() {
+            let output = "Person Information:<br>";
+            output += `Name: ${person.name}<br>`;
+            output += `Age: ${person.age}<br>`;
+            output += `School: ${person.school}`;
+            document.getElementById('output').innerHTML = output;
+        }
+    </script>
+</body>
+</html>

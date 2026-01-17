@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 70: JavaScript Forms - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 70: JavaScript Forms</h1>
+      <p>Working with forms and validation</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Create HTML forms</li>
+        <li>Get form values with JavaScript</li>
+        <li>Validate form input</li>
+        <li>Handle form submission</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Creating Forms</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a form with different input types:
+        <pre><code>&lt;form id="myForm"&gt;
+    &lt;input type="text" name="username" placeholder="Username"&gt;
+    &lt;input type="email" name="email" placeholder="Email"&gt;
+    &lt;input type="password" name="password" placeholder="Password"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Getting Form Values</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Get values from form inputs:
+        <pre><code>// By ID
+let username = document.getElementById('username').value;
+
+// By name
+let email = document.querySelector('input[name="email"]').value;
+
+// Form data object
+let formData = new FormData(document.getElementById('myForm'));</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete form with validation:
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Form Validation&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        form {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .success {
+            color: green;
+            font-size: 14px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Registration Form&lt;/h1&gt;
+    &lt;form id="registrationForm"&gt;
+        &lt;input type="text" id="username" name="username" placeholder="Username" required&gt;
+        &lt;div id="usernameError" class="error"&gt;&lt;/div&gt;
+        
+        &lt;input type="email" id="email" name="email" placeholder="Email" required&gt;
+        &lt;div id="emailError" class="error"&gt;&lt;/div&gt;
+        
+        &lt;input type="password" id="password" name="password" placeholder="Password" required&gt;
+        &lt;div id="passwordError" class="error"&gt;&lt;/div&gt;
+        
+        &lt;input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required&gt;
+        &lt;div id="confirmError" class="error"&gt;&lt;/div&gt;
+        
+        &lt;button type="submit"&gt;Register&lt;/button&gt;
+        &lt;div id="message"&gt;&lt;/div&gt;
+    &lt;/form&gt;
+    
+    &lt;script&gt;
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form from submitting
+            
+            // Clear previous errors
+            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+            document.getElementById('message').textContent = '';
+            
+            // Get values
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            let isValid = true;
+            
+            // Validate username
+            if (username.length < 3) {
+                document.getElementById('usernameError').textContent = 'Username must be at least 3 characters';
+                isValid = false;
+            }
+            
+            // Validate email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email';
+                isValid = false;
+            }
+            
+            // Validate password
+            if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
+                isValid = false;
+            }
+            
+            // Validate password match
+            if (password !== confirmPassword) {
+                document.getElementById('confirmError').textContent = 'Passwords do not match';
+                isValid = false;
+            }
+            
+            // Show success message
+            if (isValid) {
+                document.getElementById('message').textContent = 'Registration successful!';
+                document.getElementById('message').className = 'success';
+                // In a real app, you would send this data to a server
+                console.log('Form data:', { username, email, password });
+            }
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a contact form with:
+        <ul>
+          <li>Name, email, and message fields</li>
+          <li>Validation for all fields</li>
+          <li>A character counter for the message</li>
+          <li>Success/error messages</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Form:</strong> A container for input fields</li>
+        <li><strong>Input types:</strong> text, email, password, number, etc.</li>
+        <li><strong>Validation:</strong> Checking if input is correct</li>
+        <li><strong>preventDefault():</strong> Stops form from submitting normally</li>
+        <li><strong>FormData:</strong> Object to collect form data</li>
+        <li><strong>Regular expression:</strong> Pattern for validating text (like email)</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You can now create and validate forms. Next session, we'll learn about arrays and loops in JavaScript!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

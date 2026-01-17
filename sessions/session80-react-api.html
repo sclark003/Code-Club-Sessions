@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 80: React and APIs - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 80: React and APIs</h1>
+      <p>Fetching data from APIs</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Use fetch() to get data</li>
+        <li>Handle loading and error states</li>
+        <li>Display data from APIs</li>
+        <li>Use useEffect with API calls</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>React app set up</li>
+        <li>Code editor</li>
+        <li>Web browser</li>
+        <li>Internet connection</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Using fetch()</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Fetch data from an API:
+        <pre><code>fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Fetching in useEffect</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Fetch data when component loads:
+        <pre><code>useEffect(() => {
+  fetch('https://api.example.com/data')
+    .then(res => res.json())
+    .then(data => setData(data));
+}, []);</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete example fetching data:
+        <pre><code>// UserList.js
+import { useState, useEffect } from 'react';
+import './UserList.css';
+
+function UserList() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
+  useEffect(() => {
+    // Using a free API for demonstration
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch users');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setUsers(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+  
+  if (loading) {
+    return &lt;div className="loading"&gt;Loading users...&lt;/div&gt;;
+  }
+  
+  if (error) {
+    return &lt;div className="error"&gt;Error: {error}&lt;/div&gt;;
+  }
+  
+  return (
+    &lt;div className="user-list-container"&gt;
+      &lt;h2&gt;User List&lt;/h2&gt;
+      &lt;div className="users-grid"&gt;
+        {users.map(user => (
+          &lt;div key={user.id} className="user-card"&gt;
+            &lt;h3&gt;{user.name}&lt;/h3&gt;
+            &lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; {user.email}&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Username:&lt;/strong&gt; {user.username}&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;City:&lt;/strong&gt; {user.address.city}&lt;/p&gt;
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default UserList;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a component that:
+        <ul>
+          <li>Fetches posts from an API</li>
+          <li>Shows loading state while fetching</li>
+          <li>Displays posts in cards</li>
+          <li>Handles errors gracefully</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>fetch():</strong> JavaScript function to get data from APIs</li>
+        <li><strong>Promise:</strong> Represents a value that will be available later</li>
+        <li><strong>then():</strong> Handles successful responses</li>
+        <li><strong>catch():</strong> Handles errors</li>
+        <li><strong>Loading state:</strong> Shows while data is being fetched</li>
+        <li><strong>Error state:</strong> Shows if something went wrong</li>
+        <li><strong>async/await:</strong> Alternative way to handle promises</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You can now fetch data from APIs. Next session, we'll learn about React Router for navigation!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

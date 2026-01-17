@@ -1,5 +1,5 @@
 # Code-Club-Sessions
-Sessions run at a local school code club using BBC Microbits, Smart Cutebot robots, Arcade game consoles, and Python programming. 
+Sessions run at a local school code club using BBC Microbits, Smart Cutebot robots, Arcade game consoles, Python programming, and web development. 
 
 ---
 
@@ -10,6 +10,7 @@ Sessions run at a local school code club using BBC Microbits, Smart Cutebot robo
 - Introduce students to game development with Arcade console, e.g. sprites, animation, scoring, game mechanics
 - Introduce students to advanced game development, e.g. game design, power-ups, boss battles, level systems, game polish
 - Introduce students to Python programming, e.g. variables, functions, file handling, object-oriented programming, data visualisation
+- Introduce students to web development, e.g. HTML, CSS, JavaScript, React, building interactive websites
 - Encourage students to think beyond sessions and independently add new features based on the content presented
 - Have fun!
 
@@ -79,6 +80,30 @@ Sessions run at a local school code club using BBC Microbits, Smart Cutebot robo
 | **58** | Working with APIs | APIs, HTTP requests, JSON responses | Get data from the internet |
 | **59** | Data Visualisation | matplotlib, charts, graphs | Create charts and graphs |
 | **60** | Final Python Project | Project planning, combining concepts | Combine everything you've learned! |
+| **61** | Introduction to Web Development | HTML, CSS, JavaScript basics | Create your first webpage |
+| **62** | HTML Basics | HTML elements, tags, attributes | Learning essential HTML elements |
+| **63** | Introduction to CSS | CSS properties, styling, colours | Making webpages look beautiful |
+| **64** | CSS Layout and Spacing | Box model, margin, padding, flexbox | Controlling spacing and positioning |
+| **65** | Introduction to JavaScript | JavaScript basics, events, interactivity | Adding interactivity to webpages |
+| **66** | JavaScript Variables | Variables, data types, let, const | Storing and working with data |
+| **67** | JavaScript Functions | Functions, parameters, return values | Creating reusable code blocks |
+| **68** | JavaScript DOM Manipulation | DOM, selecting elements, changing content | Changing webpage content |
+| **69** | JavaScript Events | Event listeners, click, input events | Responding to user actions |
+| **70** | JavaScript Forms | Forms, validation, form submission | Working with forms and validation |
+| **71** | JavaScript Arrays and Loops | Arrays, for loops, forEach | Working with lists and loops |
+| **72** | JavaScript Objects | Objects, properties, methods | Structuring data with objects |
+| **73** | Introduction to React | React basics, components, JSX | Building modern user interfaces |
+| **74** | React Components | Creating components, props | Creating reusable UI components |
+| **75** | React State | useState hook, state management | Making components interactive |
+| **76** | React Events | Event handling, onClick, onChange | Handling user interactions |
+| **77** | React Lists and Keys | Rendering lists, map(), keys | Rendering lists of data |
+| **78** | React Hooks | useEffect, hooks, side effects | Using useEffect and other hooks |
+| **79** | React Forms | Controlled inputs, form validation | Building and validating forms |
+| **80** | React and APIs | fetch(), API calls, loading states | Fetching data from APIs |
+| **81** | React Router | Navigation, routes, multi-page apps | Adding navigation to React apps |
+| **82** | React Context | Context API, sharing data | Sharing data across components |
+| **83** | React Best Practices | Code organisation, file structure | Writing clean React code |
+| **84** | React Final Project | Project planning, combining concepts | Build a complete React application! |
 
 ---
 
@@ -106,6 +131,10 @@ View all sessions on the [GitHub Pages site](https://sclark003.github.io/Code-Cl
 - [Arcade Console Documentation](https://wiki.elecfreaks.com/en/microbit/arcade/) - Arcade console resources
 - [Python Official Website](https://www.python.org/) - Python programming language
 - [Python Documentation](https://docs.python.org/3/) - Official Python documentation
+- [MDN Web Docs](https://developer.mozilla.org/) - HTML, CSS, and JavaScript documentation
+- [React Official Website](https://react.dev/) - React library for building user interfaces
+- [React Learn](https://react.dev/learn) - Official React tutorial
+- [W3Schools](https://www.w3schools.com/) - Web development tutorials
 
 ---
 

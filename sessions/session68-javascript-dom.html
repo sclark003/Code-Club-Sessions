@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 68: JavaScript DOM Manipulation - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 68: JavaScript DOM Manipulation</h1>
+      <p>Changing webpage content with JavaScript</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what the DOM is</li>
+        <li>Learn to select elements</li>
+        <li>Change content and styles</li>
+        <li>Add and remove elements</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: What is the DOM?</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> DOM stands for Document Object Model - it's how JavaScript sees and interacts with your HTML.
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> JavaScript can find elements and change them!
+      </div>
+
+      <h2>💻 Activity 2: Selecting Elements</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Select elements by ID, class, or tag:
+        <pre><code>// By ID
+let element = document.getElementById('myId');
+
+// By class (returns array)
+let elements = document.getElementsByClassName('myClass');
+
+// By tag name
+let paragraphs = document.getElementsByTagName('p');
+
+// Modern way - querySelector
+let element = document.querySelector('#myId');
+let elements = document.querySelectorAll('.myClass');</code></pre>
+      </div>
+
+      <h2>🎨 Activity 3: Changing Content</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Change text content:
+        <pre><code>let heading = document.getElementById('myHeading');
+heading.textContent = "New Text";
+heading.innerHTML = "&lt;strong&gt;Bold Text&lt;/strong&gt;";</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Change styles:
+        <pre><code>let element = document.getElementById('myElement');
+element.style.color = 'red';
+element.style.fontSize = '24px';
+element.style.backgroundColor = 'yellow';</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete DOM manipulation example:
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;DOM Manipulation&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        #content {
+            padding: 20px;
+            border: 2px solid #333;
+            margin: 20px 0;
+            min-height: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id="mainHeading"&gt;DOM Manipulation Demo&lt;/h1&gt;
+    &lt;div id="content"&gt;This content can be changed!&lt;/div&gt;
+    
+    &lt;button onclick="changeText()"&gt;Change Text&lt;/button&gt;
+    &lt;button onclick="changeColour()"&gt;Change Colour&lt;/button&gt;
+    &lt;button onclick="addElement()"&gt;Add Element&lt;/button&gt;
+    &lt;button onclick="removeElement()"&gt;Remove Element&lt;/button&gt;
+    &lt;button onclick="reset()"&gt;Reset&lt;/button&gt;
+    
+    &lt;script&gt;
+        function changeText() {
+            const content = document.getElementById('content');
+            content.textContent = 'Text changed with JavaScript!';
+        }
+        
+        function changeColour() {
+            const content = document.getElementById('content');
+            const colours = ['red', 'blue', 'green', 'purple', 'orange'];
+            const randomColour = colours[Math.floor(Math.random() * colours.length)];
+            content.style.backgroundColor = randomColour;
+            content.style.color = 'white';
+        }
+        
+        function addElement() {
+            const content = document.getElementById('content');
+            const newElement = document.createElement('p');
+            newElement.textContent = 'New element added!';
+            newElement.className = 'highlight';
+            content.appendChild(newElement);
+        }
+        
+        function removeElement() {
+            const content = document.getElementById('content');
+            if (content.children.length > 0) {
+                content.removeChild(content.lastChild);
+            }
+        }
+        
+        function reset() {
+            const content = document.getElementById('content');
+            content.innerHTML = 'This content can be changed!';
+            content.style.backgroundColor = '';
+            content.style.color = '';
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Has a button that changes the page background colour</li>
+          <li>Adds a new list item when clicked</li>
+          <li>Changes the font size of headings</li>
+          <li>Shows/hides an element</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>DOM:</strong> Document Object Model - representation of HTML</li>
+        <li><strong>getElementById():</strong> Finds element by ID</li>
+        <li><strong>querySelector():</strong> Modern way to find elements</li>
+        <li><strong>textContent:</strong> Gets/sets text content</li>
+        <li><strong>innerHTML:</strong> Gets/sets HTML content</li>
+        <li><strong>style:</strong> Object to change CSS styles</li>
+        <li><strong>createElement():</strong> Creates new HTML elements</li>
+        <li><strong>appendChild():</strong> Adds element to page</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You can now manipulate webpage content. Next session, we'll learn about events - responding to user actions!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

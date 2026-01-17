@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 76: React Events - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 76: React Events</h1>
+      <p>Handling user interactions in React</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Handle click events</li>
+        <li>Handle input events</li>
+        <li>Update state from events</li>
+        <li>Create interactive forms</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>React app set up</li>
+        <li>Code editor</li>
+        <li>Web browser</li>
+      </ul>
+
+      <h2>🚀 Activity 1: Click Events</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Handle clicks with onClick:
+        <pre><code>function Button() {
+  const handleClick = () => {
+    alert('Button clicked!');
+  };
+  
+  return &lt;button onClick={handleClick}&gt;Click Me&lt;/button&gt;;
+}</code></pre>
+      </div>
+
+      <h2>💻 Activity 2: Input Events</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Handle input changes:
+        <pre><code>function Input() {
+  const [value, setValue] = useState('');
+  
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+  
+  return (
+    &lt;input 
+      type="text" 
+      value={value} 
+      onChange={handleChange} 
+    /&gt;
+  );
+}</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete interactive form:
+        <pre><code>// InteractiveForm.js
+import { useState } from 'react';
+import './InteractiveForm.css';
+
+function InteractiveForm() {
+  const [name, setName] = useState('');
+  const [colour, setColour] = useState('#0066cc');
+  const [message, setMessage] = useState('');
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Hello ${name}! Your message: ${message}`);
+  };
+  
+  return (
+    &lt;div className="form-container"&gt;
+      &lt;h2&gt;Interactive Form&lt;/h2&gt;
+      &lt;form onSubmit={handleSubmit}&gt;
+        &lt;div className="form-group"&gt;
+          &lt;label&gt;Name:&lt;/label&gt;
+          &lt;input 
+            type="text" 
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Enter your name"
+          /&gt;
+        &lt;/div&gt;
+        
+        &lt;div className="form-group"&gt;
+          &lt;label&gt;Favourite Colour:&lt;/label&gt;
+          &lt;input 
+            type="color" 
+            value={colour}
+            onChange={(e) => setColour(e.target.value)}
+          /&gt;
+          &lt;div 
+            className="colour-preview" 
+            style={{ backgroundColor: colour }}
+          &gt;
+            Preview
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div className="form-group"&gt;
+          &lt;label&gt;Message:&lt;/label&gt;
+          &lt;textarea 
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Enter a message"
+            rows="4"
+          /&gt;
+        &lt;/div&gt;
+        
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+      &lt;/form&gt;
+      
+      {name && (
+        &lt;div className="preview"&gt;
+          &lt;h3&gt;Preview:&lt;/h3&gt;
+          &lt;p&gt;Hello, &lt;strong style={{ color: colour }}&gt;{name}&lt;/strong&gt;!&lt;/p&gt;
+          &lt;p&gt;Your message: {message}&lt;/p&gt;
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+
+export default InteractiveForm;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create a component with:
+        <ul>
+          <li>A toggle button that shows/hides content</li>
+          <li>An input that changes background colour</li>
+          <li>A button that cycles through different messages</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>onClick:</strong> Handles click events</li>
+        <li><strong>onChange:</strong> Handles input changes</li>
+        <li><strong>onSubmit:</strong> Handles form submission</li>
+        <li><strong>Event object:</strong> Contains information about the event</li>
+        <li><strong>e.target.value:</strong> Gets the value from an input</li>
+        <li><strong>e.preventDefault():</strong> Stops default form behaviour</li>
+        <li><strong>Controlled component:</strong> Input value controlled by state</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You can now handle events in React. Next session, we'll learn about rendering lists and using keys!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

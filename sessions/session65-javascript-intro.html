@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 65: Introduction to JavaScript - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 65: Introduction to JavaScript</h1>
+      <p>Adding interactivity to your webpages</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what JavaScript does</li>
+        <li>Learn how to add JavaScript to HTML</li>
+        <li>Use console.log() to display messages</li>
+        <li>Create your first interactive webpage</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>Code editor</li>
+        <li>Web browser (with Developer Tools)</li>
+      </ul>
+
+      <h2>🚀 Activity 1: What is JavaScript?</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> JavaScript makes webpages interactive - it can respond to clicks, change content, validate forms, and much more!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> HTML = Structure, CSS = Style, JavaScript = Behaviour!
+      </div>
+
+      <h2>💻 Activity 2: Adding JavaScript</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add JavaScript in a &lt;script&gt; tag:
+        <pre><code>&lt;script&gt;
+    console.log("Hello, JavaScript!");
+&lt;/script&gt;</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Open your browser's Developer Tools (F12) and check the Console tab to see the message!
+      </div>
+
+      <h2>🎨 Activity 3: Your First Interactive Element</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a button that shows an alert:
+        <pre><code>&lt;button onclick="alert('Hello!')"&gt;Click Me!&lt;/button&gt;</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Or use a script:
+        <pre><code>&lt;button id="myButton"&gt;Click Me!&lt;/button&gt;
+&lt;script&gt;
+    document.getElementById('myButton').onclick = function() {
+        alert('Button clicked!');
+    };
+&lt;/script&gt;</code></pre>
+      </div>
+
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete interactive webpage:
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My First JavaScript Page&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #0052a3;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #009900;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;JavaScript Interactive Page&lt;/h1&gt;
+    &lt;button onclick="showAlert()"&gt;Show Alert&lt;/button&gt;
+    &lt;button onclick="changeText()"&gt;Change Text&lt;/button&gt;
+    &lt;button onclick="showTime()"&gt;Show Time&lt;/button&gt;
+    
+    &lt;p id="message"&gt;Click a button to see JavaScript in action!&lt;/p&gt;
+    
+    &lt;script&gt;
+        function showAlert() {
+            alert('Hello from JavaScript!');
+        }
+        
+        function changeText() {
+            document.getElementById('message').textContent = 'Text changed with JavaScript!';
+        }
+        
+        function showTime() {
+            const now = new Date();
+            document.getElementById('message').textContent = 'Current time: ' + now.toLocaleTimeString();
+        }
+        
+        // Log to console when page loads
+        console.log('Page loaded successfully!');
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="challenge">
+        Create an interactive page with:
+        <ul>
+          <li>A button that changes the background colour</li>
+          <li>A button that displays a random number</li>
+          <li>A button that shows/hides an element</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>JavaScript:</strong> A programming language that adds interactivity</li>
+        <li><strong>Script tag:</strong> &lt;script&gt; - where JavaScript code goes</li>
+        <li><strong>console.log():</strong> Displays messages in the browser console</li>
+        <li><strong>alert():</strong> Shows a pop-up message</li>
+        <li><strong>onclick:</strong> An event that happens when something is clicked</li>
+        <li><strong>function:</strong> A block of code that performs a task</li>
+        <li><strong>getElementById():</strong> Finds an element by its ID</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You've added interactivity to your webpage. Next session, we'll learn about JavaScript variables and data types!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>
