@@ -15,8 +15,33 @@ Sessions run at a local school code club using BBC Microbits and a Smart Cutebot
 
 | Week | Topic / Focus | Key Skills | Activity / Project |
 |------|---------------|------------|---------------------|
-| **1** | [Introduction to Microbit and coding) | MakeCode basics, inputs/outputs | Setup devices, simple "Hello World" on Micro:bit. |
-| **2** | If Statements | Input events (button press, shake) | Show output based on buttons or shake. |
+| **1** | Hello micro:bit! | MakeCode basics, outputs, LED display | Display messages and images on the micro:bit screen |
+| **2** | Button Presses | Inputs, events, conditionals | Make micro:bit respond to button A, B, and A+B presses |
+| **3** | Shake It Up! | Accelerometer, motion detection, events | Detect shaking and tilting, create a dice roller |
+| **4** | Variables & Numbers | Variables, math operations, storing data | Create counters and work with numbers |
+| **5** | Loops & Repetition | For loops, while loops, forever loops | Create animations and repeat actions |
+| **6** | Temperature Sensor | Sensors, data display, conditionals | Read and display temperature, create temperature alerts |
+| **7** | Light Sensor | Light level detection, conditionals | Detect light levels, create dark detectors and light meters |
+| **8** | Compass & Direction | Magnetometer, degrees, direction | Use compass to find North, South, East, West |
+| **9** | Music & Sounds | Music blocks, notes, melodies | Play tunes, create sound effects, make a musical instrument |
+| **10** | Radio Communication | Radio, wireless communication | Send messages between micro:bits |
+| **11** | Conditional Logic | If/else statements, comparison operators | Create complex decision-making programs |
+| **12** | Final Project | Combining all concepts | Create your own project using everything you've learned! |
+
+---
+
+## **Session Details**
+
+Each session is designed to be completed in approximately one hour and includes:
+- Clear learning goals
+- Step-by-step instructions
+- Hands-on activities
+- Key concepts explained
+- Challenges for extension
+- Links to next sessions
+
+View all sessions on the [GitHub Pages site](https://yourusername.github.io/Code-Club-Sessions/) or navigate through the `sessions/` folder.
+
 ---
 
 ---

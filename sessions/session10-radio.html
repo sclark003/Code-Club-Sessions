@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 10: Radio Communication - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 10: Radio Communication</h1>
+      <p>Sending messages between micro:bits</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Learn about radio communication</li>
+        <li>Set up radio groups</li>
+        <li>Send messages between micro:bits</li>
+        <li>Receive and display messages</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>At least 2 BBC micro:bits (or work with a partner)</li>
+        <li>USB cables</li>
+        <li>Computers with MakeCode editor</li>
+      </ul>
+
+      <h2>📡 What is Radio Communication?</h2>
+      <p>The micro:bit has a built-in radio that can send and receive messages wirelessly! This lets micro:bits "talk" to each other without wires. You can send numbers, text, or other data between micro:bits.</p>
+
+      <div class="warning">
+        For radio to work, all micro:bits need to be on the same "radio group" (like a channel). Make sure everyone uses the same group number!
+      </div>
+
+      <h2>🚀 Activity 1: Set Up Radio</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Open MakeCode and create a new project called "Radio"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Go to the <strong>"Radio"</strong> category (you might need to add it - click the gear icon)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Find <strong>"radio set group"</strong> and drag it into <strong>"on start"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Set the group number to 1 (or any number - everyone needs the same number!)
+      </div>
+
+      <div class="tip">
+        Radio groups are like walkie-talkie channels. Everyone on the same group can hear each other. Use different groups to avoid interference!
+      </div>
+
+      <h2>🎨 Activity 2: Send a Message</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add <strong>"on button A pressed"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Add <strong>"radio send string"</strong> from the Radio category
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Type a message like "Hello!" in the string block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add <strong>"show string"</strong> that says "Sent!" so you know it worked
+      </div>
+
+      <h2>🎯 Activity 3: Receive a Message</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add <strong>"on radio received receivedString"</strong> block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Inside it, add <strong>"show string"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Drag the <strong>"receivedString"</strong> variable into the "show string" block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Now when someone sends a message, your micro:bit will display it!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Test with a partner - one person presses button A to send, the other receives the message!
+      </div>
+
+      <h2>🌟 Activity 4: Send Numbers</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a variable called "score"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Add <strong>"on button A pressed"</strong> that increases the score
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add <strong>"on button B pressed"</strong> that sends the score using <strong>"radio send number"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add <strong>"on radio received receivedNumber"</strong> to receive and display the number
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Now you can share scores between micro:bits!
+      </div>
+
+      <h2>🎮 Activity 5: Simple Chat</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a program where:
+        <ul>
+          <li>Button A sends "Hi!"</li>
+          <li>Button B sends "Bye!"</li>
+          <li>Shaking sends "Help!"</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> All received messages are displayed on screen
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Test with a partner - you now have a simple chat system!
+      </div>
+
+      <div class="challenge">
+        Create a multiplayer game where:
+        <ul>
+          <li>Each player has a score</li>
+          <li>Pressing buttons increases your score</li>
+          <li>Shaking sends your score to everyone</li>
+          <li>Everyone can see each other's scores</li>
+          <li>Hint: Use variables to store your own score and received scores!</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Radio:</strong> Wireless communication between devices</li>
+        <li><strong>Radio Group:</strong> A channel number - devices on the same group can communicate</li>
+        <li><strong>Send:</strong> Transmitting a message to other micro:bits</li>
+        <li><strong>Receive:</strong> Getting a message from another micro:bit</li>
+        <li><strong>Wireless:</strong> Communication without wires or cables</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Amazing! You can now make micro:bits communicate with each other. Next session, we'll dive deeper into conditional logic!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

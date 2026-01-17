@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 8: Compass & Direction - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 8: Compass & Direction</h1>
+      <p>Using the magnetometer to find direction</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Learn about the magnetometer (compass)</li>
+        <li>Read compass direction</li>
+        <li>Display directions (North, South, East, West)</li>
+        <li>Use degrees to measure direction</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode editor</li>
+      </ul>
+
+      <h2>🧭 What is a Compass?</h2>
+      <p>The micro:bit has a magnetometer - a sensor that detects magnetic fields, including Earth's magnetic field! This lets it work like a compass, telling you which direction you're facing. Directions are measured in degrees: 0° = North, 90° = East, 180° = South, 270° = West.</p>
+
+      <div class="warning">
+        The first time you use the compass, the micro:bit needs to be calibrated. It will ask you to tilt it to draw a circle on the screen. Follow the instructions!
+      </div>
+
+      <h2>🚀 Activity 1: Display Compass Heading</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Open MakeCode and create a new project called "Compass"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Go to the <strong>"Input"</strong> category and find <strong>"compass heading"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add an <strong>"on button A pressed"</strong> block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add <strong>"show number"</strong> and drag <strong>"compass heading"</strong> into it
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Press button A and turn your micro:bit - watch the numbers change!
+      </div>
+
+      <div class="tip">
+        The compass heading is in degrees (0-360). 0° or 360° is North, 90° is East, 180° is South, 270° is West.
+      </div>
+
+      <h2>🎨 Activity 2: Direction Names</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a new project called "Direction"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Add <strong>"on button A pressed"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add an <strong>"if"</strong> block to check the compass heading
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Use the Logic category to check if heading is between certain values:
+        <ul>
+          <li>North: 315-45 degrees (or heading > 315 or heading < 45)</li>
+          <li>East: 45-135 degrees</li>
+          <li>South: 135-225 degrees</li>
+          <li>West: 225-315 degrees</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Show the direction name (N, E, S, W) using <strong>"show string"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Test by pointing your micro:bit in different directions!
+      </div>
+
+      <h2>🎯 Activity 3: Compass Arrow</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add a <strong>"forever"</strong> loop
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use <strong>"point"</strong> from the Led category
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Calculate which direction to point:
+        <ul>
+          <li>Convert compass heading to a direction (0-7 for 8 directions)</li>
+          <li>Or use simple if statements for N, E, S, W</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> The LED will point in the direction you're facing!
+      </div>
+
+      <h2>🌟 Activity 4: Simple Direction Finder</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a program that shows an arrow pointing North
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use <strong>"show arrow"</strong> from the Led category
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Calculate which arrow to show based on compass heading
+      </div>
+
+      <div class="challenge">
+        Create a digital compass that:
+        <ul>
+          <li>Shows "N" when pointing North</li>
+          <li>Shows "E" when pointing East</li>
+          <li>Shows "S" when pointing South</li>
+          <li>Shows "W" when pointing West</li>
+          <li>Shows the degree number for other directions</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Magnetometer:</strong> A sensor that detects magnetic fields</li>
+        <li><strong>Compass Heading:</strong> The direction you're facing, measured in degrees (0-360)</li>
+        <li><strong>Degrees:</strong> A way to measure angles and directions</li>
+        <li><strong>Calibration:</strong> Setting up the compass so it works correctly</li>
+        <li><strong>Cardinal Directions:</strong> North, South, East, West</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great work! You can now use the compass to detect direction. Next session, we'll make music and sounds!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

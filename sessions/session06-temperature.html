@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 6: Temperature Sensor - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 6: Temperature Sensor</h1>
+      <p>Reading temperature with the micro:bit</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Learn about sensors</li>
+        <li>Read temperature from the micro:bit</li>
+        <li>Display sensor data</li>
+        <li>Use temperature in conditional statements</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode editor</li>
+      </ul>
+
+      <h2>🌡️ What is a Temperature Sensor?</h2>
+      <p>The micro:bit has a built-in temperature sensor that can measure the temperature around it. It measures in degrees Celsius (°C). The sensor is actually inside the micro:bit's processor, so it measures the temperature of the micro:bit itself (which is usually close to room temperature).</p>
+
+      <h2>🚀 Activity 1: Display Temperature</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Open MakeCode and create a new project called "Temperature"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Go to the <strong>"Input"</strong> category and find <strong>"temperature"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add an <strong>"on button A pressed"</strong> block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add a <strong>"show number"</strong> block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Drag the <strong>"temperature"</strong> block into the "show number" block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Press button A to see the temperature!
+      </div>
+
+      <div class="tip">
+        The temperature sensor measures in Celsius. Room temperature is usually around 20-25°C. If you hold the micro:bit, it might get warmer!
+      </div>
+
+      <h2>🎨 Activity 2: Continuous Temperature Display</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add a <strong>"forever"</strong> loop from the Loops category
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Inside it, add <strong>"show number"</strong> with the temperature
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add a <strong>"pause 1000ms"</strong> (1 second)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Now it will continuously show the temperature, updating every second!
+      </div>
+
+      <h2>🎯 Activity 3: Temperature Alert</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a new project called "TempAlert"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Add a <strong>"forever"</strong> loop
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Inside, add an <strong>"if"</strong> block from the Logic category
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Drag <strong>"temperature"</strong> into the if block, and use the comparison operator (>) to check if temperature > 25
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Inside the if block, add <strong>"show icon"</strong> with a hot icon (like fire or sun)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Add an <strong>"else"</strong> block and show a different icon for normal temperature
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 7:</span> Add a pause. Now it will show different icons based on temperature!
+      </div>
+
+      <div class="challenge">
+        Create a temperature monitor that:
+        <ul>
+          <li>Shows "HOT" if temperature is above 25°C</li>
+          <li>Shows "COLD" if temperature is below 15°C</li>
+          <li>Shows "OK" for temperatures in between</li>
+          <li>Hint: You'll need multiple if/else blocks!</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Sensor:</strong> A device that detects something in the environment (like temperature)</li>
+        <li><strong>Data:</strong> Information collected by sensors (like the temperature number)</li>
+        <li><strong>Comparison:</strong> Checking if a value is greater than (>), less than (<), or equal to (=) another value</li>
+        <li><strong>Conditional:</strong> Using "if" to make decisions based on sensor data</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Great job! You can now read and use temperature data. Next session, we'll explore the light sensor!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

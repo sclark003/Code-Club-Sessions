@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 11: Conditional Logic - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 11: Conditional Logic</h1>
+      <p>Making decisions with if/else statements</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand if/else statements</li>
+        <li>Use comparison operators</li>
+        <li>Combine multiple conditions</li>
+        <li>Create complex decision-making programs</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode editor</li>
+      </ul>
+
+      <h2>🤔 What is Conditional Logic?</h2>
+      <p>Conditional logic lets your program make decisions! It's like asking "IF this is true, THEN do this, ELSE do that." This is one of the most important concepts in programming!</p>
+
+      <h2>🚀 Activity 1: Simple If Statement</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Open MakeCode and create a new project called "Conditionals"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create a variable called "age" and set it to 10 in "on start"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add <strong>"on button A pressed"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add an <strong>"if"</strong> block from the Logic category
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Drag the "age" variable into the if block, and use the comparison operator (>) to check if age > 12
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Inside the if block, add <strong>"show string"</strong> that says "Teenager!"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 7:</span> Test it - change the age value and see what happens!
+      </div>
+
+      <div class="tip">
+        Comparison operators: > (greater than), < (less than), = (equal to), ≠ (not equal to), ≥ (greater than or equal), ≤ (less than or equal)
+      </div>
+
+      <h2>🎨 Activity 2: If/Else Statement</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Add an <strong>"else"</strong> block to your if statement (click the + button on the if block)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Inside the else block, add <strong>"show string"</strong> that says "Child!"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Now your program will show one message if age > 12, and a different message otherwise!
+      </div>
+
+      <h2>🎯 Activity 3: Multiple Conditions</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a variable called "score"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Add <strong>"on button A pressed"</strong> that increases the score
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add <strong>"on button B pressed"</strong> that checks the score:
+        <ul>
+          <li>If score > 50, show "Excellent!"</li>
+          <li>Else if score > 20, show "Good!"</li>
+          <li>Else, show "Keep trying!"</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> You'll need multiple if/else blocks for this - try nesting them!
+      </div>
+
+      <h2>🌟 Activity 4: Temperature Alert System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a program that checks temperature
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use if/else to show different messages:
+        <ul>
+          <li>If temperature > 25: "Hot!"</li>
+          <li>Else if temperature < 15: "Cold!"</li>
+          <li>Else: "Just right!"</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add this in a forever loop to continuously monitor
+      </div>
+
+      <h2>🎮 Activity 5: Game Logic</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a simple game:
+        <ul>
+          <li>Start with score = 0</li>
+          <li>Button A adds a random number (1-10) to score</li>
+          <li>Button B checks if score >= 20</li>
+          <li>If yes: "You win!" and reset score</li>
+          <li>If no: Show current score</li>
+        </ul>
+      </div>
+
+      <div class="challenge">
+        Create a smart light system that:
+        <ul>
+          <li>Checks the light level</li>
+          <li>If very dark (< 20): Show bright LEDs</li>
+          <li>If slightly dark (20-50): Show dim LEDs</li>
+          <li>If bright (> 50): Turn off LEDs</li>
+          <li>Also check temperature - if hot (> 25), show a warning icon!</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>If Statement:</strong> Checks a condition and runs code only if it's true</li>
+        <li><strong>Else Statement:</strong> Runs code when the if condition is false</li>
+        <li><strong>Condition:</strong> A true/false question (like "is age > 12?")</li>
+        <li><strong>Comparison Operator:</strong> Symbols that compare values (>, <, =, ≠)</li>
+        <li><strong>Boolean:</strong> A value that is either true or false</li>
+        <li><strong>Nested Conditions:</strong> Putting if statements inside other if statements</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent work! You now understand conditional logic - one of the most powerful programming concepts. Next session is your final project where you'll combine everything you've learned!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

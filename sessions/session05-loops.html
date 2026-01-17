@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 5: Loops & Repetition - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 5: Loops & Repetition</h1>
+      <p>Repeating actions with loops</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand what a loop is</li>
+        <li>Learn to use "repeat" loops</li>
+        <li>Learn to use "for" loops</li>
+        <li>Create animations and patterns</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode editor</li>
+      </ul>
+
+      <h2>🔄 What is a Loop?</h2>
+      <p>A loop is a way to repeat actions without writing the same code over and over. Instead of copying and pasting, you tell the computer "do this 5 times" or "keep doing this until something happens".</p>
+
+      <h2>🚀 Activity 1: Repeat Loop</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Open MakeCode and create a new project called "Loops"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Go to the <strong>"Loops"</strong> category and find <strong>"repeat 4 times"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Drag it into the <strong>"on start"</strong> block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add a <strong>"show icon"</strong> block inside the repeat loop
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Add a <strong>"pause"</strong> block (from Basic) set to 500ms (half a second)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Change the repeat number to 10 and watch the icon flash 10 times!
+      </div>
+
+      <div class="tip">
+        The pause block gives a delay between actions. Without it, things happen too fast to see!
+      </div>
+
+      <h2>🎨 Activity 2: Counting Loop</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Find the <strong>"for index from 0 to 4"</strong> block in the Loops category
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Drag it into "on start"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Inside the loop, add <strong>"show number"</strong>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Drag the <strong>"index"</strong> variable into the "show number" block
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Add a pause block. Watch it count from 0 to 4!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 6:</span> Change "0 to 4" to "1 to 10" to count higher
+      </div>
+
+      <h2>🎯 Activity 3: Animation Loop</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a new project called "Animation"
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Add a <strong>"repeat 5 times"</strong> loop
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Inside, add multiple <strong>"show icon"</strong> blocks with different icons
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add <strong>"pause 200ms"</strong> between each icon
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> The loop will repeat your animation 5 times!
+      </div>
+
+      <h2>🌟 Activity 4: Forever Loop</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Find the <strong>"forever"</strong> block in the Loops category
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> This loop runs continuously - it never stops!
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add a <strong>"show icon"</strong> and <strong>"pause"</strong> inside it
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Your animation will play forever!
+      </div>
+
+      <div class="warning">
+        Be careful with forever loops! They run continuously, so make sure to include pause blocks or your micro:bit might freeze!
+      </div>
+
+      <div class="challenge">
+        Create a program that:
+        <ul>
+          <li>Uses a loop to show numbers 1, 2, 3, 4, 5</li>
+          <li>Then shows a star icon</li>
+          <li>Repeats this pattern 3 times</li>
+          <li>Hint: You can put loops inside other blocks!</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Loop:</strong> A way to repeat code without writing it multiple times</li>
+        <li><strong>Repeat Loop:</strong> Repeats a specific number of times (like "repeat 5 times")</li>
+        <li><strong>For Loop:</strong> Repeats with a counter variable (like "for index from 1 to 10")</li>
+        <li><strong>Forever Loop:</strong> Repeats continuously, never stops</li>
+        <li><strong>Index:</strong> A variable that counts in a for loop (0, 1, 2, 3...)</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! Loops help you create animations and repeat actions easily. Next session, we'll explore the temperature sensor!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>
