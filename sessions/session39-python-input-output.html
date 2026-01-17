@@ -142,6 +142,73 @@ print(f"{num1} + {num2} = {result}")</code></pre>
         <span class="step-number">Step 2:</span> Try modifying it to do subtraction, multiplication, or division
       </div>
 
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete interactive program:
+        <pre><code># interactive_program.py
+# An interactive program that gets user input
+
+print("=" * 40)
+print("Welcome to the Interactive Program!")
+print("=" * 40)
+
+# Get user's name
+name = input("What is your name? ")
+print(f"Hello, {name}! Nice to meet you.")
+
+# Get user's age
+age = int(input("How old are you? "))
+print(f"You are {age} years old.")
+
+# Get user's favourite colour
+favourite_colour = input("What is your favourite colour? ")
+print(f"{favourite_colour} is a great colour!")
+
+# Get user's favourite number
+favourite_number = int(input("What is your favourite number? "))
+double = favourite_number * 2
+print(f"Double your favourite number is {double}!")
+
+# Create a summary
+print("\n" + "=" * 40)
+print("Summary")
+print("=" * 40)
+print(f"Name: {name}")
+print(f"Age: {age}")
+print(f"Favourite colour: {favourite_colour}")
+print(f"Favourite number: {favourite_number}")
+print(f"Double of favourite number: {double}")
+
+print("\nThank you for using the program!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Example Run:</span> Here's what happens when you run it:
+        <pre><code>========================================
+Welcome to the Interactive Program!
+========================================
+What is your name? Sarah
+Hello, Sarah! Nice to meet you.
+How old are you? 12
+You are 12 years old.
+What is your favourite colour? Blue
+Blue is a great colour!
+What is your favourite number? 7
+Double your favourite number is 14!
+
+========================================
+Summary
+========================================
+Name: Sarah
+Age: 12
+Favourite colour: Blue
+Favourite number: 7
+Double of favourite number: 14
+
+Thank you for using the program!</code></pre>
+      </div>
+
       <div class="challenge">
         Create a program that:
         <ul>
@@ -151,6 +218,30 @@ print(f"{num1} + {num2} = {result}")</code></pre>
           <li>Asks how many pets they have</li>
           <li>Creates a personalised message with all this information</li>
         </ul>
+        <p><strong>Example solution:</strong></p>
+        <pre><code># Age calculator program
+from datetime import datetime
+
+print("Personal Information Program")
+print("=" * 35)
+
+name = input("What is your name? ")
+birth_year = int(input("What year were you born? "))
+current_year = datetime.now().year
+age = current_year - birth_year
+
+pets = int(input("How many pets do you have? "))
+
+print("\n" + "=" * 35)
+print(f"Hello, {name}!")
+print(f"You were born in {birth_year}")
+print(f"You are {age} years old")
+print(f"You have {pets} pet(s)")
+
+if pets > 0:
+    print(f"That's great! {pets} pet(s) must be fun!")
+else:
+    print("Maybe you'll get a pet one day!")</code></pre>
       </div>
 
       <h2>💡 Key Concepts</h2>

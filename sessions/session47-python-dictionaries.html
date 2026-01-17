@@ -183,6 +183,184 @@ while True:
         break</code></pre>
       </div>
 
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete student management program:
+        <pre><code># student_manager.py
+# A program to manage student information using dictionaries
+
+# Initial student data
+students = {
+    "Sarah": {
+        "age": 12,
+        "grade": 7,
+        "favourite_subject": "Maths",
+        "email": "sarah@school.com"
+    },
+    "Alex": {
+        "age": 13,
+        "grade": 8,
+        "favourite_subject": "Science",
+        "email": "alex@school.com"
+    },
+    "Jordan": {
+        "age": 12,
+        "grade": 7,
+        "favourite_subject": "English",
+        "email": "jordan@school.com"
+    }
+}
+
+print("Student Information Manager")
+print("=" * 40)
+
+while True:
+    print("\nMenu:")
+    print("1. View all students")
+    print("2. Look up a student")
+    print("3. Add a student")
+    print("4. Update student information")
+    print("5. Remove a student")
+    print("6. Quit")
+    
+    choice = input("\nChoose an option (1-6): ")
+    
+    if choice == "1":
+        print("\n" + "=" * 40)
+        print("All Students")
+        print("=" * 40)
+        for name, info in students.items():
+            print(f"\n{name}:")
+            print(f"  Age: {info['age']}")
+            print(f"  Grade: {info['grade']}")
+            print(f"  Favourite Subject: {info['favourite_subject']}")
+            print(f"  Email: {info['email']}")
+    
+    elif choice == "2":
+        name = input("\nEnter student name: ")
+        if name in students:
+            info = students[name]
+            print(f"\n{name}:")
+            print(f"  Age: {info['age']}")
+            print(f"  Grade: {info['grade']}")
+            print(f"  Favourite Subject: {info['favourite_subject']}")
+            print(f"  Email: {info['email']}")
+        else:
+            print(f"Student '{name}' not found!")
+    
+    elif choice == "3":
+        name = input("Enter student name: ")
+        if name in students:
+            print(f"Student '{name}' already exists!")
+        else:
+            age = int(input("Enter age: "))
+            grade = int(input("Enter grade: "))
+            subject = input("Enter favourite subject: ")
+            email = input("Enter email: ")
+            students[name] = {
+                "age": age,
+                "grade": grade,
+                "favourite_subject": subject,
+                "email": email
+            }
+            print(f"Added {name} to the system!")
+    
+    elif choice == "4":
+        name = input("Enter student name to update: ")
+        if name in students:
+            print("Enter new information (press Enter to keep current):")
+            age = input(f"Age (current: {students[name]['age']}): ")
+            if age:
+                students[name]['age'] = int(age)
+            
+            grade = input(f"Grade (current: {students[name]['grade']}): ")
+            if grade:
+                students[name]['grade'] = int(grade)
+            
+            subject = input(f"Favourite Subject (current: {students[name]['favourite_subject']}): ")
+            if subject:
+                students[name]['favourite_subject'] = subject
+            
+            print(f"Updated {name}'s information!")
+        else:
+            print(f"Student '{name}' not found!")
+    
+    elif choice == "5":
+        name = input("Enter student name to remove: ")
+        if name in students:
+            del students[name]
+            print(f"Removed {name} from the system!")
+        else:
+            print(f"Student '{name}' not found!")
+    
+    elif choice == "6":
+        print("\nFinal student list:")
+        for name in students.keys():
+            print(f"  - {name}")
+        print("\nGoodbye!")
+        break
+    
+    else:
+        print("Invalid choice. Please try again.")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Example Run:</span>
+        <pre><code>Student Information Manager
+========================================
+
+Menu:
+1. View all students
+2. Look up a student
+3. Add a student
+4. Update student information
+5. Remove a student
+6. Quit
+
+Choose an option (1-6): 1
+
+========================================
+All Students
+========================================
+
+Sarah:
+  Age: 12
+  Grade: 7
+  Favourite Subject: Maths
+  Email: sarah@school.com
+
+Alex:
+  Age: 13
+  Grade: 8
+  Favourite Subject: Science
+  Email: alex@school.com
+
+Jordan:
+  Age: 12
+  Grade: 7
+  Favourite Subject: English
+  Email: jordan@school.com
+
+Choose an option (1-6): 2
+Enter student name: Sarah
+
+Sarah:
+  Age: 12
+  Grade: 7
+  Favourite Subject: Maths
+  Email: sarah@school.com
+
+Choose an option (1-6): 6
+
+Final student list:
+  - Sarah
+  - Alex
+  - Jordan
+
+Goodbye!</code></pre>
+      </div>
+
       <div class="challenge">
         Create a program that:
         <ul>
@@ -191,6 +369,31 @@ while True:
           <li>Allows you to update a student's information</li>
           <li>Displays all students and their information</li>
         </ul>
+        <p><strong>Example solution:</strong></p>
+        <pre><code># student_info.py
+students = {
+    "Sarah": {"age": 12, "subject": "Maths"},
+    "Alex": {"age": 13, "subject": "Science"},
+    "Jordan": {"age": 12, "subject": "English"}
+}
+
+# Look up student
+name = input("Enter student name: ")
+if name in students:
+    info = students[name]
+    print(f"{name}: Age {info['age']}, Favourite: {info['subject']}")
+
+# Update student
+name = input("\nStudent to update: ")
+if name in students:
+    students[name]["age"] = int(input("New age: "))
+    students[name]["subject"] = input("New subject: ")
+    print("Updated!")
+
+# Display all
+print("\nAll students:")
+for name, info in students.items():
+    print(f"{name}: {info}")</code></pre>
       </div>
 
       <h2>💡 Key Concepts</h2>

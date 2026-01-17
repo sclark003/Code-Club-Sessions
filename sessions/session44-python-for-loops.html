@@ -152,6 +152,86 @@ for number in numbers:
 print(f"The largest number is {largest}")</code></pre>
       </div>
 
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete program using for loops:
+        <pre><code># number_analyser.py
+# A program that analyses a list of numbers
+
+print("Number Analyser")
+print("=" * 40)
+
+# Get numbers from user
+numbers = []
+print("Enter 5 numbers:")
+
+for i in range(5):
+    num = float(input(f"Number {i+1}: "))
+    numbers.append(num)
+
+# Calculate statistics
+total = 0
+largest = numbers[0]
+smallest = numbers[0]
+
+for number in numbers:
+    total += number
+    if number > largest:
+        largest = number
+    if number < smallest:
+        smallest = number
+
+average = total / len(numbers)
+
+# Display results
+print("\n" + "=" * 40)
+print("Results")
+print("=" * 40)
+print(f"Numbers entered: {numbers}")
+print(f"Sum: {total}")
+print(f"Average: {average:.2f}")
+print(f"Largest: {largest}")
+print(f"Smallest: {smallest}")
+
+# Count even and odd numbers
+even_count = 0
+odd_count = 0
+
+for number in numbers:
+    if number % 2 == 0:
+        even_count += 1
+    else:
+        odd_count += 1
+
+print(f"\nEven numbers: {even_count}")
+print(f"Odd numbers: {odd_count}")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Example Run:</span>
+        <pre><code>Number Analyser
+========================================
+Enter 5 numbers:
+Number 1: 10
+Number 2: 25
+Number 3: 7
+Number 4: 14
+Number 5: 33
+
+========================================
+Results
+========================================
+Numbers entered: [10.0, 25.0, 7.0, 14.0, 33.0]
+Sum: 89.0
+Average: 17.80
+Largest: 33.0
+Smallest: 7.0
+
+Even numbers: 2
+Odd numbers: 3</code></pre>
+      </div>
+
       <div class="challenge">
         Create a program that:
         <ul>
@@ -160,6 +240,38 @@ print(f"The largest number is {largest}")</code></pre>
           <li>Finds and displays the sum, average, largest, and smallest</li>
           <li>Uses for loops to process the list</li>
         </ul>
+        <p><strong>Example solution:</strong></p>
+        <pre><code># number_statistics.py
+numbers = []
+
+# Get 5 numbers
+for i in range(5):
+    num = float(input(f"Enter number {i+1}: "))
+    numbers.append(num)
+
+# Calculate sum
+total = 0
+for num in numbers:
+    total += num
+
+# Find largest and smallest
+largest = numbers[0]
+smallest = numbers[0]
+for num in numbers:
+    if num > largest:
+        largest = num
+    if num < smallest:
+        smallest = num
+
+# Calculate average
+average = total / len(numbers)
+
+# Display results
+print(f"\nNumbers: {numbers}")
+print(f"Sum: {total}")
+print(f"Average: {average}")
+print(f"Largest: {largest}")
+print(f"Smallest: {smallest}")</code></pre>
       </div>
 
       <h2>💡 Key Concepts</h2>

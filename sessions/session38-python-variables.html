@@ -131,6 +131,82 @@ print(type(name))
 print(type(age))</code></pre>
       </div>
 
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete program using all data types:
+        <pre><code># variables_example.py
+# Demonstrating different data types
+
+# String variables
+name = "Sarah"
+favourite_colour = "blue"
+school = "Code Club School"
+
+# Integer variables
+age = 12
+grade = 7
+favourite_number = 42
+
+# Float variables
+height = 1.65
+weight = 45.5
+temperature = 23.5
+
+# Boolean variables
+is_student = True
+likes_coding = True
+is_weekend = False
+
+# Display information using f-strings
+print("=" * 40)
+print("Student Information")
+print("=" * 40)
+print(f"Name: {name}")
+print(f"Age: {age} years old")
+print(f"Grade: {grade}")
+print(f"Height: {height} metres")
+print(f"Favourite colour: {favourite_colour}")
+print(f"Favourite number: {favourite_number}")
+print(f"\nIs a student: {is_student}")
+print(f"Likes coding: {likes_coding}")
+print(f"Is weekend: {is_weekend}")
+
+# Check data types
+print("\n" + "=" * 40)
+print("Data Types")
+print("=" * 40)
+print(f"name is: {type(name)}")
+print(f"age is: {type(age)}")
+print(f"height is: {type(height)}")
+print(f"is_student is: {type(is_student)}")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Output:</span> When you run this program:
+        <pre><code>========================================
+Student Information
+========================================
+Name: Sarah
+Age: 12 years old
+Grade: 7
+Height: 1.65 metres
+Favourite colour: blue
+Favourite number: 42
+
+Is a student: True
+Likes coding: True
+Is weekend: False
+
+========================================
+Data Types
+========================================
+name is: &lt;class 'str'&gt;
+age is: &lt;class 'int'&gt;
+height is: &lt;class 'float'&gt;
+is_student is: &lt;class 'bool'&gt;</code></pre>
+      </div>
+
       <div class="challenge">
         Create a program that stores information about yourself:
         <ul>
@@ -140,6 +216,23 @@ print(type(age))</code></pre>
           <li>Whether you like coding (boolean)</li>
           <li>Print all this information in a nice message using f-strings</li>
         </ul>
+        <p><strong>Example solution:</strong></p>
+        <pre><code># About me program
+name = "Alex"
+age = 13
+height = 1.70
+likes_coding = True
+
+print("=" * 30)
+print("About Me")
+print("=" * 30)
+print(f"My name is {name}")
+print(f"I am {age} years old")
+print(f"My height is {height} metres")
+print(f"Do I like coding? {likes_coding}")
+
+if likes_coding:
+    print("\nI love coding with Python!")</code></pre>
       </div>
 
       <h2>💡 Key Concepts</h2>

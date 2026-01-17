@@ -171,6 +171,157 @@ while True:
         break</code></pre>
       </div>
 
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete grade management program:
+        <pre><code># grade_manager.py
+# A program to manage student grades using files
+
+import json
+
+GRADES_FILE = "grades.json"
+
+def load_grades():
+    """Load grades from file"""
+    try:
+        with open(GRADES_FILE, 'r') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return {}
+
+def save_grades(grades):
+    """Save grades to file"""
+    with open(GRADES_FILE, 'w') as file:
+        json.dump(grades, file, indent=2)
+
+def display_menu():
+    """Display the main menu"""
+    print("\n" + "=" * 40)
+    print("Grade Management System")
+    print("=" * 40)
+    print("1. Add/Update student grade")
+    print("2. View all grades")
+    print("3. View specific student")
+    print("4. Calculate average grade")
+    print("5. Remove student")
+    print("6. Quit")
+    print("=" * 40)
+
+def calculate_average(grades):
+    """Calculate average of all grades"""
+    if not grades:
+        return 0
+    total = sum(grades.values())
+    return total / len(grades)
+
+# Main program
+grades = load_grades()
+
+while True:
+    display_menu()
+    choice = input("Choose an option (1-6): ")
+    
+    if choice == "1":
+        name = input("Enter student name: ")
+        try:
+            grade = float(input("Enter grade (0-100): "))
+            if 0 <= grade <= 100:
+                grades[name] = grade
+                save_grades(grades)
+                print(f"Grade saved for {name}!")
+            else:
+                print("Grade must be between 0 and 100!")
+        except ValueError:
+            print("Please enter a valid number!")
+    
+    elif choice == "2":
+        if not grades:
+            print("\nNo grades recorded yet!")
+        else:
+            print("\n" + "=" * 40)
+            print("All Grades")
+            print("=" * 40)
+            for name, grade in sorted(grades.items()):
+                print(f"{name:20} {grade:6.1f}")
+            print("=" * 40)
+    
+    elif choice == "3":
+        name = input("Enter student name: ")
+        if name in grades:
+            print(f"\n{name}'s grade: {grades[name]}")
+        else:
+            print(f"Student '{name}' not found!")
+    
+    elif choice == "4":
+        if not grades:
+            print("No grades to calculate average!")
+        else:
+            average = calculate_average(grades)
+            print(f"\nAverage grade: {average:.2f}")
+            print(f"Total students: {len(grades)}")
+    
+    elif choice == "5":
+        name = input("Enter student name to remove: ")
+        if name in grades:
+            del grades[name]
+            save_grades(grades)
+            print(f"Removed {name} from records!")
+        else:
+            print(f"Student '{name}' not found!")
+    
+    elif choice == "6":
+        print("\nSaving data...")
+        save_grades(grades)
+        print("Goodbye!")
+        break
+    
+    else:
+        print("Invalid choice. Please try again.")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Example Run:</span>
+        <pre><code>========================================
+Grade Management System
+========================================
+1. Add/Update student grade
+2. View all grades
+3. View specific student
+4. Calculate average grade
+5. Remove student
+6. Quit
+========================================
+Choose an option (1-6): 1
+Enter student name: Sarah
+Enter grade (0-100): 85
+Grade saved for Sarah!
+
+Choose an option (1-6): 1
+Enter student name: Alex
+Enter grade (0-100): 92
+Grade saved for Alex!
+
+Choose an option (1-6): 2
+
+========================================
+All Grades
+========================================
+Alex                   92.0
+Sarah                  85.0
+========================================
+
+Choose an option (1-6): 4
+
+Average grade: 88.50
+Total students: 2
+
+Choose an option (1-6): 6
+
+Saving data...
+Goodbye!</code></pre>
+      </div>
+
       <div class="challenge">
         Create a program that:
         <ul>
@@ -179,6 +330,33 @@ while True:
           <li>Can read and display all students and their grades</li>
           <li>Calculates and displays the average grade</li>
         </ul>
+        <p><strong>Example solution:</strong></p>
+        <pre><code># student_grades.py
+grades = {}
+
+# Add grades
+while True:
+    name = input("Student name (or 'done' to finish): ")
+    if name.lower() == 'done':
+        break
+    grade = float(input(f"Grade for {name}: "))
+    grades[name] = grade
+
+# Save to file
+with open("grades.txt", "w") as file:
+    for name, grade in grades.items():
+        file.write(f"{name}: {grade}\n")
+
+# Read and display
+print("\nAll grades:")
+with open("grades.txt", "r") as file:
+    for line in file:
+        print(line.strip())
+
+# Calculate average
+if grades:
+    average = sum(grades.values()) / len(grades)
+    print(f"\nAverage grade: {average:.2f}")</code></pre>
       </div>
 
       <h2>💡 Key Concepts</h2>

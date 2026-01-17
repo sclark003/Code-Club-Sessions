@@ -150,6 +150,82 @@ while True:
         print("Invalid choice. Try again.")</code></pre>
       </div>
 
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete program using while loops:
+        <pre><code># number_collector.py
+# Collect numbers until user enters 0
+
+print("Number Collector")
+print("=" * 30)
+print("Enter numbers (enter 0 to finish)")
+
+numbers = []
+total = 0
+count = 0
+
+while True:
+    try:
+        number = float(input(f"Enter number {count + 1}: "))
+        
+        if number == 0:
+            break  # Exit the loop when 0 is entered
+        
+        numbers.append(number)
+        total += number
+        count += 1
+        
+    except ValueError:
+        print("Please enter a valid number!")
+
+# Display results
+print("\n" + "=" * 30)
+print("Results")
+print("=" * 30)
+
+if count > 0:
+    average = total / count
+    
+    print(f"Numbers entered: {numbers}")
+    print(f"Total count: {count}")
+    print(f"Sum: {total}")
+    print(f"Average: {average:.2f}")
+    
+    # Find largest and smallest
+    largest = max(numbers)
+    smallest = min(numbers)
+    print(f"Largest: {largest}")
+    print(f"Smallest: {smallest}")
+else:
+    print("No numbers were entered!")
+
+print("=" * 30)</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Example Run:</span>
+        <pre><code>Number Collector
+==============================
+Enter numbers (enter 0 to finish)
+Enter number 1: 10
+Enter number 2: 25
+Enter number 3: 7
+Enter number 4: 14
+Enter number 5: 0
+
+==============================
+Results
+==============================
+Numbers entered: [10.0, 25.0, 7.0, 14.0]
+Total count: 4
+Sum: 56.0
+Average: 14.00
+Largest: 25.0
+Smallest: 7.0
+==============================</code></pre>
+      </div>
+
       <div class="challenge">
         Create a program that:
         <ul>
@@ -158,6 +234,23 @@ while True:
           <li>Calculates and displays the sum of all numbers entered</li>
           <li>Shows how many numbers were entered</li>
         </ul>
+        <p><strong>Example solution:</strong></p>
+        <pre><code># number_sum.py
+numbers = []
+total = 0
+
+print("Enter numbers (0 to stop):")
+
+while True:
+    num = float(input("Number: "))
+    if num == 0:
+        break
+    numbers.append(num)
+    total += num
+
+print(f"\nYou entered {len(numbers)} numbers")
+print(f"Sum: {total}")
+print(f"Numbers: {numbers}")</code></pre>
       </div>
 
       <h2>💡 Key Concepts</h2>

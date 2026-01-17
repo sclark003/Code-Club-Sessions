@@ -166,6 +166,101 @@ print(multiply(10, 5))
 print(divide(10, 5))</code></pre>
       </div>
 
+      <h2>📋 Complete Example Program</h2>
+      
+      <div class="step">
+        <span class="step-number">Example:</span> Here's a complete program with multiple functions:
+        <pre><code># geometry_calculator.py
+# A program with functions for geometry calculations
+
+import math
+
+def rectangle_area(length, width):
+    """Calculate the area of a rectangle"""
+    return length * width
+
+def circle_area(radius):
+    """Calculate the area of a circle"""
+    return math.pi * radius ** 2
+
+def triangle_area(base, height):
+    """Calculate the area of a triangle"""
+    return 0.5 * base * height
+
+def celsius_to_fahrenheit(celsius):
+    """Convert Celsius to Fahrenheit"""
+    return (celsius * 9/5) + 32
+
+def fahrenheit_to_celsius(fahrenheit):
+    """Convert Fahrenheit to Celsius"""
+    return (fahrenheit - 32) * 5/9
+
+def is_even(number):
+    """Check if a number is even"""
+    return number % 2 == 0
+
+# Main program
+print("Geometry and Utility Calculator")
+print("=" * 40)
+
+# Rectangle
+length = float(input("Enter rectangle length: "))
+width = float(input("Enter rectangle width: "))
+area_rect = rectangle_area(length, width)
+print(f"Rectangle area: {area_rect:.2f}")
+
+# Circle
+radius = float(input("\nEnter circle radius: "))
+area_circle = circle_area(radius)
+print(f"Circle area: {area_circle:.2f}")
+
+# Triangle
+base = float(input("\nEnter triangle base: "))
+height = float(input("Enter triangle height: "))
+area_triangle = triangle_area(base, height)
+print(f"Triangle area: {area_triangle:.2f}")
+
+# Temperature conversion
+celsius = float(input("\nEnter temperature in Celsius: "))
+fahrenheit = celsius_to_fahrenheit(celsius)
+print(f"{celsius}°C = {fahrenheit:.2f}°F")
+
+# Even/odd check
+number = int(input("\nEnter a number: "))
+if is_even(number):
+    print(f"{number} is even")
+else:
+    print(f"{number} is odd")
+
+print("\n" + "=" * 40)
+print("Calculations complete!")</code></pre>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Example Run:</span>
+        <pre><code>Geometry and Utility Calculator
+========================================
+Enter rectangle length: 5
+Enter rectangle width: 3
+Rectangle area: 15.00
+
+Enter circle radius: 4
+Circle area: 50.27
+
+Enter triangle base: 6
+Enter triangle height: 4
+Triangle area: 12.00
+
+Enter temperature in Celsius: 25
+25.0°C = 77.00°F
+
+Enter a number: 42
+42 is even
+
+========================================
+Calculations complete!</code></pre>
+      </div>
+
       <div class="challenge">
         Create a program with functions that:
         <ul>
@@ -174,6 +269,33 @@ print(divide(10, 5))</code></pre>
           <li>Converts temperature from Celsius to Fahrenheit</li>
           <li>Checks if a number is prime</li>
         </ul>
+        <p><strong>Example solution:</strong></p>
+        <pre><code># utility_functions.py
+import math
+
+def rectangle_area(length, width):
+    return length * width
+
+def circle_area(radius):
+    return math.pi * radius ** 2
+
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+def is_prime(number):
+    if number < 2:
+        return False
+    for i in range(2, int(math.sqrt(number)) + 1):
+        if number % i == 0:
+            return False
+    return True
+
+# Test the functions
+print(f"Rectangle area (5x3): {rectangle_area(5, 3)}")
+print(f"Circle area (radius 4): {circle_area(4):.2f}")
+print(f"25°C = {celsius_to_fahrenheit(25)}°F")
+print(f"Is 17 prime? {is_prime(17)}")
+print(f"Is 20 prime? {is_prime(20)}")</code></pre>
       </div>
 
       <h2>💡 Key Concepts</h2>
