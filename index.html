@@ -21,8 +21,19 @@
       <p><strong>Start with Sessions 1-12</strong> to learn micro:bit basics, then try <strong>Sessions 13-18</strong> for Cutebot robotics, <strong>Sessions 19-24</strong> for Arcade game development, or <strong>Sessions 25-30</strong> for advanced game development!</p>
     </section>
 
+    <section class="filters">
+      <h3>Filter Sessions:</h3>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Sessions</button>
+        <button class="filter-btn" data-filter="microbit">micro:bit Basics</button>
+        <button class="filter-btn" data-filter="cutebot">Cutebot Robotics</button>
+        <button class="filter-btn" data-filter="arcade">Arcade Basics</button>
+        <button class="filter-btn" data-filter="advanced">Advanced Arcade</button>
+      </div>
+    </section>
+
     <section class="sessions-grid">
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 1</div>
         <h3>Hello micro:bit!</h3>
         <p class="concept">Concepts: Outputs, Basic Blocks</p>
@@ -30,7 +41,7 @@
         <a href="sessions/session01-hello-microbit.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 2</div>
         <h3>Button Presses</h3>
         <p class="concept">Concepts: Inputs, Events, Conditionals</p>
@@ -38,7 +49,7 @@
         <a href="sessions/session02-buttons.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 3</div>
         <h3>Shake It Up!</h3>
         <p class="concept">Concepts: Accelerometer, Events</p>
@@ -46,7 +57,7 @@
         <a href="sessions/session03-shake.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 4</div>
         <h3>Variables & Numbers</h3>
         <p class="concept">Concepts: Variables, Math Operations</p>
@@ -54,7 +65,7 @@
         <a href="sessions/session04-variables.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 5</div>
         <h3>Loops & Repetition</h3>
         <p class="concept">Concepts: For Loops, While Loops</p>
@@ -62,7 +73,7 @@
         <a href="sessions/session05-loops.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 6</div>
         <h3>Temperature Sensor</h3>
         <p class="concept">Concepts: Sensors, Data Display</p>
@@ -70,7 +81,7 @@
         <a href="sessions/session06-temperature.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 7</div>
         <h3>Light Sensor</h3>
         <p class="concept">Concepts: Light Level, Conditionals</p>
@@ -78,7 +89,7 @@
         <a href="sessions/session07-light.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 8</div>
         <h3>Compass & Direction</h3>
         <p class="concept">Concepts: Magnetometer, Degrees</p>
@@ -86,7 +97,7 @@
         <a href="sessions/session08-compass.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 9</div>
         <h3>Music & Sounds</h3>
         <p class="concept">Concepts: Music Blocks, Notes</p>
@@ -94,7 +105,7 @@
         <a href="sessions/session09-music.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 10</div>
         <h3>Radio Communication</h3>
         <p class="concept">Concepts: Radio, Communication</p>
@@ -102,7 +113,7 @@
         <a href="sessions/session10-radio.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 11</div>
         <h3>Conditional Logic</h3>
         <p class="concept">Concepts: If/Else, Logic Operators</p>
@@ -110,7 +121,7 @@
         <a href="sessions/session11-conditionals.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="microbit">
         <div class="session-number">Session 12</div>
         <h3>Final Project</h3>
         <p class="concept">Concepts: Combining Skills</p>
@@ -125,7 +136,7 @@
     </section>
 
     <section class="sessions-grid">
-      <div class="session-card">
+      <div class="session-card" data-category="cutebot">
         <div class="session-number">Session 13</div>
         <h3>Introduction to Cutebot</h3>
         <p class="concept">Concepts: Robot Setup, Movement</p>
@@ -133,7 +144,7 @@
         <a href="sessions/session13-cutebot-intro.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="cutebot">
         <div class="session-number">Session 14</div>
         <h3>Control Cutebot with Buttons</h3>
         <p class="concept">Concepts: Remote Control, Events</p>
@@ -141,7 +152,7 @@
         <a href="sessions/session14-cutebot-buttons.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="cutebot">
         <div class="session-number">Session 15</div>
         <h3>Cutebot Speed Control</h3>
         <p class="concept">Concepts: Variables, Speed Control</p>
@@ -149,7 +160,7 @@
         <a href="sessions/session15-cutebot-speed.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="cutebot">
         <div class="session-number">Session 16</div>
         <h3>Cutebot Line Following</h3>
         <p class="concept">Concepts: Sensors, Algorithms</p>
@@ -157,7 +168,7 @@
         <a href="sessions/session16-cutebot-line-following.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="cutebot">
         <div class="session-number">Session 17</div>
         <h3>Cutebot Obstacle Avoidance</h3>
         <p class="concept">Concepts: Ultrasonic Sensor, Navigation</p>
@@ -165,7 +176,7 @@
         <a href="sessions/session17-cutebot-obstacles.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="cutebot">
         <div class="session-number">Session 18</div>
         <h3>Cutebot Final Project</h3>
         <p class="concept">Concepts: Combining All Skills</p>
@@ -180,7 +191,7 @@
     </section>
 
     <section class="sessions-grid">
-      <div class="session-card">
+      <div class="session-card" data-category="arcade">
         <div class="session-number">Session 19</div>
         <h3>Introduction to Arcade Console</h3>
         <p class="concept">Concepts: Sprites, MakeCode Arcade</p>
@@ -188,7 +199,7 @@
         <a href="sessions/session19-arcade-intro.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="arcade">
         <div class="session-number">Session 20</div>
         <h3>Arcade Movement & Controls</h3>
         <p class="concept">Concepts: Button Controls, Game Loops</p>
@@ -196,7 +207,7 @@
         <a href="sessions/session20-arcade-movement.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="arcade">
         <div class="session-number">Session 21</div>
         <h3>Arcade Animation & Sound</h3>
         <p class="concept">Concepts: Animation, Sound Effects</p>
@@ -204,7 +215,7 @@
         <a href="sessions/session21-arcade-animation.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="arcade">
         <div class="session-number">Session 22</div>
         <h3>Arcade Scoring & Game Mechanics</h3>
         <p class="concept">Concepts: Scoring, Collisions, Game Rules</p>
@@ -212,7 +223,7 @@
         <a href="sessions/session22-arcade-scoring.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="arcade">
         <div class="session-number">Session 23</div>
         <h3>Arcade Levels & Backgrounds</h3>
         <p class="concept">Concepts: Backgrounds, Multiple Levels</p>
@@ -220,7 +231,7 @@
         <a href="sessions/session23-arcade-levels.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="arcade">
         <div class="session-number">Session 24</div>
         <h3>Arcade Final Project</h3>
         <p class="concept">Concepts: Complete Game Design</p>
@@ -235,7 +246,7 @@
     </section>
 
     <section class="sessions-grid">
-      <div class="session-card">
+      <div class="session-card" data-category="advanced">
         <div class="session-number">Session 25</div>
         <h3>Advanced Game Design</h3>
         <p class="concept">Concepts: Planning, Design Documents</p>
@@ -243,7 +254,7 @@
         <a href="sessions/session25-arcade-game-design.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="advanced">
         <div class="session-number">Session 26</div>
         <h3>Building Core Mechanics</h3>
         <p class="concept">Concepts: Game Loop, State Management</p>
@@ -251,7 +262,7 @@
         <a href="sessions/session26-arcade-core-mechanics.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="advanced">
         <div class="session-number">Session 27</div>
         <h3>Advanced Game Features</h3>
         <p class="concept">Concepts: Power-ups, AI, Special Abilities</p>
@@ -259,7 +270,7 @@
         <a href="sessions/session27-arcade-advanced-features.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="advanced">
         <div class="session-number">Session 28</div>
         <h3>Levels & Boss Battles</h3>
         <p class="concept">Concepts: Level Design, Boss Mechanics</p>
@@ -267,7 +278,7 @@
         <a href="sessions/session28-arcade-levels-bosses.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="advanced">
         <div class="session-number">Session 29</div>
         <h3>Menus & Game Polish</h3>
         <p class="concept">Concepts: UI, Menus, Polish</p>
@@ -275,7 +286,7 @@
         <a href="sessions/session29-arcade-menus-polish.html" class="btn">Start Session →</a>
       </div>
 
-      <div class="session-card">
+      <div class="session-card" data-category="advanced">
         <div class="session-number">Session 30</div>
         <h3>Testing & Sharing</h3>
         <p class="concept">Concepts: Testing, Debugging, Sharing</p>
@@ -301,5 +312,46 @@
       <p>Made with ❤️ for Code Club</p>
     </div>
   </footer>
+
+  <script>
+    // Filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const sessionCards = document.querySelectorAll('.session-card');
+      const introSections = document.querySelectorAll('.intro');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+
+          const filter = this.getAttribute('data-filter');
+
+          // Filter session cards
+          sessionCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'block';
+              // Add fade-in animation
+              card.style.animation = 'fadeIn 0.3s ease-in';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Show/hide intro sections based on filter
+          introSections.forEach(section => {
+            if (filter === 'all') {
+              section.style.display = 'block';
+            } else {
+              // Hide intro sections when filtering (they're not needed when filtered)
+              section.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
