@@ -40,7 +40,7 @@ Each session is designed to be completed in approximately one hour and includes:
 - Challenges for extension
 - Links to next sessions
 
-View all sessions on the [GitHub Pages site](https://yourusername.github.io/Code-Club-Sessions/) or navigate through the `sessions/` folder.
+View all sessions on the [GitHub Pages site](https://sclark003.github.io/Code-Club-Sessions/) or navigate through the `sessions/` folder.
 
 ---
 
