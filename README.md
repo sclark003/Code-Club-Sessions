@@ -36,18 +36,24 @@ Sessions run at a local school code club using BBC Microbits, Smart Cutebot robo
 | **16** | Cutebot Line Following | Sensors, algorithms | Make Cutebot automatically follow a line |
 | **17** | Cutebot Obstacle Avoidance | Ultrasonic sensor, navigation | Detect and avoid obstacles automatically |
 | **18** | Cutebot Final Project | Combining all robot skills | Create your own amazing robot project! |
-| **19** | Introduction to Arcade Console | Sprites, MakeCode Arcade | Meet the Arcade console and create your first sprites |
-| **20** | Arcade Movement & Controls | Button controls, game loops | Make your sprites move with console buttons |
-| **21** | Arcade Animation & Sound | Animation, sound effects | Bring your games to life with animation and sound |
-| **22** | Arcade Scoring & Game Mechanics | Scoring, collisions, game rules | Add scoring, collectibles, and game rules |
-| **23** | Arcade Levels & Backgrounds | Backgrounds, multiple levels | Create beautiful game worlds and multiple levels |
-| **24** | Arcade Final Project | Complete game design | Create your own amazing game combining everything! |
-| **25** | Advanced Game Design | Planning, design documents | Plan and design your detailed game before building |
-| **26** | Building Core Mechanics | Game loop, state management | Create the foundation and core gameplay |
-| **27** | Advanced Game Features | Power-ups, AI, special abilities | Add power-ups, multiple enemies, and special abilities |
-| **28** | Levels & Boss Battles | Level design, boss mechanics | Create multiple levels and epic boss battles |
-| **29** | Menus & Game Polish | UI, menus, polish | Add menus, UI elements, and final polish |
-| **30** | Testing & Sharing | Testing, debugging, sharing | Test, debug, balance, and share your completed game |
+| **19** | Advanced Cutebot Navigation | Pathfinding, complex navigation | Navigate complex paths, mazes, and intersections |
+| **20** | Cutebot Sensor Fusion | Multi-sensor systems | Combine multiple sensors for intelligent behavior |
+| **21** | Complex Cutebot Behaviors | State machines, behavior programming | Program complex behaviors using state machines |
+| **22** | Multi-Robot Coordination | Multi-robot systems, communication | Make multiple Cutebots work together |
+| **23** | Cutebot Data Logging | Data recording, analysis | Record and analyze robot data to improve performance |
+| **24** | Advanced Cutebot Final Project | Advanced autonomous missions | Create an advanced autonomous robot mission! |
+| **25** | Introduction to Arcade Console | Sprites, MakeCode Arcade | Meet the Arcade console and create your first sprites |
+| **26** | Arcade Movement & Controls | Button controls, game loops | Make your sprites move with console buttons |
+| **27** | Arcade Animation & Sound | Animation, sound effects | Bring your games to life with animation and sound |
+| **28** | Arcade Scoring & Game Mechanics | Scoring, collisions, game rules | Add scoring, collectibles, and game rules |
+| **29** | Arcade Levels & Backgrounds | Backgrounds, multiple levels | Create beautiful game worlds and multiple levels |
+| **30** | Arcade Final Project | Complete game design | Create your own amazing game combining everything! |
+| **31** | Advanced Game Design | Planning, design documents | Plan and design your detailed game before building |
+| **32** | Building Core Mechanics | Game loop, state management | Create the foundation and core gameplay |
+| **33** | Advanced Game Features | Power-ups, AI, special abilities | Add power-ups, multiple enemies, and special abilities |
+| **34** | Levels & Boss Battles | Level design, boss mechanics | Create multiple levels and epic boss battles |
+| **35** | Menus & Game Polish | UI, menus, polish | Add menus, UI elements, and final polish |
+| **36** | Testing & Sharing | Testing, debugging, sharing | Test, debug, balance, and share your completed game |
 
 ---
 

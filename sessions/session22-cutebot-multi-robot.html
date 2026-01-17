@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 22: Multi-Robot Coordination - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 22: Multi-Robot Coordination</h1>
+      <p>Working with multiple Cutebots together</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Coordinate multiple Cutebots</li>
+        <li>Use radio communication between robots</li>
+        <li>Create leader-follower systems</li>
+        <li>Program synchronized behaviors</li>
+        <li>Design multi-robot missions</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>At least 2 BBC micro:bits</li>
+        <li>At least 2 Cutebot robot cars</li>
+        <li>USB cables</li>
+        <li>Computers with MakeCode editor</li>
+        <li>Cutebot extension</li>
+        <li>Radio communication (from micro:bit sessions)</li>
+      </ul>
+
+      <h2>🤝 Multi-Robot Systems</h2>
+      <p>Today we'll learn to make multiple Cutebots work together! By coordinating robots, we can accomplish tasks that would be difficult for a single robot.</p>
+
+      <h2>🚀 Activity 1: Radio Setup for Robots</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Set up radio communication (review Session 10 if needed)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Assign robot IDs:
+        <ul>
+          <li>Robot 1: ID = 1</li>
+          <li>Robot 2: ID = 2</li>
+          <li>Use same radio group for all robots</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Create message types:
+        <ul>
+          <li>"START" - Begin mission</li>
+          <li>"STOP" - Stop moving</li>
+          <li>"POSITION" - Share position</li>
+          <li>"STATUS" - Share status</li>
+        </ul>
+      </div>
+
+      <h2>🎨 Activity 2: Leader-Follower System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Designate one robot as leader, others as followers
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Leader robot:
+        <ul>
+          <li>Moves based on buttons or sensors</li>
+          <li>Sends position/status to followers</li>
+          <li>Makes decisions for the group</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Follower robots:
+        <ul>
+          <li>Receive messages from leader</li>
+          <li>Move to follow leader</li>
+          <li>Maintain distance from leader</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Test - followers should follow the leader!
+      </div>
+
+      <h2>🎯 Activity 3: Synchronized Movement</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Make robots move in sync
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> One robot sends "GO" command
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> All robots receive command and move together:
+        <ul>
+          <li>Move forward for 2 seconds</li>
+          <li>Turn left together</li>
+          <li>Move forward again</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Create a synchronized dance or pattern!
+      </div>
+
+      <h2>🌟 Activity 4: Cooperative Task</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Design a task requiring cooperation:
+        <ul>
+          <li>Robot 1: Finds and follows line</li>
+          <li>Robot 2: Clears obstacles ahead</li>
+          <li>Both: Work together to complete mission</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Program communication:
+        <ul>
+          <li>Robot 1 sends "OBSTACLE" when it sees one</li>
+          <li>Robot 2 receives message and moves to clear it</li>
+          <li>Robot 2 sends "CLEAR" when done</li>
+          <li>Robot 1 continues when path is clear</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Test the cooperative mission!
+      </div>
+
+      <h2>🎮 Activity 5: Formation Flying</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create robots that move in formation
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Formation types:
+        <ul>
+          <li><strong>Line:</strong> One behind the other</li>
+          <li><strong>V-formation:</strong> Like birds flying</li>
+          <li><strong>Square:</strong> Four robots in a square</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Use radio to coordinate positions
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Maintain formation while moving
+      </div>
+
+      <div class="challenge">
+        Create a multi-robot system with:
+        <ul>
+          <li>At least 2 robots working together</li>
+          <li>Radio communication between robots</li>
+          <li>Leader-follower or cooperative behavior</li>
+          <li>Synchronized movements</li>
+          <li>Complete cooperative mission</li>
+          <li>Formation movement capability</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>Multi-Robot System:</strong> Multiple robots working together</li>
+        <li><strong>Coordination:</strong> Making robots work in harmony</li>
+        <li><strong>Leader-Follower:</strong> One robot leads, others follow</li>
+        <li><strong>Synchronization:</strong> Robots doing things at the same time</li>
+        <li><strong>Cooperation:</strong> Robots helping each other</li>
+        <li><strong>Formation:</strong> Robots arranged in a pattern</li>
+        <li><strong>Communication:</strong> Robots sharing information</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Amazing! You can now coordinate multiple robots. Next session, we'll learn about data logging and analyzing robot behavior!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>

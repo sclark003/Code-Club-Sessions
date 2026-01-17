@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 21: Complex Cutebot Behaviors - Code Club</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="session-header">
+    <div class="container">
+      <h1>Session 21: Complex Cutebot Behaviors</h1>
+      <p>State machines and complex behavior programming</p>
+      <div class="session-nav">
+        <a href="../index.html">← Back to Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="session-content">
+      <h2>🎯 Learning Goals</h2>
+      <ul>
+        <li>Understand state machines</li>
+        <li>Program complex behaviors with multiple states</li>
+        <li>Create behavior sequences</li>
+        <li>Handle state transitions</li>
+        <li>Build autonomous missions</li>
+      </ul>
+
+      <h2>📋 What You'll Need</h2>
+      <ul>
+        <li>BBC micro:bit</li>
+        <li>Cutebot robot car</li>
+        <li>USB cable</li>
+        <li>Computer with MakeCode editor</li>
+        <li>Cutebot extension</li>
+      </ul>
+
+      <h2>🤖 State Machines</h2>
+      <p>Today we'll learn about state machines - a powerful way to program complex behaviors! A state machine helps your robot know what it's doing and what to do next.</p>
+
+      <h2>🚀 Activity 1: Simple State Machine</h2>
+      
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a variable "robotState" with possible values:
+        <ul>
+          <li>"searching" - Looking for something</li>
+          <li>"following" - Following a line</li>
+          <li>"avoiding" - Avoiding an obstacle</li>
+          <li>"stopped" - Not moving</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> In your main loop, check the current state
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Do different things based on state:
+        <ul>
+          <li>If "searching": Move forward, look for line</li>
+          <li>If "following": Follow the line</li>
+          <li>If "avoiding": Avoid obstacles</li>
+          <li>If "stopped": Don't move</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Change states based on conditions:
+        <ul>
+          <li>If line found while searching → change to "following"</li>
+          <li>If obstacle found while following → change to "avoiding"</li>
+          <li>After avoiding obstacle → change to "searching"</li>
+        </ul>
+      </div>
+
+      <h2>🎨 Activity 2: Mission Sequence</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a mission with multiple steps:
+        <ul>
+          <li>Step 1: Find and follow line</li>
+          <li>Step 2: Stop at checkpoint</li>
+          <li>Step 3: Turn around</li>
+          <li>Step 4: Return to start</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Create a variable "missionStep" to track progress
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Program each step as a separate function
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Move to next step when current step is complete
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 5:</span> Test your complete mission!
+      </div>
+
+      <h2>🎯 Activity 3: Behavior Priority System</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create behaviors with priorities:
+        <ul>
+          <li>Emergency stop (highest priority)</li>
+          <li>Obstacle avoidance</li>
+          <li>Line following</li>
+          <li>Exploration (lowest priority)</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Check conditions in priority order
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Execute the highest priority behavior that's active
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Lower priority behaviors only run if higher ones aren't needed
+      </div>
+
+      <h2>🌟 Activity 4: Autonomous Mission</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Design a complete autonomous mission:
+        <ul>
+          <li>Start at point A</li>
+          <li>Navigate to point B (avoiding obstacles)</li>
+          <li>Perform a task at point B</li>
+          <li>Return to point A</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Break mission into states:
+        <ul>
+          <li>"goingToB" - Navigating to destination</li>
+          <li>"atB" - Arrived, performing task</li>
+          <li>"returning" - Going back to start</li>
+          <li>"complete" - Mission finished</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Program state transitions
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Add error handling (what if something goes wrong?)
+      </div>
+
+      <h2>🎮 Activity 5: Multi-Task Robot</h2>
+
+      <div class="step">
+        <span class="step-number">Step 1:</span> Create a robot that can do multiple tasks:
+        <ul>
+          <li>Follow lines</li>
+          <li>Avoid obstacles</li>
+          <li>Seek light</li>
+          <li>Respond to commands</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 2:</span> Use state machine to switch between tasks
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 3:</span> Add a mode selector (button press changes mode)
+      </div>
+
+      <div class="step">
+        <span class="step-number">Step 4:</span> Each mode has different behavior
+      </div>
+
+      <div class="challenge">
+        Create a complex autonomous robot with:
+        <ul>
+          <li>State machine with at least 5 different states</li>
+          <li>Multi-step mission sequence</li>
+          <li>Priority-based behavior system</li>
+          <li>Error handling and recovery</li>
+          <li>Mode switching capability</li>
+          <li>Complete autonomous mission from start to finish</li>
+        </ul>
+      </div>
+
+      <h2>💡 Key Concepts</h2>
+      <ul>
+        <li><strong>State Machine:</strong> A system with different states and transitions between them</li>
+        <li><strong>State:</strong> What the robot is currently doing</li>
+        <li><strong>Transition:</strong> Moving from one state to another</li>
+        <li><strong>Mission Sequence:</strong> A series of steps to complete a task</li>
+        <li><strong>Priority System:</strong> Ranking behaviors by importance</li>
+        <li><strong>Autonomous:</strong> Working independently without constant control</li>
+        <li><strong>Error Handling:</strong> What to do when things go wrong</li>
+      </ul>
+
+      <h2>🔍 What's Next?</h2>
+      <p>Excellent! You can now program complex behaviors. Next session, we'll learn about multi-robot coordination and communication!</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with ❤️ for Code Club</p>
+    </div>
+  </footer>
+</body>
+</html>
