@@ -37,10 +37,10 @@ Sessions run at a local school code club using BBC Microbits, Smart Cutebot robo
 | **17** | Cutebot Obstacle Avoidance | Ultrasonic sensor, navigation | Detect and avoid obstacles automatically |
 | **18** | Cutebot Final Project | Combining all robot skills | Create your own amazing robot project! |
 | **19** | Advanced Cutebot Navigation | Pathfinding, complex navigation | Navigate complex paths, mazes, and intersections |
-| **20** | Cutebot Sensor Fusion | Multi-sensor systems | Combine multiple sensors for intelligent behavior |
-| **21** | Complex Cutebot Behaviors | State machines, behavior programming | Program complex behaviors using state machines |
+| **20** | Cutebot Sensor Fusion | Multi-sensor systems | Combine multiple sensors for intelligent behaviour |
+| **21** | Complex Cutebot Behaviours | State machines, behaviour programming | Program complex behaviours using state machines |
 | **22** | Multi-Robot Coordination | Multi-robot systems, communication | Make multiple Cutebots work together |
-| **23** | Cutebot Data Logging | Data recording, analysis | Record and analyze robot data to improve performance |
+| **23** | Cutebot Data Logging | Data recording, analysis | Record and analyse robot data to improve performance |
 | **24** | Advanced Cutebot Final Project | Advanced autonomous missions | Create an advanced autonomous robot mission! |
 | **25** | Introduction to Arcade Console | Sprites, MakeCode Arcade | Meet the Arcade console and create your first sprites |
 | **26** | Arcade Movement & Controls | Button controls, game loops | Make your sprites move with console buttons |
